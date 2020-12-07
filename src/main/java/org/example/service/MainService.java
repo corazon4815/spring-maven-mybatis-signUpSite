@@ -5,6 +5,8 @@ import org.example.model.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class MainService {
     @Autowired
@@ -16,6 +18,10 @@ public class MainService {
 
     public String memberName() {
         return mainDao.memberName();
+    }
+
+    public int LoginChk(Map<String, Object> map) {
+        return mainDao.LoginChk(map);
     }
 
 }

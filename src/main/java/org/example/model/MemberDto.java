@@ -7,7 +7,9 @@ public class MemberDto {
 
     private int member_no;
     private String member_name;
+    private String member_id;
     private String member_pw;
     private String member_address;
     private String member_birth;
+    private String regdate;
 }

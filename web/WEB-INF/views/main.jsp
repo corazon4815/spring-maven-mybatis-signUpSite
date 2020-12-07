@@ -5,10 +5,12 @@
 <html>
 <head>
     <title>Title</title>
+
 </head>
 <body>
 
-${member}
+메인입니다
+회원목록
 
 
 </body>
