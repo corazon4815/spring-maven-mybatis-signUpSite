@@ -11,6 +11,21 @@
         select count(*) from member_tb where member_id=#{member_id} and member_pw=#{member_pw};
     </select>
 
+    <!--아이디 중복체크-->
+    <select id="DuplChk" resultType="int" parameterType="String">
+        select count(*) from member_tb where member_id=#{member_id};
+    </select>
+
+    <insert id="MemberRegister" parameterType="org.example.model.MemberDto">
+        insert into member_tb set member_id=#{member_id} ,
+                             member_name=#{member_name},
+                             member_pw=#{member_pw},
+                             member_address=#{member_address},
+                             member_birth=#{member_birth};
+    </insert>
+
+
+
 
 
 </mapper>

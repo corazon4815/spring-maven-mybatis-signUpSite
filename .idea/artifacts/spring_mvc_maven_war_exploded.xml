@@ -35,6 +35,9 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.webjars:jquery-form:3.51" />
           <element id="library" level="project" name="Maven: org.webjars:jquery:3.4.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.5" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.5" />
         </element>
       </element>
     </root>

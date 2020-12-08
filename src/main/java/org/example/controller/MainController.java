@@ -5,9 +5,7 @@ import org.example.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
@@ -51,10 +49,24 @@ public class MainController {
         }
         return data;
     }
-    @RequestMapping(value ="/member/register")
+    @RequestMapping(value ="/member/registerform")
     public String getMemberjoinPage(){
-
         return "memberjoin";
+    }
+
+    @GetMapping(value ="/member/checkid/")
+    @ResponseBody
+    public int isIdDuplicated(@RequestParam("member_id") String member_id){
+        return mainService.DuplChk(member_id);
+    }
+
+    @PostMapping(value = "/member/register")
+    @ResponseBody
+    public int registerMember(@RequestBody MemberDto dto){
+        System.out.println(dto);
+        mainService.MemberRegister(dto);
+        int data = 0;
+        return data;
     }
 
     @GetMapping(value ="/member/main")

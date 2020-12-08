@@ -16,12 +16,17 @@ public class MainService {
         this.mainDao = mainDao;
     }
 
-    public String memberName() {
-        return mainDao.memberName();
-    }
-
     public int LoginChk(Map<String, Object> map) {
         return mainDao.LoginChk(map);
     }
+
+    public int DuplChk(String member_id) {
+        return mainDao.DuplChk(member_id);
+    }
+    public void MemberRegister(MemberDto dto) {
+        System.out.println("service");
+         mainDao.MemberRegister(dto);
+    }
+
 
 }

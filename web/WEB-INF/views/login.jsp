@@ -42,7 +42,7 @@
         <input type="text" name="member_id" id="member_id" placeholder="member_id"><br>
         <input type="password" name="member_pw" id="member_pw"  placeholder="member_pw"><br>
         <input type="button" id="btn_login" value="로그인">
-        <button onclick="window.open('/member/register','회원가입','width=430,height=500,location=no,status=no,scrollbars=yes');">회원가입</button>
+        <button onclick="window.open('/member/registerform','회원가입','width=430,height=500,location=no,status=no,scrollbars=yes');">회원가입</button>
 
     </div>
 </form>
