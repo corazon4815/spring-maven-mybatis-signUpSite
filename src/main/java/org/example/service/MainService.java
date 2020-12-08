@@ -12,10 +12,6 @@ public class MainService {
     @Autowired
     MainDao mainDao;
 
-    public void setMainDao(MainDao mainDao) {
-        this.mainDao = mainDao;
-    }
-
     public int LoginChk(Map<String, Object> map) {
         return mainDao.LoginChk(map);
     }
@@ -24,9 +20,13 @@ public class MainService {
         return mainDao.DuplChk(member_id);
     }
     public void MemberRegister(MemberDto dto) {
-        System.out.println("service");
-         mainDao.MemberRegister(dto);
+        mainDao.MemberRegister(dto);
     }
+/*    public void MemberRegister(MemberDto dto) {
+        mainDao.MemberRegister(dto);
+    }
+
+    getMemberList*/
 
 
 }

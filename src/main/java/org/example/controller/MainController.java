@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import org.example.model.MemberDto;
+import com.google.gson.Gson;
 import org.example.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -22,55 +24,60 @@ public class MainController {
         this.mainService = mainService;
     }
 
-    @RequestMapping(value ="/member/loginForm")
+    //@RequestMapping(value ="/view/loginForm")
+    @RequestMapping(value ="/loginView")
     public String loginForm() throws Exception {
-
         return "login";
     }
 
     @RequestMapping(value ="/member/login")
     @ResponseBody
-    public int doLogin(HttpSession session, String member_id, String member_pw, HttpServletResponse response) {
+    public int doLogin(HttpSession session, String memberId, String memberPw, HttpServletResponse response) {
         int data;
         if (session.getAttribute("login") != null) {
             session.removeAttribute("login");
         }
         Map<String, Object> map = new HashMap<>();
 
-        map.put("member_id", member_id);
-        map.put("member_pw", member_pw);
+        map.put("memberId", memberId);
+        map.put("memberPw", memberPw);
 
         int loginCnt = mainService.LoginChk(map);
         if(loginCnt==1) {
-            session.setAttribute("member_id", member_id);
+            session.setAttribute("memberId", memberId);
             data = 1;
         }else{
             data = 0;
         }
         return data;
     }
-    @RequestMapping(value ="/member/registerform")
+    //@getMapping(value ="/member/registerform")
+    @RequestMapping(value = "/member/registerform")
     public String getMemberjoinPage(){
         return "memberjoin";
     }
 
     @GetMapping(value ="/member/checkid/")
     @ResponseBody
-    public int isIdDuplicated(@RequestParam("member_id") String member_id){
-        return mainService.DuplChk(member_id);
+    public int isIdDuplicated(@RequestParam("memberId") String memberId){
+        return mainService.DuplChk(memberId);
     }
 
     @PostMapping(value = "/member/register")
     @ResponseBody
-    public int registerMember(@RequestBody MemberDto dto){
+    public void registerMember(@RequestBody MemberDto dto){
         System.out.println(dto);
         mainService.MemberRegister(dto);
-        int data = 0;
-        return data;
     }
-
+    @ResponseBody
     @GetMapping(value ="/member/main")
     public String getMainPage() {
+//        List<MemberDto> list = staff.selectDepts();
+//        Gson json = new Gson();
+//        resp.setContentType("text/html;charset=utf-8");
+//        PrintWriter out = resp.getWriter();
+//        out.print(json.toJson(list));
+//        mainService.getMemberList();
         return "main";
     }
 

@@ -5,11 +5,11 @@ import lombok.Data;
 @Data
 public class MemberDto {
 
-    private int member_no;
-    private String member_name;
-    private String member_id;
-    private String member_pw;
-    private String member_address;
-    private String member_birth;
-    private String regdate;
+    private int memberNo;
+    private String memberName;
+    private String memberId;
+    private String memberPw;
+    private String memberAddress;
+    private String memberBirth;
+    private String regDate;
 }

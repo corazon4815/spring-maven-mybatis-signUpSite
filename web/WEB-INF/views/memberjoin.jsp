@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -13,9 +12,9 @@
     <script>
         $(function() {
             $("#btn_duplChk").click(function() {
-                var member_id = $('#member_id').val();
+                var member_id = $('#memberId').val();
                 $.ajax({
-                    url : '${pageContext.request.contextPath}/member/checkid/?member_id='+ member_id,
+                    url : '${pageContext.request.contextPath}/member/checkid/?memberId='+ memberId,
                     type : 'get',
                     success : function(data) {
                         if (data >= 1) {
@@ -41,16 +40,16 @@
 
         $(function() {
             $("#reg_submit").click(function() {
-                var member_pw = $('#member_pw').val();
+                var memberPw = $('#memberPw').val();
                 var member_pw_chk = $('#member_pw_chk').val();
                 var form = {
-                    member_id: $('#member_id').val(),
-                    member_name: $('#member_name').val(),
-                    member_address: $('#member_address').val(),
-                    member_pw: $('#member_pw').val(),
-                    member_birth: $('#member_birth').val()
+                    memberId: $('#memberId').val(),
+                    memberName: $('#memberName').val(),
+                    memberAddress: $('#memberAddress').val(),
+                    memberPw: $('#memberPw').val(),
+                    memberBirth: $('#memberBirth').val()
                 };
-                if (member_pw!=member_pw_chk){
+                if (memberPw!=member_pw_chk){
                     $('#pw_check').text('비밀번호가 일치하지 않습니다.');
                     $('#id_check').css('color', 'red');
                     return false;
@@ -63,7 +62,7 @@
                         dataType: "json",
                         success: function () {
                             alert('회원가입이 완료되었습니다.')
-                                close();
+                            close();
                         },
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "error:" + error);
@@ -78,24 +77,24 @@
 <body>
 <form id="joinForm" method="post">
     <div class="form-group">
-        <label for="member_id">아이디</label><br>
-        <input type="text"  id="member_id" name="member_id" required><input type="BUTTON" name="btn_duplChk" id="btn_duplChk" value="중복확인" ><br>
-        <div class="check_font" id="id_check"></div><br>
+        <label for="memberId">아이디</label><br>
+        <input type="text"  id="memberId" name="memberId" required><input type="BUTTON" name="btn_duplChk" id="btn_duplChk" value="중복확인" ><br>
+        <div class="check_font" id="id_check"></div>
 
-        <label for="member_name">이름</label><br>
-        <input type="text" id="member_name" name="member_name" required><br>
+        <label for="memberName">이름</label><br>
+        <input type="text" id="memberName" name="memberName" required><br>
 
-        <label for="member_address">주소</label><br>
-        <input type="text" id="member_address" name="member_address" required><br>
+        <label for="memberAddress">주소</label><br>
+        <input type="text" id="memberAddress" name="memberAddress" required><br>
 
-        <label for="member_pw">비밀번호</label><br>
-        <input type="text" id="member_pw" name="member_pw" required><br>
+        <label for="memberPw">비밀번호</label><br>
+        <input type="text" id="memberPw" name="memberPw" required><br>
         <label for="member_pw_chk">비밀번호 확인</label><br>
         <input type="text" id="member_pw_chk" name="member_pw_chk" required><br>
         <div class="check_font" id="pw_check"></div><br>
 
-        <label for="member_birth">생년월일</label><br>
-        <input type="date" id="member_birth" name="member_birth" required><br>
+        <label for="memberBirth">생년월일</label><br>
+        <input type="date" id="memberBirth" name="memberBirth" required><br>
     </div>
     <input type="BUTTON" name="reg_submit" id="reg_submit" value="등   록" >
     <input type='BUTTON' value="닫기" onClick='self.close()'>

@@ -24,7 +24,6 @@ public class MainDao extends SqlSessionDaoSupport {
         return getSqlSession().selectOne("member.DuplChk", member_id);
     }
     public void MemberRegister(MemberDto dto) {
-        System.out.println("dao");
         getSqlSession().selectOne("member.MemberRegister", dto);
     }
 
