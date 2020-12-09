@@ -1,26 +1,36 @@
 package org.example.service;
 
-import org.example.dao.MainDao;
+
+import org.example.mapper.MainMapper;
 import org.example.model.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.Map;
 
 @Service
 public class MainService {
-    @Autowired
-    MainDao mainDao;
+    @Resource
+    MainMapper mainMapper;
 
-    public int LoginChk(Map<String, Object> map) {
-        return mainDao.LoginChk(map);
+    public MainService(MainMapper mainMapper) {
+        this.mainMapper = mainMapper;
     }
 
-    public int DuplChk(String member_id) {
-        return mainDao.DuplChk(member_id);
+
+    public int loginChk(Map<String, Object> map) throws Exception {
+        return mainMapper.loginChk(map);
     }
-    public void MemberRegister(MemberDto dto) {
-        mainDao.MemberRegister(dto);
+
+    public int duplChk(String memberId) throws Exception {
+        return mainMapper.duplChk(memberId);
+    }
+
+    @Transactional
+    public void memberRegister(MemberDto dto) throws Exception {
+        mainMapper.memberRegister(dto);
     }
 /*    public void MemberRegister(MemberDto dto) {
         mainDao.MemberRegister(dto);

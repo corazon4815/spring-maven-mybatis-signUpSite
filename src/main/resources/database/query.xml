@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="member">
+<mapper namespace="org.example.mapper.MainMapper">
 
-    <select id="selectName" resultType="String">
-        select member_name from member_tb where member_no=1;
-    </select>
     <!--로그인 체크-->
     <select id="loginChk" resultType="int" parameterType="hashMap">
-        select count(*) from member_tb where member_id=#{member_id} and member_pw=#{member_pw}
+        SELECT
+               count(*)
+        FROM   MEMBER_TB
+        WHERE  MEMBER_ID=#{memberId}
+        AND    MEMBER_PW=#{memberPw}
     </select>
 
     <!--아이디 중복체크-->
-    <select id="DuplChk" resultType="int" parameterType="String">
-        select count(*) from member_tb where member_id=#{member_id}
---         SELECT
---                 A,
---                 B,
---         FROM  DDDD
---         WHERE AASSAS
---         AND
---         ORDER BY  AA
+    <select id="duplChk" resultType="int" parameterType="String">
+        SELECT
+               count(*)
+        FROM   MEMBER_TB
+        WHERE  MEMBER_ID=#{memberId}
+     </select>
 
-    </select>
+    <insert id="memberRegister" parameterType="org.example.model.MemberDto">
+        INSERT INTO MEMBER_TB
+         (
+            MEMBER_ID,
+            MEMBER_NAME,
+            MEMBER_PW,
+            MEMBER_ADDRESS,
+            MEMBER_BIRTH
+         )VALUES (
+            #{memberId},
+            #{memberName},
+            #{memberPw},
+            #{memberAddress},
+            #{memberBirth}
+         )
+     </insert>
 
-    <insert id="MemberRegister" parameterType="org.example.model.MemberDto">
-        insert into member_tb set member_id=#{member_id} ,
-                             member_name=#{member_name},
-                             member_pw=#{member_pw},
-                             member_address=#{member_address},
-                             member_birth=#{member_birth}
---         INSERT INTO MEMBER_TB
---         (
---           MEMBER_ID,
---           DD.
---         )VALUES (
---           #{member_id}
---         )
-    </insert>
-
-
-
-
+             <!--SELECT-->
+                     <!--A,-->
+                     <!--B,-->
+             <!--FROM  DDDD-->
+             <!--WHERE AASSAS-->
+             <!--AND-->
+             <!--ORDER BY  AA-->
 
 </mapper>

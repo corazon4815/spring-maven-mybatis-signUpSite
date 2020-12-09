@@ -1,3 +1,4 @@
+/*
 package org.example.dao;
 
 import org.apache.ibatis.session.SqlSession;
@@ -13,6 +14,7 @@ import java.util.Map;
 @Repository
 public class MainDao extends SqlSessionDaoSupport {
 
+
     @Autowired
     SqlSession sqlSession;
 
@@ -20,11 +22,12 @@ public class MainDao extends SqlSessionDaoSupport {
         return getSqlSession().selectOne("member.loginChk", map);
     }
 
-    public int DuplChk(String member_id) {
-        return getSqlSession().selectOne("member.DuplChk", member_id);
+    public int DuplChk(String memberId) {
+        return getSqlSession().selectOne("member.DuplChk", memberId);
     }
     public void MemberRegister(MemberDto dto) {
         getSqlSession().selectOne("member.MemberRegister", dto);
     }
 
 }
+*/

@@ -25,14 +25,15 @@ public class MainController {
     }
 
     //@RequestMapping(value ="/view/loginForm")
-    @RequestMapping(value ="/loginView")
+    @RequestMapping(value ="/view/loginview")
     public String loginForm() throws Exception {
         return "login";
     }
 
     @RequestMapping(value ="/member/login")
     @ResponseBody
-    public int doLogin(HttpSession session, String memberId, String memberPw, HttpServletResponse response) {
+    public Map doLogin(HttpSession session, String memberId, String memberPw, HttpServletResponse response) throws Exception {
+        Map resultMap = new HashMap();
         int data;
         if (session.getAttribute("login") != null) {
             session.removeAttribute("login");
@@ -42,14 +43,16 @@ public class MainController {
         map.put("memberId", memberId);
         map.put("memberPw", memberPw);
 
-        int loginCnt = mainService.LoginChk(map);
+        int loginCnt = mainService.loginChk(map);
         if(loginCnt==1) {
             session.setAttribute("memberId", memberId);
-            data = 1;
+           // data = 1;
+            resultMap.put(" ", true);
         }else{
-            data = 0;
+           // data = 0;
+            resultMap.put("result", false);
         }
-        return data;
+        return resultMap;
     }
     //@getMapping(value ="/member/registerform")
     @RequestMapping(value = "/member/registerform")
@@ -59,18 +62,18 @@ public class MainController {
 
     @GetMapping(value ="/member/checkid/")
     @ResponseBody
-    public int isIdDuplicated(@RequestParam("memberId") String memberId){
-        return mainService.DuplChk(memberId);
+    public int isIdDuplicated(@RequestParam("memberId") String memberId) throws Exception {
+        return mainService.duplChk(memberId);
     }
 
     @PostMapping(value = "/member/register")
     @ResponseBody
-    public void registerMember(@RequestBody MemberDto dto){
+    public void registerMember(@RequestBody MemberDto dto) throws Exception {
         System.out.println(dto);
-        mainService.MemberRegister(dto);
+        mainService.memberRegister(dto);
     }
     @ResponseBody
-    @GetMapping(value ="/member/main")
+    @GetMapping(value ="/view/mainview")
     public String getMainPage() {
 //        List<MemberDto> list = staff.selectDepts();
 //        Gson json = new Gson();
@@ -78,6 +81,7 @@ public class MainController {
 //        PrintWriter out = resp.getWriter();
 //        out.print(json.toJson(list));
 //        mainService.getMemberList();
+
         return "main";
     }
 

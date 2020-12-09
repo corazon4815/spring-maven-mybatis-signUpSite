@@ -19,11 +19,11 @@
                 $("#listInfo").html("");
                 $("#listInfo").append(
                     "<table id='memberTable' class='memberTable' style='text-align: center; width: 1000px;'><tr><td>아이디</td><td>이름</td><td>주소</td><td>가입일</td></tr></table>");
-                for (var i = 0; i < args.length; i++) {
+                for (var i = 0; i < args.result.length; i++) {
                     var str = "<tr><td>" + args[i].memberId
                         + "</td>" + "<td>" + args[i].memberPw
                         + "</td>" + "<td>" + args[i].memberAddress
-                        + "</td>" + "<td>" + args[i].memberNo
+                        + "</td>" + "<td>" + args[i].regDate
                         + "</td></tr>";
                     $("#listInfo table").append(str);
                 }

@@ -3,7 +3,8 @@
 <html>
 <head>
     <title>Title</title>
-    <script src="/libs/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/libs/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/js/login/login.js"></script>
 </head>
 <body>
 <form name="loginform" id="loginform" method="post">
