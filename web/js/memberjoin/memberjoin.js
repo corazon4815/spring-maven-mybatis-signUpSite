@@ -6,15 +6,16 @@
         $memberJoin.request.doRegister();
     });
 */
+    var isMemberChecked;
     $memberJoin.event = {
         duplChk: function () {
-            $("#btn_duplChk").click(function () {
+           /* $("#btn_duplChk").click(function () {*/
                 var memberId = $('#memberIdModal').val();
                 $.ajax({
-                    url: '${pageContext.request.contextPath}/member/checkid/?memberId=' + memberId,
+                    url: '/member/checkid/?memberId=' + memberId,
                     type: 'get',
-                    success: function (result) {
-                        if (result=="true") {
+                    success: function (data) {
+                        if (data.result=="true") {
                             $("#id_check").text("사용중인 아이디입니다");
                             $("#id_check").css("color", "red");
                             $("#reg_submit").attr("disabled", true);
@@ -26,20 +27,22 @@
                             } else {
                                 $('#id_check').text('사용 가능한 아이디 입니다.');
                                 $("#reg_submit").attr("disabled", false);
+                                isMemberChecked = 'y';
                             }
                         }
                     }, error: function () {
                         console.log("실패");
                     }
                 });
-            });
+           /* });*/
         }
     }
 
     $memberJoin.request = {
         doRegister : function() {
-            $("#reg_submitk").click(function () {
+            /*$("#reg_submitk").click(function () {*/
             var memberId = $('#memberIdModal').val();
+            var id_check = $('#id_check').val();
             var memberPw = $('#memberPwModal').val();
             var member_pw_chk = $('#member_pw_chk').val();
             var memberName = $('#memberName').val();
@@ -72,6 +75,10 @@
                 alert("생년월일을 입력하세요");
                 return false;
             }
+            if (isMemberChecked!='y'){
+                alert("아이디 중복체크를 해주시기 바랍니다.");
+                return false;
+            }
             if (memberPw!=member_pw_chk){
                 $('#pw_check').text('비밀번호가 일치하지 않습니다.');
                 $('#pw_check').css('color', 'red');
@@ -94,7 +101,7 @@
                     }
                 });
             }
-        })
+        /*});*/
     }
     }
 }(window, document));

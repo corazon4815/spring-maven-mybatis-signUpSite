@@ -32,12 +32,34 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
-            <div class="modal-body">
-                ...
+            <div class="modal-body" style="width: 500px; text-align:center;">
+                <label for="memberIdModal">아이디</label><br>
+                <tab1>
+                <input type="text" id="memberIdModal" name="memberId" required> &nbsp;
+                <button name="btn_duplChk" id="btn_duplChk" onclick="$memberJoin.event.duplChk();">중복확인</button><br></tab1>
+                <div class="check_font" id="id_check"></div>
+
+                <label for="memberName">이름</label><br>
+                <input type="text" id="memberName" name="memberName" required><br>
+
+                <label for="memberAddress">주소</label><br>
+                <input type="text" id="memberAddress" name="memberAddress" required><br>
+
+                <label for="memberPwModal">비밀번호</label><br>
+                <input type="text" id="memberPwModal" name="memberPw" required><br>
+                <label for="member_pw_chk">비밀번호 확인</label><br>
+                <input type="text" id="member_pw_chk" name="member_pw_chk" required><br>
+                <div class="check_font" id="pw_check"></div>
+                <br>
+
+                <label for="memberBirth">생년월일</label><br>
+                <input type="date" id="memberBirth" name="memberBirth" required><br>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" name="reg_submit" id="reg_submit"
+                        onclick="$memberJoin.request.doRegister();">등록
+                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
             </div>
         </div>
     </div>
