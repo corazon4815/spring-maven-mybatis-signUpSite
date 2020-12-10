@@ -39,13 +39,17 @@
                     return false;
                 } else {
                     $.ajax({
-                        type: "POST",
+                        type: "post",
                         url: "/member/login",
                         data: "memberId=" + memberId + "&memberPw=" + memberPw,
                         dataType: "json",
                         success: function (data) {/*, textStatus, xhr*/
-                            console.log(data)
-                        },
+                            if (data.result) {
+                                window.location.href = '/view/mainview';
+                            }else{
+                            alert("아이디와 비밀번호를 확인해주세요.")}
+                        }
+                        ,
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "error:" + error);
                         }

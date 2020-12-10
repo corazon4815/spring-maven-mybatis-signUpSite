@@ -7,6 +7,7 @@
     <title>Title</title>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 <script>
+/*
     $(function(){
         var url="/member/main";
 
@@ -32,6 +33,7 @@
         });
     });
 
+*/
 
 </script>
 </head>

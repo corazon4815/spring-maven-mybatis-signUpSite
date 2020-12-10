@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 @Repository
-public interface MainMapper {
+public interface MemberMapper {
 
     public int loginChk(Map<String, Object> map) throws Exception;
 

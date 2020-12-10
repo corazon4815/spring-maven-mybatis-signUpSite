@@ -1,9 +1,8 @@
 package org.example.service;
 
 
-import org.example.mapper.MainMapper;
+import org.example.mapper.MemberMapper;
 import org.example.model.MemberDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,26 +10,26 @@ import javax.annotation.Resource;
 import java.util.Map;
 
 @Service
-public class MainService {
+public class MemberService {
     @Resource
-    MainMapper mainMapper;
+    MemberMapper mapperMapper;
 
-    public MainService(MainMapper mainMapper) {
-        this.mainMapper = mainMapper;
+    public MemberService(MemberMapper mapperMapper) {
+        this.mapperMapper = mapperMapper;
     }
 
 
     public int loginChk(Map<String, Object> map) throws Exception {
-        return mainMapper.loginChk(map);
+        return mapperMapper.loginChk(map);
     }
 
     public int duplChk(String memberId) throws Exception {
-        return mainMapper.duplChk(memberId);
+        return mapperMapper.duplChk(memberId);
     }
 
     @Transactional
     public void memberRegister(MemberDto dto) throws Exception {
-        mainMapper.memberRegister(dto);
+        mapperMapper.memberRegister(dto);
     }
 /*    public void MemberRegister(MemberDto dto) {
         mainDao.MemberRegister(dto);
