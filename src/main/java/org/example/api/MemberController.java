@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 @RestController
 public class MemberController {
@@ -41,7 +42,6 @@ public class MemberController {
         }else{
             resultMap.put("result", false);
         }
-        System.out.println("resultMap="+resultMap);
         return resultMap;
     }
 
@@ -62,12 +62,33 @@ public class MemberController {
     @ResponseBody
     public Map registerMember(@RequestBody MemberDto dto) throws Exception {
         Map resultMap = new HashMap();
-        System.out.println(dto);
         memberService.memberRegister(dto);
         resultMap.put("result", "success");
 
         return resultMap;
     }
+
+    @GetMapping(value = "/member/memberlist")
+    @ResponseBody
+    public Map getMemberList() throws Exception {
+        Map resultMap = new HashMap();
+        List<MemberDto> list = (List<MemberDto>) memberService.getMemberList();
+
+        System.out.println(list);
+        resultMap.put("result", list);
+        return resultMap;
+    }
+
+    @GetMapping(value = "/member/memberInfo/{id}")
+    @ResponseBody
+    public Map getMember(String memberId) throws Exception {
+        Map resultMap = new HashMap();
+        MemberDto dto = memberService.getMember(memberId);
+        resultMap.put("result", dto);
+        return resultMap;
+    }
+
+
 
 /*    @RequestMapping (value ="/view/mainview")
     public String getMainPage() {*/

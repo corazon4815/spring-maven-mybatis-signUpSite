@@ -37,7 +37,30 @@
          )
      </insert>
 
-             <!--SELECT-->
+    <select id="getMemberList" resultType="org.example.model.MemberDto">
+        SELECT
+            MEMBER_ID,
+            MEMBER_NAME,
+            MEMBER_ADDRESS,
+            REGDATE as regDate
+        FROM   MEMBER_TB
+    </select>
+
+    <select id="getMember" resultType="org.example.model.MemberDto" parameterType="String">
+        SELECT
+            MEMBER_ID,
+            MEMBER_NAME,
+            MEMBER_ADDRESS,
+            REGDATE as regDate
+        FROM   MEMBER_TB
+        WHERE  MEMBER_ID = #{memberId};
+    </select>
+
+
+
+
+
+    <!--SELECT-->
                      <!--A,-->
                      <!--B,-->
              <!--FROM  DDDD-->

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -31,9 +32,31 @@ public class MemberService {
     public void memberRegister(MemberDto dto) throws Exception {
         mapperMapper.memberRegister(dto);
     }
+
+    public List<MemberDto> getMemberList() throws Exception {
+        return mapperMapper.getMemberList();
+    }
+
+    public MemberDto getMember(String memberId) throws Exception {
+        return mapperMapper.getMember();
+    }
 /*    public void MemberRegister(MemberDto dto) {
         mainDao.MemberRegister(dto);
     }
+
+    public BoardListModel list(int pageNum, int per){
+		int count = dao.count();
+		if(count == 0) {
+			return new BoardListModel();
+		}
+
+		int start = (pageNum - 1) * per;
+		List<BoardDto> list = dao.getList(start, per);
+
+		Paging p = new Paging().paging(pageNum, count, per);
+
+		return new BoardListModel(list,pageNum,p.totalPageCount,start,p,count);
+	}
 
     getMemberList*/
 

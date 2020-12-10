@@ -44,17 +44,6 @@
     </div>
 </div>
 
-<%--<form name="loginform" id="loginform" method="post">
-    <div>
-        &lt;%&ndash;<input type="text" name="memberId" id="memberId" placeholder="ID"><br>
-        <input type="password" name="memberPw" id="memberPw" placeholder="PASSWARD"><br>
-        <input type="button" class="btn btn-primary" id="btn_login" value="로그인">&ndash;%&gt;
-        &lt;%&ndash; <button onclick="window.open('/view/registerview','회원가입','width=430,height=500,location=no,status=no,scrollbars=yes');">회원가입&ndash;%&gt;
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#memberModal">회원가입</button>
-        &lt;%&ndash;onclick="javascript:$loginView.ui.doLogin();&ndash;%&gt;
-    </div>
-</form>--%>
-
 <!-- Modal -->
 <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -126,29 +115,6 @@
                         </form>
                     </div>
                 </div>
-
-
-<%--                <label for="memberIdModal">아이디</label>--%>
-<%--                <tab1>--%>
-<%--                <input type="text" class="form-control memberjoinwidth" id="memberIdModal" name="memberId" required> &nbsp;--%>
-<%--                <button name="btn_duplChk" id="btn_duplChk" class="btn btn-secondary" onclick="$memberJoin.event.duplChk();">중복확인</button><br></tab1>--%>
-<%--                <div class="check_font" id="id_check"></div>--%>
-
-<%--                <label for="memberName">이름</label><br>--%>
-<%--                <input type="text" id="memberName" name="memberName" class="form-control" required><br>--%>
-
-<%--                <label for="memberAddress">주소</label><br>--%>
-<%--                <input type="text" id="memberAddress" name="memberAddress" class="form-control" required><br>--%>
-
-<%--                <label for="memberPwModal">비밀번호</label><br>--%>
-<%--                <input type="text" id="memberPwModal" name="memberPw" class="form-control" required><br>--%>
-<%--                <label for="member_pw_chk">비밀번호 확인</label><br>--%>
-<%--                <input type="text" id="member_pw_chk" name="member_pw_chk" class="form-control" required><br>--%>
-<%--                <div class="check_font" id="pw_check"></div>--%>
-<%--                <br>--%>
-
-<%--                <label for="memberBirth">생년월일</label><br>--%>
-<%--                <input type="date" id="memberBirth" name="memberBirth" class="form-control" required><br>--%>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" name="reg_submit" id="reg_submit"

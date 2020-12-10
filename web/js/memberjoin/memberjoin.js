@@ -1,16 +1,12 @@
 (function(W, D) {
     W.$memberJoin = W.$memberJoin || {};
 
-    /*$(document).ready(function () {
-        $memberJoin.event.setEventUI();
-        $memberJoin.request.doRegister();
-    });
-*/
-    var isMemberChecked;
+    let isMemberChecked;
+
     $memberJoin.event = {
         duplChk: function () {
            /* $("#btn_duplChk").click(function () {*/
-                var memberId = $('#memberIdModal').val();
+                let memberId = $('#memberIdModal').val();
                 $.ajax({
                     url: '/member/checkid/?memberId=' + memberId,
                     type: 'get',
@@ -41,14 +37,14 @@
     $memberJoin.request = {
         doRegister : function() {
             /*$("#reg_submitk").click(function () {*/
-            var memberId = $('#memberIdModal').val();
-            var id_check = $('#id_check').val();
-            var memberPw = $('#memberPwModal').val();
-            var member_pw_chk = $('#member_pw_chk').val();
-            var memberName = $('#memberName').val();
-            var memberAddress = $('#memberAddress').val();
-            var memberBirth = $('#memberBirth').val();
-            var form = {
+            let memberId = $('#memberIdModal').val();
+            let id_check = $('#id_check').val();
+            let memberPw = $('#memberPwModal').val();
+            let member_pw_chk = $('#member_pw_chk').val();
+            let memberName = $('#memberName').val();
+            let memberAddress = $('#memberAddress').val();
+            let memberBirth = $('#memberBirth').val();
+            let form = {
                 memberId: $('#memberIdModal').val(),
                 memberName: $('#memberName').val(),
                 memberAddress: $('#memberAddress').val(),

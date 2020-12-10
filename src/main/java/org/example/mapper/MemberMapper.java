@@ -3,6 +3,7 @@ package org.example.mapper;
 import org.example.model.MemberDto;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Map;
 @Repository
 public interface MemberMapper {
@@ -12,5 +13,9 @@ public interface MemberMapper {
     public int duplChk(String memberId) throws Exception;
 
     public void memberRegister(MemberDto dto) throws Exception;
+
+    public List<MemberDto> getMemberList() throws Exception;
+
+    public MemberDto getMember() throws Exception;
 
 }

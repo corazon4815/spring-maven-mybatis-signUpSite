@@ -29,8 +29,8 @@
     $loginView.event = {
         setEventUI: function () {
             $('#btn_login').click(function () {
-                var memberId = $('#memberId').val();
-                var memberPw = $('#memberPw').val();
+                let memberId = $('#memberId').val();
+                let memberPw = $('#memberPw').val();
                 if (memberId == "") {
                     alert("ID를 입력하세요.");
                     return false;
@@ -53,11 +53,11 @@
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "error:" + error);
                         }
-                    })
+                    });
                 }
             });
         }
-    }
+    };
 
 
 }(window, document));
