@@ -62,7 +62,7 @@
 </head>
 <body>
 
-메인입니다
+ 메인입니다
 회원목록
 <div class="container">
     <div class="span5">
