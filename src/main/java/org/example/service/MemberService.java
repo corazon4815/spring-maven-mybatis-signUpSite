@@ -38,7 +38,7 @@ public class MemberService {
     }
 
     public MemberDto getMember(String memberId) throws Exception {
-        return mapperMapper.getMember();
+        return mapperMapper.getMember(memberId);
     }
 /*    public void MemberRegister(MemberDto dto) {
         mainDao.MemberRegister(dto);

@@ -16,6 +16,6 @@ public interface MemberMapper {
 
     public List<MemberDto> getMemberList() throws Exception;
 
-    public MemberDto getMember() throws Exception;
+    public MemberDto getMember(String memberId) throws Exception;
 
 }

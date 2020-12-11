@@ -45,7 +45,7 @@ public class MemberController {
         return resultMap;
     }
 
-    @GetMapping(value ="/member/checkid/")
+    @GetMapping(value ="/member/checkid")
     @ResponseBody
     public Map isIdDuplicated(@RequestParam("memberId") String memberId) throws Exception {
         Map resultMap = new HashMap();
@@ -77,12 +77,13 @@ public class MemberController {
         return resultMap;
     }
 
-    @GetMapping(value = "/member/memberInfo/{memberId}")
+    @GetMapping(value = "/member/memberInfo")
     @ResponseBody
-    public Map getMember(String memberId) throws Exception {
+    public Map getMember(@RequestParam("memberId") String memberId) throws Exception {
         System.out.println(memberId);
         Map resultMap = new HashMap();
         MemberDto dto = memberService.getMember(memberId);
+        System.out.println(dto.getMemberId());
         resultMap.put("result", dto);
         return resultMap;
     }

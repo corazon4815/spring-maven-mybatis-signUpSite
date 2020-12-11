@@ -51,6 +51,7 @@
             MEMBER_ID,
             MEMBER_NAME,
             MEMBER_ADDRESS,
+            MEMBER_BIRTH,
             REGDATE as regDate
         FROM   MEMBER_TB
         WHERE  MEMBER_ID = #{memberId};
