@@ -73,15 +73,14 @@ public class MemberController {
     public Map getMemberList() throws Exception {
         Map resultMap = new HashMap();
         List<MemberDto> list = (List<MemberDto>) memberService.getMemberList();
-
-        System.out.println(list);
         resultMap.put("result", list);
         return resultMap;
     }
 
-    @GetMapping(value = "/member/memberInfo/{id}")
+    @GetMapping(value = "/member/memberInfo/{memberId}")
     @ResponseBody
     public Map getMember(String memberId) throws Exception {
+        System.out.println(memberId);
         Map resultMap = new HashMap();
         MemberDto dto = memberService.getMember(memberId);
         resultMap.put("result", dto);

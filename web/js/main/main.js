@@ -1,32 +1,53 @@
 (function(W, D) {
     W.$mainView = W.$mainView || {};
 
-    $(document).ready(function () {
-        $mainView.event.memberInfo();
-    });
+    $mainView.event = {
+        memberInfo: function (str) {
+            $("#memberInfoModal").modal('show');
+                let memberId = str;
+            $.ajax({
+                url: '/member/memberInfo/?memberId=' + memberId,
+                type: 'get',
+                // data: "memberId=" + memberId,
+                dataType: "json",
 
-    $memberJoin.event = {
-        memberInfo: function (e) {
+                success: function (data) {
 
-                $.ajax({
-                    type: "post",
-                    url: '/member/memberInfo/?memberId=' + e,
-                    dataType: "json",
-                    success: function (data) {/*, textStatus, xhr*/
-                        if (data.result) {
-                            $("#memberIdModal").text(data.result.memberId);
+                    $("#memberInfo").html("");
+                    let html =
+                        "<table id='memberInfoTable' class='table table-striped table-condensed'>";
+                        $("#memberInfo table").append(html);
 
-                        }
-                    }
-                    ,
-                    error: function (request, status, error) {
-                        alert("code:" + request.status + "\n" + "error:" + error);
-                    }
-                });
+                            let str =
+                            "<tr>" +
+                            "<td>아이디" +
+                            "</td>" +
+                            "<td" + data.memberId + "</td>" +
+                            "<tr>" +
+                            "<td>이름" +
+                            "</td>" +
+                            "<td>" + data.memberName + "</td>" +
+                            "<tr>" +
+                            "<td>주소" +
+                            "</td>" +
+                            "<td>" + data.memberAddress + "</td>" +
+                            "<tr>" +
+                            "<td>생년월일" +
+                            "</td>" +
+                            "<td>" + data.memberBirth + "</td>" +
+                            "<tr>" +
+                            "<td>입사일" +
+                            "</td>" +
+                            "<td>" + data.regDate + "</td>" +
+                            "</tr>";
+                        $("#memberInfo table").append(str);
 
-
+                },error :function () {
+                        console.log("실패");
 
         }
+        });//ajax
+}//memberInfo
+    };
 
-    }
-});
+}(window, document));
