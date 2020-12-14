@@ -40,7 +40,7 @@
                     for (var i = 0; i < args.result.length; i++) {
                         html +=
                             "<tr>" +
-                            "<td id='memId' style='cursor:hand' data-toggle='modal' data-target='#memberInfoModal' data-title=" + args.result[i].memberId + ">" +
+                            "<td id='memId' class='cursor' data-toggle='modal' data-target='#memberInfoModal' data-title=" + args.result[i].memberId + ">" +
                             args.result[i].memberId + "</td>" +
                             "<td>" + args.result[i].memberName + "</td>" +
                             "<td>" + args.result[i].memberAddress + "</td>" +

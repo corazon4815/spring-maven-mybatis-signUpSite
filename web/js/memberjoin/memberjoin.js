@@ -43,7 +43,10 @@
             let member_pw_chk = $('#member_pw_chk').val();
             let memberName = $('#memberName').val();
             let memberAddress = $('#memberAddress').val();
-            let memberBirth = $('#memberBirth').val();
+            let year = $('#year').val();
+            let month = $('#month').val();
+            let day = $('#day').val();
+            let memberBirth = year+"-"+month+"-"+day;
             let form = {
                 memberId: $('#memberIdModal').val(),
                 memberName: $('#memberName').val(),
@@ -51,6 +54,7 @@
                 memberPw: $('#memberPwModal').val(),
                 memberBirth: $('#memberBirth').val()
             };
+            console.log(memberBirth);
             if(!memberId) {
                 alert("아이디를 입력하세요");
                 return false;
