@@ -1,120 +1,120 @@
-<!-- ÀÎÅÍ³Ý¿¡¼­ jsÆÄÀÏ Ã£±â  --> 
+<!-- ì¸í„°ë„·ì—ì„œ jsíŒŒì¼jsíŒŒì¼ ì°¾ê¸°  --> 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="http://code.jquery.com/jquery-latest.js"></script> (ÃßÃµX)
+<script src="http://code.jquery.com/jquery-latest.js"></script> (ì¶”ì²œX)
 
-ready ÇÔ¼ö
-¼¿·ºÅÍ
+ready í•¨ìˆ˜
+ì…€ë ‰í„°
 
 
 $(function(){
-// ÀÌ¾ÈÀÇ ÄÚµå¸¦ °è¼Ó ¹Ù²ã°¡¸é¼­ Àû¾îÁÖ¸éµÊ
+// ì´ì•ˆì˜ ì½”ë“œë¥¼ ê³„ì† ë°”ê¿”ê°€ë©´ì„œ ì ì–´ì£¼ë©´ë¨
 });   
 ex)
 	$(function(){
 	$("li").css("color","red");
 	});
 	
-idºÎ¸¦¶§´Â #
-classºÎ¸¦¶§´Â . 
-li * -> liÅÂ±×¿Í ±× ¾Æ·¡ÅÂ±×¸¦ °¡Áö°íÀÖ´Â ÀüÃ¼
-"#second + li" - id°¡ second¿¡ ÇüÁ¦ liÅÂ±×Áß¿¡ ¹Ù·Î ¹Ø¿¡ ³ª¿À´Â¾Ö 
-"li:first-child" - liÅÂ±×Áß¿¡ Ã¹¹øÂ° ÀÚ½Ä(ÀüÃ¼ ¹®¼­°¡¾Æ´Ñ ¹­¿©ÀÖ´Â ±×·ì¸¶´Ù)
+idë¶€ë¥¼ë•ŒëŠ” #
+classë¶€ë¥¼ë•ŒëŠ” . 
+li * -> liíƒœê·¸ì™€ ê·¸ ì•„ëž˜íƒœê·¸ë¥¼ ê°€ì§€ê³ ìžˆëŠ” ì „ì²´
+"#second + li" - idê°€ secondì— í˜•ì œ liíƒœê·¸ì¤‘ì— ë°”ë¡œ ë°‘ì— ë‚˜ì˜¤ëŠ”ì•  
+"li:first-child" - liíƒœê·¸ì¤‘ì— ì²«ë²ˆì§¸ ìžì‹(ì „ì²´ ë¬¸ì„œê°€ì•„ë‹Œ ë¬¶ì—¬ìžˆëŠ” ê·¸ë£¹ë§ˆë‹¤)
 
-$("¼¿·ºÅÍ").html()
-$("¼¿·ºÅÍ").html("<p>text</p>); ->ÇØ´çÅÂ±×ÀÇ ÅØ½ºÆ®¿¡ ÅÂ±×¸¦ ÁÜ 
-$("¼¿·ºÅÍ").text()  ->ÇØ´ç ÅÂ±× ¾ÈÀÇ ÅØ½ºÆ®¸¸ °¡Á®¿È 
-¡Ú¡Ú¡Ú$("¼¿·ºÅÍ").append("<p>text</p>")  ->ºEºÎºÐ¿¡ »ðÀÔ
+$("ì…€ë ‰í„°").html()
+$("ì…€ë ‰í„°").html("<p>text</p>); ->í•´ë‹¹íƒœê·¸ì˜ í…ìŠ¤íŠ¸ì— íƒœê·¸ë¥¼ ì¤Œ 
+$("ì…€ë ‰í„°").text()  ->í•´ë‹¹ íƒœê·¸ ì•ˆì˜ í…ìŠ¤íŠ¸ë§Œ ê°€ì ¸ì˜´ 
+â˜…â˜…â˜…$("ì…€ë ‰í„°").append("<p>text</p>")  ->Eë¶€ë¶„ì— ì‚½ìž…
 
-¡ÚAttribute : ÅÂ±×ÀÇ ¼Ó¼º
+â˜…Attribute : íƒœê·¸ì˜ ì†ì„±
 <input type ="checkbox" name ="box" checked ="checked">
 
-¡ÚProperty : ÀÚ¹Ù½ºÅ©¸³Æ® °´Ã¼ÀÇ ¼Ó¼º
+â˜…Property : ìžë°”ìŠ¤í¬ë¦½íŠ¸ ê°ì²´ì˜ ì†ì„±
 document.getElementById("box").checked
 
-<ÀÌº¥Æ® ±¸Á¶>
+<ì´ë²¤íŠ¸ êµ¬ì¡°>
 $(function(){
-	$("¼¿·ºÅÍ").ÀÌº¥Æ®(function(){
-		ÀÌº¥Æ®°¡ ¹ß»ýÇÑ ½ÃÁ¡¿¡ ½ÇÇàÇÒ ¹®Àå
+	$("ì…€ë ‰í„°").ì´ë²¤íŠ¸(function(){
+		ì´ë²¤íŠ¸ê°€ ë°œìƒí•œ ì‹œì ì— ì‹¤í–‰í•  ë¬¸ìž¥
 	});
 });
 
 ex)
-$("img").attr("src","sea.jpg").attr("alt","¹Ù´Ù");    
-  ÅÂ±×ÀÇ       srcÀÇ ¼Ó¼ºÀ» sea·Î º¯°æ  altÀÇ ¼Ó¼ºÀ» ¹Ù´Ù·Î º¯°æ 
+$("img").attr("src","sea.jpg").attr("alt","ë°”ë‹¤");    
+  íƒœê·¸ì˜       srcì˜ ì†ì„±ì„ seaë¡œ ë³€ê²½  altì˜ ì†ì„±ì„ ë°”ë‹¤ë¡œ ë³€ê²½ 
   
   
-<a href="sea.jpg">È­¸éÀ» º¯°æ</a>
-¾ÞÄ¿ÅÂ±× Å¬¸¯½Ã ÇÏÀÌÆÛ¸µÅ© ÀÌµ¿ 
+<a href="sea.jpg">í™”ë©´ì„ ë³€ê²½</a>
+ì•µì»¤íƒœê·¸ í´ë¦­ì‹œ í•˜ì´í¼ë§í¬ ì´ë™ 
 
-"javascript:void(0)"->ÀÚ¹Ù½ºÅ©¸³Æ® µ¿ÀÛ½ÃÅ°Áö¾Ê°Ú´Ù ÀÇ¹Ì(=return false)
+"javascript:void(0)"->ìžë°”ìŠ¤í¬ë¦½íŠ¸ ë™ìž‘ì‹œí‚¤ì§€ì•Šê² ë‹¤ ì˜ë¯¸(=return false)
 
-ex)$("a:eq(0)").click(function(){        ->"a:eq(0)": ¾ÞÄ¿ÅÂ±×0¹øÂ°
-$("img").attr("src","flower.jpg").attr("alt","²É");
+ex)$("a:eq(0)").click(function(){        ->"a:eq(0)": ì•µì»¤íƒœê·¸0ë²ˆì§¸
+$("img").attr("src","flower.jpg").attr("alt","ê½ƒ");
 
 <on>
 $(function(){       
-//"a" : ÀÌº¥Æ®°¡ ¹ß»ýÇÒ ¾Ö ->¾ÞÄ¿ÅÂ±×¿¡ Å¬¸¯ÀÌº¥Æ®°¡ ¹ß»ýÇÒ¶§ 
+//"a" : ì´ë²¤íŠ¸ê°€ ë°œìƒí•  ì•  ->ì•µì»¤íƒœê·¸ì— í´ë¦­ì´ë²¤íŠ¸ê°€ ë°œìƒí• ë•Œ 
 	$(ul).on("click","a",function(){
-         //¹ß»ýÇÒÀÌº¥Æ®         $("img").attr("src",$(this).attr("href")).attr("alt",$(this).text());
+         //ë°œìƒí• ì´ë²¤íŠ¸         $("img").attr("src",$(this).attr("href")).attr("alt",$(this).text());
 		return false;
 	});
 	$("button").click(function(){
-		$("ul").append("<li><a href='Building.jpg'>°Ç¹°</a></li>");
+		$("ul").append("<li><a href='Building.jpg'>ê±´ë¬¼</a></li>");
 	});
 });
 
                 
 $("ul").on("click","a",function(){
-         //¹ß»ýÇÒ ÀÌº¥Æ®
+         //ë°œìƒí•  ì´ë²¤íŠ¸
 		$("img").attr("src",$(this).attr("href")).attr("alt",$(this).text());
 		return false;
 
 
-:password ->inputÅÂ±×ÀÇ Å¸ÀÔÀÌ passwordÀÎ¾Ö
-:file ->inputÅÂ±×ÀÇ Å¸ÀÔÀÌ fileÀÎ¾Ö
+:password ->inputíƒœê·¸ì˜ íƒ€ìž…ì´ passwordì¸ì• 
+:file ->inputíƒœê·¸ì˜ íƒ€ìž…ì´ fileì¸ì• 
 
 <prop vs attr>
 $(":checkbox").prop("checked","true");
 $(":checkbox").attr("checked","true");
-//attr : ¸ðµç Ã¼Å©¹Ú½º¸¦ °¡Á®¿È (ÅÂ±×ÀÚÃ¼¸¦ ÀÇ¹Ì 
-¹®ÀÚ¿­¿£ checked¶ó°í µÅÀÖÁö¸¸ Ç®¸®´Â »óÅÂÀÓ-> ÀÌ »óÅÂ¿¡¼­ checked¸¦ Áàµµ
-ÀÌ¹Ì checked¶ó´Â ¹®ÀÚ¿­ÀÌ µé¾îÀÖÀ¸´Ï±î check°¡ ¾ÈµÊ
-¡Ú¡Ú¡Ú
-prop·Î »Ì¾Æ¿À¸é -> ÇÁ·ÎÅäÄÝºÎÅÍ ´Ù»Ì¾Æ¿È
-attr·Î »Ì¾Æ¿À¸é -> ÅÂ±×¿¡ ¸í½ÃµÅÀÖ´Â °ª¸¸ »Ì¾Æ¿È
+//attr : ëª¨ë“  ì²´í¬ë°•ìŠ¤ë¥¼ ê°€ì ¸ì˜´ (íƒœê·¸ìžì²´ë¥¼ ì˜ë¯¸ 
+ë¬¸ìžì—´ì—” checkedë¼ê³  ë¼ìžˆì§€ë§Œ í’€ë¦¬ëŠ” ìƒíƒœìž„-> ì´ ìƒíƒœì—ì„œ checkedë¥¼ ì¤˜ë„
+ì´ë¯¸ checkedë¼ëŠ” ë¬¸ìžì—´ì´ ë“¤ì–´ìžˆìœ¼ë‹ˆê¹Œ checkê°€ ì•ˆë¨
+â˜…â˜…â˜…
+propë¡œ ë½‘ì•„ì˜¤ë©´ -> í”„ë¡œí† ì½œë¶€í„° ë‹¤ë½‘ì•„ì˜´
+attrë¡œ ë½‘ì•„ì˜¤ë©´ -> íƒœê·¸ì— ëª…ì‹œë¼ìžˆëŠ” ê°’ë§Œ ë½‘ì•„ì˜´
 
-¡Ú¡Ú¡Ú<labelÀÇ for, inputÀÇ id´Â °°Àº ÀÌ¸§À¸·Î ÇÏ±â>
+â˜…â˜…â˜…<labelì˜ for, inputì˜ idëŠ” ê°™ì€ ì´ë¦„ìœ¼ë¡œ í•˜ê¸°>
 
 $(":radio").click(function(){
 		$("label").css("font-weight",""); 
-		->font-weightÀ» ÃÊ±âÈ­("")(µÑ´Ù ÃÊ±âÈ­ ½ÃÄÑ³õ°í ÇÏ´Â°Ô ÆíÇÏ´Ï±î ÃÊ±âÈ­½ÃÅ´
+		->font-weightì„ ì´ˆê¸°í™”("")(ë‘˜ë‹¤ ì´ˆê¸°í™” ì‹œì¼œë†“ê³  í•˜ëŠ”ê²Œ íŽ¸í•˜ë‹ˆê¹Œ ì´ˆê¸°í™”ì‹œí‚´
 		$("label[for='"+$(this).attr("id")+"']").css("font-weight","bold");
 	});
 	
-<change>  ->¼±ÅÃµÈ °ªÀÌ ´Þ¶óÁö¸é 
+<change>  ->ì„ íƒëœ ê°’ì´ ë‹¬ë¼ì§€ë©´ 
 $(":radio").change(function(){
 		$("label").css("font-weight","");
-		$("label[for='"+$(this).attr("id")+"']").css("font-weight","bold");                //Áö±Ý ¼±ÅÃµÈ label 
+		$("label[for='"+$(this).attr("id")+"']").css("font-weight","bold");                //ì§€ê¸ˆ ì„ íƒëœ label 
 	});
 	
-- each(): ¿©·¯°³ÀÇ ÅÂ±× ÁýÇÕ¿¡¼­ ÇÏ³ª¾¿ ²¨³»¼­ Ã³¸®(¹Ýº¹¹®)
-²¨³»¿Â ÅÂ±×´Â $(this)·Î ´Ù·é´Ù.
+- each(): ì—¬ëŸ¬ê°œì˜ íƒœê·¸ ì§‘í•©ì—ì„œ í•˜ë‚˜ì”© êº¼ë‚´ì„œ ì²˜ë¦¬(ë°˜ë³µë¬¸)
+êº¼ë‚´ì˜¨ íƒœê·¸ëŠ” $(this)ë¡œ ë‹¤ë£¬ë‹¤.
 $(:checkbox).each(function(){
-    $(this).¸í·É¾î;
+    $(this).ëª…ë ¹ì–´;
     });
 
 ex)
 $("table tr").each(function(){
-$(this).html("<td>"+$("th",this).text()+"´Â"+$("td",this).text()+"</td>");
+$(this).html("<td>"+$("th",this).text()+"ëŠ”"+$("td",this).text()+"</td>");
 	});
-Ã¹¹øÂ° trÀ» ²¨³»¿À°í ´ÙÀ½ trÀ» °è¼ÓÇØ¼­ for¹®Ã³·³ ²¨³»¿È
-this´Â tableÀÇ trÀ» ¸»ÇÔ
+ì²«ë²ˆì§¸ trì„ êº¼ë‚´ì˜¤ê³  ë‹¤ìŒ trì„ ê³„ì†í•´ì„œ forë¬¸ì²˜ëŸ¼ êº¼ë‚´ì˜´
+thisëŠ” tableì˜ trì„ ë§í•¨
 
 ex)
 $("label,:checkbox").click(function(){
 		$("label").css("background","");
 		$(":checked").each(function(){
-			//:checked : Ã¼Å©µÈ Ã¼Å©¹Ú½º¸¦ °¡Á®¿È 
+			//:checked : ì²´í¬ëœ ì²´í¬ë°•ìŠ¤ë¥¼ ê°€ì ¸ì˜´ 
 			$("label[for='"+$(this).attr("id")+"']").css("background","#CCC");
 		});
 	});
@@ -123,123 +123,123 @@ $("label,:checkbox").click(function(){
 ex)
 	$("select").change(function(){
 		var x = $(":selected").attr("value");
-	if(x=="10 ´ë" || x==" ¼±ÅÃÇØÁÖ¼¼¿ä" ||x=="40 ´ëÀÌ»ó"){
-		//¼±ÅÃµÈ ¿É¼ÇÅÂ±×¸¦ °¡Á®¿Í¼­ º§·ù°ªÀ» ²¨³»¿È  attr("value")´ë½Å val()½áµµµÊ
+	if(x=="10 ëŒ€" || x==" ì„ íƒí•´ì£¼ì„¸ìš”" ||x=="40 ëŒ€ì´ìƒ"){
+		//ì„ íƒëœ ì˜µì…˜íƒœê·¸ë¥¼ ê°€ì ¸ì™€ì„œ ë²¨ë¥˜ê°’ì„ êº¼ë‚´ì˜´  attr("value")ëŒ€ì‹  val()ì¨ë„ë¨
 		$("input").attr("disabled", "disabled");
 	}else             
 		$("input").removeAttr("disabled");
 	
 	});
 	
-<jquery ¾Ö´Ï¸ÞÀÌ¼Ç È¿°ú ±¸Á¶>
+<jquery ì• ë‹ˆë©”ì´ì…˜ íš¨ê³¼ êµ¬ì¡°>
 
-$(¼¿·ºÅÍ).¸í·É¾î([ ¡°¼Óµµ¡± ], [ÄÝ¹éÇÔ¼ö] );     //¼Óµµ, ÄÝ¹éÇÔ¼ö »ý·«°¡´É 
+$(ì…€ë ‰í„°).ëª…ë ¹ì–´([ â€œì†ë„â€ ], [ì½œë°±í•¨ìˆ˜] );     //ì†ë„, ì½œë°±í•¨ìˆ˜ ìƒëžµê°€ëŠ¥ 
 
 <slow, hide>
 $("button#show").click(function(){
 		$("div").show("slow");
 	});
 	$("button#hide").click(function(){
-		$("div").hide("slow"); //w,h¸¦ 0À¸·Î ¹Ù²Ù°í display¸¦ none±îÁö ¸¸µê 
+		$("div").hide("slow"); //w,hë¥¼ 0ìœ¼ë¡œ ë°”ê¾¸ê³  displayë¥¼ noneê¹Œì§€ ë§Œë“¦ 
 	});
 
-<¾Ö´Ï¸ÞÀÌ¼ÇÀÌ µ¿ÀÛÁßÀÏ¶© Æã¼ÇÀÌ ½ÇÇàµÇÁö ¾Ê°Ô> 
+<ì• ë‹ˆë©”ì´ì…˜ì´ ë™ìž‘ì¤‘ì¼ë• íŽ‘ì…˜ì´ ì‹¤í–‰ë˜ì§€ ì•Šê²Œ> 
 ex) $("div:not(:animated)").hide("slow");
 
-display : inline -±âº»°ªÀ¸·Î ¿ä¼Ò¸¦ inline¿ä¼ÒÃ³·³ Ç¥½ÃÇÔ
-                ¾ÕµÚ·Î ÁÙ¹Ù²Þx
-          block - ÁÙ¹Ù²ÞÀÌ µÊ
-          none - ¹Ú½º°¡ »ý¼ºµÇÁö ¾ÊÀ½
-                 °ø°£À» Â÷ÁöÇÏÁö¾ÊÀ½
-          inline-block - ¿ä¼Ò´Â inlineÀÎµ¥ ³»ºÎ´Â blockÃ³·³ Ç¥½Ã
-                         Áï ¹Ú½º ¸ð¾çÀÌ inlineÃ³·³ ¿·À¸·Î ´Ã¾î¼¶
+display : inline -ê¸°ë³¸ê°’ìœ¼ë¡œ ìš”ì†Œë¥¼ inlineìš”ì†Œì²˜ëŸ¼ í‘œì‹œí•¨
+                ì•žë’¤ë¡œ ì¤„ë°”ê¿ˆx
+          block - ì¤„ë°”ê¿ˆì´ ë¨
+          none - ë°•ìŠ¤ê°€ ìƒì„±ë˜ì§€ ì•ŠìŒ
+                 ê³µê°„ì„ ì°¨ì§€í•˜ì§€ì•ŠìŒ
+          inline-block - ìš”ì†ŒëŠ” inlineì¸ë° ë‚´ë¶€ëŠ” blockì²˜ëŸ¼ í‘œì‹œ
+                         ì¦‰ ë°•ìŠ¤ ëª¨ì–‘ì´ inlineì²˜ëŸ¼ ì˜†ìœ¼ë¡œ ëŠ˜ì–´ì„¬
                          
-<animate() :: µ¶ÀÚÀûÀÎ ¿¡´Ï¸ÞÀÌ¼Ç È¿°ú ÀÛ¼º>
-$(¼¿·ºÅÍ).animate(°ªÀ» º¯°æÇÏ°í ½ÍÀº css¼Ó¼º:°ª, ¼Óµµ, ¿òÁ÷ÀÓ, ÄÝ¹éÇÔ¼ö );
-	´Ü ¼Ó¼ºÀº ¼ö½Ä(px,em,%)À¸·Î ÀÔ·ÂÇÒ ¼ö ÀÖ´Â °Í¸¸ °¡´É.
-	¿òÁ÷ÀÓ : swing(Á¡Á¡ ºü¸£°Ô) , linear(ÀÏÁ¤ÇÑ ¼Óµµ)
+<animate() :: ë…ìžì ì¸ ì—ë‹ˆë©”ì´ì…˜ íš¨ê³¼ ìž‘ì„±>
+$(ì…€ë ‰í„°).animate(ê°’ì„ ë³€ê²½í•˜ê³  ì‹¶ì€ cssì†ì„±:ê°’, ì†ë„, ì›€ì§ìž„, ì½œë°±í•¨ìˆ˜ );
+	ë‹¨ ì†ì„±ì€ ìˆ˜ì‹(px,em,%)ìœ¼ë¡œ ìž…ë ¥í•  ìˆ˜ ìžˆëŠ” ê²ƒë§Œ ê°€ëŠ¥.
+	ì›€ì§ìž„ : swing(ì ì  ë¹ ë¥´ê²Œ) , linear(ì¼ì •í•œ ì†ë„)
 	
-<ÁÙ¹Ù²Ù´Â ºÎºÐ ÁÖ¼®Ã³¸®ÇÏ±â>
+<ì¤„ë°”ê¾¸ëŠ” ë¶€ë¶„ ì£¼ì„ì²˜ë¦¬í•˜ê¸°>
 <!-- -->
 
-<Ajax> -°¹¼ö Á¦ÇÑ 6°³
-Ajax¸¦ »ç¿ëÇÏ¸é À¥ ÆäÀÌÁö³ª ¾ÖÇÃ¸®ÄÉÀÌ¼Ç¿¡¼­ Á¤¸»·Î ÇÊ¿äÇÑ µ¥ÀÌÅÍ, 
-¼­¹ö¿¡¼­ ¹Þ¾Æ¿Í¾ß ÇÏ´Â µ¥ÀÌÅÍ¸¸ ¿äÃ»ÇÏ±â ¶§¹®¿¡ µ¥ÀÌÅÍ ÀÌ¿ë·®Àº ÁÙ¾îµé°í, 
-ÀÛÀº ºÎºÐ¸¸ ¾÷µ¥ÀÌÆ®ÇÏ°í, ÆäÀÌÁö »õ·Î°íÄ§À» ±â´Ù¸®´Â ½Ã°£µµ ÁÙ¾îµé¾ú´Ù. 
+<Ajax> -ê°¯ìˆ˜ ì œí•œ 6ê°œ
+Ajaxë¥¼ ì‚¬ìš©í•˜ë©´ ì›¹ íŽ˜ì´ì§€ë‚˜ ì• í”Œë¦¬ì¼€ì´ì…˜ì—ì„œ ì •ë§ë¡œ í•„ìš”í•œ ë°ì´í„°, 
+ì„œë²„ì—ì„œ ë°›ì•„ì™€ì•¼ í•˜ëŠ” ë°ì´í„°ë§Œ ìš”ì²­í•˜ê¸° ë•Œë¬¸ì— ë°ì´í„° ì´ìš©ëŸ‰ì€ ì¤„ì–´ë“¤ê³ , 
+ìž‘ì€ ë¶€ë¶„ë§Œ ì—…ë°ì´íŠ¸í•˜ê³ , íŽ˜ì´ì§€ ìƒˆë¡œê³ ì¹¨ì„ ê¸°ë‹¤ë¦¬ëŠ” ì‹œê°„ë„ ì¤„ì–´ë“¤ì—ˆë‹¤. 
 
-<Ajax ±âº»ÇÔ¼ö>
-(Á¦ÀÌÄõ¸® ÁÖ¼Ò ½á³õ°íÇØ¾ßÇÔ)
-$.ajax({¿É¼Ç¼Ó¼º:°ª}); // jQuery.ajax();
+<Ajax ê¸°ë³¸í•¨ìˆ˜>
+(ì œì´ì¿¼ë¦¬ ì£¼ì†Œ ì¨ë†“ê³ í•´ì•¼í•¨)
+$.ajax({ì˜µì…˜ì†ì„±:ê°’}); // jQuery.ajax();
 
-¡Ú8. success: ÀÀ´äÀÌ ¼º°ø »óÅÂ ÄÚµå¸¦ ¹ÝÈ¯ÇÏ¸é È£ÃâµÇ´Â ÇÔ¼ö. ÀÀ´ä º»¹®Àº ÀÌ ÇÔ¼öÀÇ Ã¹ ¹øÂ° ¸Å°³º¯¼ö·Î Àü´ÞµÇ¸ç, dataType ÇÁ·ÎÆÛÆ¼¿¡ ¸í½ÃÇÑ ÇüÅÂ·Î ±¸¼º. µÎ¹øÂ° ¸Å°³º¯¼ö´Â »óÅÂ°ªÀ» ³ªÅ¸³»´Â ¹®ÀÚ¿­ÀÌ¸ç, ÀÌ °æ¿ì¿¡´Â Ç×»ó success´Ù(Function) 
+â˜…8. success: ì‘ë‹µì´ ì„±ê³µ ìƒíƒœ ì½”ë“œë¥¼ ë°˜í™˜í•˜ë©´ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜. ì‘ë‹µ ë³¸ë¬¸ì€ ì´ í•¨ìˆ˜ì˜ ì²« ë²ˆì§¸ ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬ë˜ë©°, dataType í”„ë¡œí¼í‹°ì— ëª…ì‹œí•œ í˜•íƒœë¡œ êµ¬ì„±. ë‘ë²ˆì§¸ ë§¤ê°œë³€ìˆ˜ëŠ” ìƒíƒœê°’ì„ ë‚˜íƒ€ë‚´ëŠ” ë¬¸ìžì—´ì´ë©°, ì´ ê²½ìš°ì—ëŠ” í•­ìƒ successë‹¤(Function) 
 
 ex)
 if ($(this).find("option:selected").index() > 0) {
-¼±ÅÃÇÏ¼¼¿ä°¡ 0¹øÀÎµ¦½º´Ï±î ±× ¾Æ·¡ ¿É¼ÇÀ» ¼±ÅÃÇß´Ù¸é 
+ì„ íƒí•˜ì„¸ìš”ê°€ 0ë²ˆì¸ë±ìŠ¤ë‹ˆê¹Œ ê·¸ ì•„ëž˜ ì˜µì…˜ì„ ì„ íƒí–ˆë‹¤ë©´ 
 
-CGI¹æ½Ä : À¥¼­¹ö°¡ ¸ðµÎ Ã³¸®ÇØ¼­ ´ë·® Æ®·¡ÇÈ ¹ß»ý½Ã ºÒ¸®
-¾îÇÃ¸®ÄÉÀÌ¼Ç ¼­¹ö ¹æ½Ä : À¥¼­¹ö´Â ¾îÇÃ¸®ÄÉÀÌ¼Ç¼­¹ö¿¡¸¸ Àü´ÞÇÏ¸é 
-µÇ±â¶§¹®¿¡ ÀüÃ¼Àû¾È Ã³¸®·® ³ôÀ½
+CGIë°©ì‹ : ì›¹ì„œë²„ê°€ ëª¨ë‘ ì²˜ë¦¬í•´ì„œ ëŒ€ëŸ‰ íŠ¸ëž˜í”½ ë°œìƒì‹œ ë¶ˆë¦¬
+ì–´í”Œë¦¬ì¼€ì´ì…˜ ì„œë²„ ë°©ì‹ : ì›¹ì„œë²„ëŠ” ì–´í”Œë¦¬ì¼€ì´ì…˜ì„œë²„ì—ë§Œ ì „ë‹¬í•˜ë©´ 
+ë˜ê¸°ë•Œë¬¸ì— ì „ì²´ì ì•ˆ ì²˜ë¦¬ëŸ‰ ë†’ìŒ
 
-<WAS> : À¥ ¾îÇÃ¸®ÄÉÀÌ¼Ç ¼­¹ö 
-ex) À¥¼­¹ö : apache 
-    ¾îÇÃ¸®ÄÉÀÌ¼Ç : tomcat9.0
+<WAS> : ì›¹ ì–´í”Œë¦¬ì¼€ì´ì…˜ ì„œë²„ 
+ex) ì›¹ì„œë²„ : apache 
+    ì–´í”Œë¦¬ì¼€ì´ì…˜ : tomcat9.0
 
 Uniform Resource Locator
-±¸¼º
+êµ¬ì„±
 
 <URL>
-¿¹: http://www.google.com/search?hl=en&q=jsp&aq=f&oq=
-ÇÁ·ÎÅäÄÝ: http
-È£½ºÆ®: www.google.com
-Æ÷Æ®: 80 (http ÇÁ·ÎÅäÄÝÀÇ ±âº» Æ÷Æ®)     --> ±âº»Æ÷Æ®ÀÏ¶§ »ý·«°¡´É 
-°æ·Î: /search                         --> ½½·¯½Ã ±â¾ïÇÏ±â
-Äõ¸®¹®ÀÚ¿­: hl=en&q=jsp&aq=f&oq=
+ì˜ˆ: http://www.google.com/search?hl=en&q=jsp&aq=f&oq=
+í”„ë¡œí† ì½œ: http
+í˜¸ìŠ¤íŠ¸: www.google.com
+í¬íŠ¸: 80 (http í”„ë¡œí† ì½œì˜ ê¸°ë³¸ í¬íŠ¸)     --> ê¸°ë³¸í¬íŠ¸ì¼ë•Œ ìƒëžµê°€ëŠ¥ 
+ê²½ë¡œ: /search                         --> ìŠ¬ëŸ¬ì‹œ ê¸°ì–µí•˜ê¸°
+ì¿¼ë¦¬ë¬¸ìžì—´: hl=en&q=jsp&aq=f&oq=
 
-URLÀº À¥ ¾îÇÃ¸®ÄÉÀÌ¼Ç¿¡ ¿äÃ»À» ±¸ºÐÇÏ±â À§ÇÑ ¿ëµµ·Î »ç¿ëµÊ
+URLì€ ì›¹ ì–´í”Œë¦¬ì¼€ì´ì…˜ì— ìš”ì²­ì„ êµ¬ë¶„í•˜ê¸° ìœ„í•œ ìš©ë„ë¡œ ì‚¬ìš©ë¨
 
-<ÇÁ·ÎÁ§Æ® ¸¸µé¶§ ÅèÄ¹À¸·Î ¼­¹ö ÁöÁ¤¸øÇßÀ»¶§>
+<í”„ë¡œì íŠ¸ ë§Œë“¤ë•Œ í†°ìº£ìœ¼ë¡œ ì„œë²„ ì§€ì •ëª»í–ˆì„ë•Œ>
 properties-> java build path -> add library-> server Runtime
-ÈÄ nextÅ¬¸¯ÇÏ°í ¾ÆÆÄÄ¡ÅèÄ¹ Å¬¸¯  
+í›„ nextí´ë¦­í•˜ê³  ì•„íŒŒì¹˜í†°ìº£ í´ë¦­  
 
-servelet(¼­ºí¸´) : À¥ ¿äÃ»À» Ã³¸®ÇÏ´Â Å¬·¡½º
+servelet(ì„œë¸”ë¦¿) : ì›¹ ìš”ì²­ì„ ì²˜ë¦¬í•˜ëŠ” í´ëž˜ìŠ¤
 extends HttpServlet
 
 goGet()
-doPost() post ¹æ½ÄÀÏ¶§ 
-init() : ÃÊ±âÈ­. °´Ã¼ »ý¼º ÈÄ ¹Ù·Î ÇÑ¹ø¸¸ ½ÇÇà  
-destroy() : ¼Ò¸ê. °´Ã¼°¡ ¸Þ¸ð¸®¿¡¼­ ¼Ò¸êµÇ±â Á÷Àü ¸¶Áö¸·À¸·Î ½ÇÇà
+doPost() post ë°©ì‹ì¼ë•Œ 
+init() : ì´ˆê¸°í™”. ê°ì²´ ìƒì„± í›„ ë°”ë¡œ í•œë²ˆë§Œ ì‹¤í–‰  
+destroy() : ì†Œë©¸. ê°ì²´ê°€ ë©”ëª¨ë¦¬ì—ì„œ ì†Œë©¸ë˜ê¸° ì§ì „ ë§ˆì§€ë§‰ìœ¼ë¡œ ì‹¤í–‰
 
-<doget°ú dopostÀÇ ¸Å°³º¯¼ö>
-HttpServletRequest request : ¿äÃ»Á¤º¸¸¦ ´ã°íÀÖ´Â °´Ã¼
-HttpServletResponse response : Å¬¶óÀÌ¾ðÆ®¿¡°Ô º¸³¾ ÀÀ´ä µ¥ÀÌÅÍ¸¦ ÀúÀåÇÑ °´Ã¼
-¡Úform ÅÂ±×¿¡ post¶ó°í ¸í½ÃÇÏÁö¾ÊÀºÀÌ»ó ¸ðµÎ get¹æ½Ä 
+<dogetê³¼ dopostì˜ ë§¤ê°œë³€ìˆ˜>
+HttpServletRequest request : ìš”ì²­ì •ë³´ë¥¼ ë‹´ê³ ìžˆëŠ” ê°ì²´
+HttpServletResponse response : í´ë¼ì´ì–¸íŠ¸ì—ê²Œ ë³´ë‚¼ ì‘ë‹µ ë°ì´í„°ë¥¼ ì €ìž¥í•œ ê°ì²´
+â˜…form íƒœê·¸ì— postë¼ê³  ëª…ì‹œí•˜ì§€ì•Šì€ì´ìƒ ëª¨ë‘ getë°©ì‹ 
 
-¼­¹ö ½ºÅ¸Æ®(web.xml) - Å¬¶óÀÌ¾ðÆ®ÀÇ ¿äÃ» ±â´Ù¸²
-url·Î ¿äÃ» -> 1. ¿äÃ»À» Ã³¸®ÇÒ ¼ö ÀÖ´Â ¼­ºí¸´À» Ã£À½
-             - ÇØ´ç ¼­ºí¸´ÀÌ ÀÖÀ¸¸é ¼­ºí¸´ÀÌ Ã³¸®
-             2. ¼­ºí¸´ÀÌ ¾ø´Â °æ¿ì path(WebContent)·Î ÀüÈ¯
-ÇØ´ç °æ·Î¿¡ ÀÖ´Â ÆÄÀÏÀ» Ã£¾Æ°¡¼­ ½ÇÇàÇÔ.
+ì„œë²„ ìŠ¤íƒ€íŠ¸(web.xml) - í´ë¼ì´ì–¸íŠ¸ì˜ ìš”ì²­ ê¸°ë‹¤ë¦¼
+urlë¡œ ìš”ì²­ -> 1. ìš”ì²­ì„ ì²˜ë¦¬í•  ìˆ˜ ìžˆëŠ” ì„œë¸”ë¦¿ì„ ì°¾ìŒ
+             - í•´ë‹¹ ì„œë¸”ë¦¿ì´ ìžˆìœ¼ë©´ ì„œë¸”ë¦¿ì´ ì²˜ë¦¬
+             2. ì„œë¸”ë¦¿ì´ ì—†ëŠ” ê²½ìš° path(WebContent)ë¡œ ì „í™˜
+í•´ë‹¹ ê²½ë¡œì— ìžˆëŠ” íŒŒì¼ì„ ì°¾ì•„ê°€ì„œ ì‹¤í–‰í•¨.
 
-<µð·ºÆ¼ºê>
-- Á¦°ø µð·ºÆ¼ºê -
-***page : JSP ÆäÀÌÁö¿¡ ´ëÇÑ Á¤º¸¸¦ ÁöÁ¤
-¹®¼­ÀÇ Å¸ÀÔ, Ãâ·Â ¹öÆÛÀÇ Å©±â, ¿¡·¯ ÆäÀÌÁö µî Á¤º¸ ÁöÁ¤
-***taglib : »ç¿ëÇÒ ÅÂ±× ¶óÀÌºê·¯¸®¸¦ ÁöÁ¤
+<ë””ë ‰í‹°ë¸Œ>
+- ì œê³µ ë””ë ‰í‹°ë¸Œ -
+***page : JSP íŽ˜ì´ì§€ì— ëŒ€í•œ ì •ë³´ë¥¼ ì§€ì •
+ë¬¸ì„œì˜ íƒ€ìž…, ì¶œë ¥ ë²„í¼ì˜ í¬ê¸°, ì—ëŸ¬ íŽ˜ì´ì§€ ë“± ì •ë³´ ì§€ì •
+***taglib : ì‚¬ìš©í•  íƒœê·¸ ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ ì§€ì •
 
-<JSP µð·ºÆ¼ºêÀÇ ÀÛ¼º ¿¹>
+<JSP ë””ë ‰í‹°ë¸Œì˜ ìž‘ì„± ì˜ˆ>
 <%@ page contentType="text/html; charset=euc-kr" %>
 <%@ page import="java.util.Date" %>
 
-<% %> - ½ºÅ©¸³Æ®¸´ ÀÚ¹Ù µé¾î°¡´Â ºÎºÐ 
+<% %> - ìŠ¤í¬ë¦½íŠ¸ë¦¿ ìžë°” ë“¤ì–´ê°€ëŠ” ë¶€ë¶„ 
 
-<html¿¡¼­ ÀÚ¹ÙÅ¬·¡½º¸¦ ºÒ·¯¿À´Â ¹ý>
+<htmlì—ì„œ ìžë°”í´ëž˜ìŠ¤ë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” ë²•>
 ex)
 <%@ page contentType = "text/html; charset=utf-8" %>
 <%@ page import ="day0630.Multiply" %>
 
 <html>
-<head><title>¼±¾ðºÎ¸¦ »ç¿ëÇÑ µÎ Á¤¼ö°ªÀÇ °ö</title></head>
+<head><title>ì„ ì–¸ë¶€ë¥¼ ì‚¬ìš©í•œ ë‘ ì •ìˆ˜ê°’ì˜ ê³±</title></head>
 <body>
 <% Multiply m = new Multiply(); %>
 	10*25 = <%= m.multiply(10,25) %>
@@ -247,73 +247,73 @@ ex)
 </body>
 </html>
 
-¡Ú¡Ú¡Ú<request ±âº» °´Ã¼>
-À¥ ºê¶ó¿ìÀú°¡ À¥ ¼­¹ö¿¡ Àü¼ÛÇÑ ¿äÃ» °ü·Ã Á¤º¸ Á¦°ø
-<ÁÖ¿ä ±â´É>
-- ¡ÚÅ¬¶óÀÌ¾ðÆ®(À¥ ºê¶ó¿ìÀú)¿Í °ü·ÃµÈ Á¤º¸ ÀÐ±â ±â´É
-- ¼­¹ö¿Í °ü·ÃµÈ Á¤º¸ ÀÐ±â ±â´É
-- ¡Ú¡Ú¡ÚÅ¬¶óÀÌ¾ðÆ®°¡ Àü¼ÛÇÑ ¿äÃ» ÆÄ¶ó¹ÌÅÍ ÀÐ±â ±â´É
-- Å¬¶óÀÌ¾ðÆ®°¡ Àü¼ÛÇÑ ¿äÃ» Çì´õ ÀÐ±â ±â´É
-- Å¬¶óÀÌ¾ðÆ®°¡ Àü¼ÛÇÑ ÄíÅ° ÀÐ±â ±â´É
-- ¼Ó¼º Ã³¸® ±â´É
+â˜…â˜…â˜…<request ê¸°ë³¸ ê°ì²´>
+ì›¹ ë¸Œë¼ìš°ì €ê°€ ì›¹ ì„œë²„ì— ì „ì†¡í•œ ìš”ì²­ ê´€ë ¨ ì •ë³´ ì œê³µ
+<ì£¼ìš” ê¸°ëŠ¥>
+- â˜…í´ë¼ì´ì–¸íŠ¸(ì›¹ ë¸Œë¼ìš°ì €)ì™€ ê´€ë ¨ëœ ì •ë³´ ì½ê¸° ê¸°ëŠ¥
+- ì„œë²„ì™€ ê´€ë ¨ëœ ì •ë³´ ì½ê¸° ê¸°ëŠ¥
+- â˜…â˜…â˜…í´ë¼ì´ì–¸íŠ¸ê°€ ì „ì†¡í•œ ìš”ì²­ íŒŒë¼ë¯¸í„° ì½ê¸° ê¸°ëŠ¥
+- í´ë¼ì´ì–¸íŠ¸ê°€ ì „ì†¡í•œ ìš”ì²­ í—¤ë” ì½ê¸° ê¸°ëŠ¥
+- í´ë¼ì´ì–¸íŠ¸ê°€ ì „ì†¡í•œ ì¿ í‚¤ ì½ê¸° ê¸°ëŠ¥
+- ì†ì„± ì²˜ë¦¬ ê¸°ëŠ¥
 
-ContextPath -> ºÒ·¯¿À´Â °æ·Î
+ContextPath -> ë¶ˆëŸ¬ì˜¤ëŠ” ê²½ë¡œ
 http://localhost:8080/chap03/requstInfo.jsp
 
-<request ±âº»°´Ã¼ ÁÖ¿äÁ¦°ø ¸Þ¼­µå>
+<request ê¸°ë³¸ê°ì²´ ì£¼ìš”ì œê³µ ë©”ì„œë“œ>
 request.getRemoteAddr()
 request.getMethod()
 request.getMethod()
 request.request.getMethod()
 
-Enumeration : ³»Àå°´Ã¼ request ¿¡¼­. getParameterNames()·Î ¸ðµç ÀÎÀÚÀÇ ÀÌ¸§À» ¹ÞÀ»¶§ EnumerationÀ¸·Î ¹ÝÈ¯ÇÏ°Ô µÈ´Ù.
+Enumeration : ë‚´ìž¥ê°ì²´ request ì—ì„œ. getParameterNames()ë¡œ ëª¨ë“  ì¸ìžì˜ ì´ë¦„ì„ ë°›ì„ë•Œ Enumerationìœ¼ë¡œ ë°˜í™˜í•˜ê²Œ ëœë‹¤.
 
-Map - key, value key°ªÀº Áßº¹µÇ¸é ¾ÈµÊ ¼ø¼­x 
+Map - key, value keyê°’ì€ ì¤‘ë³µë˜ë©´ ì•ˆë¨ ìˆœì„œx 
 
-<ÆÄ¶ó¹ÌÅÍ °ª ±¸ÇÏ±â>
+<íŒŒë¼ë¯¸í„° ê°’ êµ¬í•˜ê¸°>
 request.getParameter
 
-index.jsp?name // nameÀÌ¶ó´Â ÀÌ¸§À¸·Î º¸³½´Ù´Â ¶æ 
+index.jsp?name // nameì´ë¼ëŠ” ì´ë¦„ìœ¼ë¡œ ë³´ë‚¸ë‹¤ëŠ” ëœ» 
 
-¼­ºí¸´ : À¥¿äÃ»À» ¹Þ¾Æ¼­ Ã³¸®ÇÏ´Â Å¬·¡½º¸¦ ¸¸µé¸é ±×°Ô ¼­ºí¸´Å¬·¡½º
-Http¸¦ »ó¼Ó¹ÞÀ½
+ì„œë¸”ë¦¿ : ì›¹ìš”ì²­ì„ ë°›ì•„ì„œ ì²˜ë¦¬í•˜ëŠ” í´ëž˜ìŠ¤ë¥¼ ë§Œë“¤ë©´ ê·¸ê²Œ ì„œë¸”ë¦¿í´ëž˜ìŠ¤
+Httpë¥¼ ìƒì†ë°›ìŒ
 
-<¹öÆÛ¼³Á¤>
+<ë²„í¼ì„¤ì •>
 <%@ page buffer="8kb" autoFlush="false"%>
 
-warÆÄÀÏ »ÌÀ»¶§ ¿¢½ºÆ÷Æ® ¼­¹öÆÄÀÏ? Ã¼Å©ÇÏ±â
+waríŒŒì¼ ë½‘ì„ë•Œ ì—‘ìŠ¤í¬íŠ¸ ì„œë²„íŒŒì¼? ì²´í¬í•˜ê¸°
 
-<TOC ÁÖ¿ä±âº»°´Ã¼>
-request : Å¬¶óÀÌ¾ðÆ®ÀÇ ¿äÃ» Á¤º¸¸¦ ÀúÀåÇÑ´Ù.
-response : ÀÀ´ä Á¤º¸¸¦ ÀúÀåÇÑ´Ù. 
-session : HTTP¼¼¼Ç Á¤º¸¸¦ ÀúÀåÇÑ´Ù. ¡ÚHttpSession
+<TOC ì£¼ìš”ê¸°ë³¸ê°ì²´>
+request : í´ë¼ì´ì–¸íŠ¸ì˜ ìš”ì²­ ì •ë³´ë¥¼ ì €ìž¥í•œë‹¤.
+response : ì‘ë‹µ ì •ë³´ë¥¼ ì €ìž¥í•œë‹¤. 
+session : HTTPì„¸ì…˜ ì •ë³´ë¥¼ ì €ìž¥í•œë‹¤. â˜…HttpSession
 
-<application ±âº»°´Ã¼: ÀÚ¿ø±¸ÇÏ±â>
-- ÀÚ¿ø Á¢±Ù ¸Þ¼­µå
-getRealPath(String path) : (String) À¥ ¾îÇÃ¸®ÄÉÀÌ¼Ç ³»¿¡¼­ ÁöÁ¤ÇÑ °æ·Î¿¡ ÇØ´çÇÏ´Â ÀÚ¿øÀÇ ½Ã½ºÅÛ»ó¿¡¼­ÀÇ ÀÚ¿ø °æ·Î¸¦ ¸®ÅÏÇÑ´Ù.
+<application ê¸°ë³¸ê°ì²´: ìžì›êµ¬í•˜ê¸°>
+- ìžì› ì ‘ê·¼ ë©”ì„œë“œ
+getRealPath(String path) : (String) ì›¹ ì–´í”Œë¦¬ì¼€ì´ì…˜ ë‚´ì—ì„œ ì§€ì •í•œ ê²½ë¡œì— í•´ë‹¹í•˜ëŠ” ìžì›ì˜ ì‹œìŠ¤í…œìƒì—ì„œì˜ ìžì› ê²½ë¡œë¥¼ ë¦¬í„´í•œë‹¤.
 
-getResource(String path) : (url) À¥ ¾îÇÃ¸®ÄÉÀÌ¼Ç ³»¿¡¼­ ÁöÁ¤ÇÑ °æ·Î¿¡ ÇØ´çÇÏ´Â ÀÚ¿ø¿¡ Á¢±ÙÇÒ ¼ö ÀÖ´Â URL °´Ã¼¸¦ ¸®ÅÏÇÑ´Ù.
+getResource(String path) : (url) ì›¹ ì–´í”Œë¦¬ì¼€ì´ì…˜ ë‚´ì—ì„œ ì§€ì •í•œ ê²½ë¡œì— í•´ë‹¹í•˜ëŠ” ìžì›ì— ì ‘ê·¼í•  ìˆ˜ ìžˆëŠ” URL ê°ì²´ë¥¼ ë¦¬í„´í•œë‹¤.
 
-getResourceAsStream(String path) : (InputStrean) À¥ ¾îÇÃ¸®ÄÉÀÌ¼Ç ³»¿¡¼­ ÁöÁ¤ÇÑ °æ·Î¿¡ ÇØ´çÇÏ´Â ÀÚ¿øÀ¸·ÎºÎÅÍ µ¥ÀÌÅÍ¸¦ ÀÐ¾î¿Ã ¼ö ÀÖ´Â InputStreamÀ» ¸®ÅÏÇÑ´Ù.
+getResourceAsStream(String path) : (InputStrean) ì›¹ ì–´í”Œë¦¬ì¼€ì´ì…˜ ë‚´ì—ì„œ ì§€ì •í•œ ê²½ë¡œì— í•´ë‹¹í•˜ëŠ” ìžì›ìœ¼ë¡œë¶€í„° ë°ì´í„°ë¥¼ ì½ì–´ì˜¬ ìˆ˜ ìžˆëŠ” InputStreamì„ ë¦¬í„´í•œë‹¤.
 
 
-¡Ú¡Ú¡ÚÃÊ±âÈ­ ÆÄ¶ó¹ÌÅÍ°ª ÀúÀåÇÏ±â
-web.xml¿¡ 
+â˜…â˜…â˜…ì´ˆê¸°í™” íŒŒë¼ë¯¸í„°ê°’ ì €ìž¥í•˜ê¸°
+web.xmlì— 
  
  <context-param>
-  	<param-name>ÆÄ¶ó¹ÌÅÍ ÀÌ¸§</param-name>
-  	<param-value>ÆÄ¶ó¹ÌÅÍ °ª</param-value>
+  	<param-name>íŒŒë¼ë¯¸í„° ì´ë¦„</param-name>
+  	<param-value>íŒŒë¼ë¯¸í„° ê°’</param-value>
   </context-param>
   <context-param>
   	<param-name>port</param-name>
   	<param-value>8080</param-value>
   </context-param>
   
-¡Ú¡Ú¡ÚÃÊ±âÈ­ ÆÄ¶ó¹ÌÅÍ°ª ÀÐ¾î¿À±â
+â˜…â˜…â˜…ì´ˆê¸°í™” íŒŒë¼ë¯¸í„°ê°’ ì½ì–´ì˜¤ê¸°
 ex)
 <body>
 
-ÃÊ±âÈ­ ÆÄ¶ó¹ÌÅÍ ¸ñ·Ï:
+ì´ˆê¸°í™” íŒŒë¼ë¯¸í„° ëª©ë¡:
 <ul>
 <%
     Enumeration<String> initParamEnum = application.getInitParameterNames();
@@ -328,7 +328,7 @@ ex)
 </ul>
 </body>
 
-¡Ú¡Ú¡Ú<getRealPath(String path) Àý´ë°æ·Î>
+â˜…â˜…â˜…<getRealPath(String path) ì ˆëŒ€ê²½ë¡œ>
 ex)
 <body>
 
@@ -342,99 +342,99 @@ ex)
 			out.print(new String(buff, 0, len));
 		}
 	} catch(IOException ex) {
-		out.println("ÀÍ¼Á¼Ç ¹ß»ý: "+ex.getMessage());
+		out.println("ìµì…‰ì…˜ ë°œìƒ: "+ex.getMessage());
 	}
 %>
 
 </body>
 
-http¿äÃ»ÀÌ¶õ -> urlÇÏ³ªÇÏ³ª 
+httpìš”ì²­ì´ëž€ -> urlí•˜ë‚˜í•˜ë‚˜ 
 
-ÆÄ¶ó¹ÌÅÍ - url¿¡ ÀÌ¸§(name) °ª(value)À¸·Î Àü´ÞÇÏ´Â °ª, String 
-¼Ó¼º - ÀÌ¸§,°ª ¼¼Æ® 
-<¼Ó¼º °ü·Ã ¸Þ¼­µå>
-!!ÀúÀå!!¡Ú¡ÚsetAttribute - (void) ÀÌ¸§ÀÌ nameÀÎ ¼Ó¼ºÀÇ °ªÀ» value·Î ÁöÁ¤ ->¸ðµç ¼­ºí¸´°ú jsp°¡ °øÀ¯ÇÒ ¼ö ÀÖÀ½ 
-¡Ú¡ÚgetAttribute - (Object) ÀÌ¸§ÀÌ nameÀÎ ¼Ó¼ºÀÇ °ªÀ» ±¸ÇÔ.
-            ÁöÁ¤ÇÑ ÀÌ¸§ÀÇ ¼Ó¼ºÀÌ Á¸ÀçÇÏÁö ¾ÊÀ»°æ¿ì null¸®ÅÏ
-            ²¨³»¿Ã¶§ Ä³½ºÆÃ ²À ÇÏ±â 
+íŒŒë¼ë¯¸í„° - urlì— ì´ë¦„(name) ê°’(value)ìœ¼ë¡œ ì „ë‹¬í•˜ëŠ” ê°’, String 
+ì†ì„± - ì´ë¦„,ê°’ ì„¸íŠ¸ 
+<ì†ì„± ê´€ë ¨ ë©”ì„œë“œ>
+!!ì €ìž¥!!â˜…â˜…setAttribute - (void) ì´ë¦„ì´ nameì¸ ì†ì„±ì˜ ê°’ì„ valueë¡œ ì§€ì • ->ëª¨ë“  ì„œë¸”ë¦¿ê³¼ jspê°€ ê³µìœ í•  ìˆ˜ ìžˆìŒ 
+â˜…â˜…getAttribute - (Object) ì´ë¦„ì´ nameì¸ ì†ì„±ì˜ ê°’ì„ êµ¬í•¨.
+            ì§€ì •í•œ ì´ë¦„ì˜ ì†ì„±ì´ ì¡´ìž¬í•˜ì§€ ì•Šì„ê²½ìš° nullë¦¬í„´
+            êº¼ë‚´ì˜¬ë•Œ ìºìŠ¤íŒ… ê¼­ í•˜ê¸° 
      ex)String type = (String)request.getAttribute("type");
-¡ÙsetAttribute ¿ëµµ - °°Àº ¿µ¿ªÀÇ ÆäÀÌÁö°¡ °øÀ¯ÇÒ ³»¿ëÀÌ ÀÖÀ¸¸é ±×°É ÀúÀåÇÒ ¿ëµµ (·Î±×ÀÎÇÒ¶§ µî)
+â˜†setAttribute ìš©ë„ - ê°™ì€ ì˜ì—­ì˜ íŽ˜ì´ì§€ê°€ ê³µìœ í•  ë‚´ìš©ì´ ìžˆìœ¼ë©´ ê·¸ê±¸ ì €ìž¥í•  ìš©ë„ (ë¡œê·¸ì¸í• ë•Œ ë“±)
 0701\chap06\setApplicationAttribute.jsp
 
-¸®Äù½ºÆ®¿¡ ÀúÀåÇÏ¸é ÇÏ³ªÀÇ url·Î ÀúÀåÇÏ´Â ¸ðµç ÆäÀÌÁö¿¡¼­ °øÀ¯ °¡´É
-(=°°Àº ¸®Äù½ºÆ®·Î¹­À½)
+ë¦¬í€˜ìŠ¤íŠ¸ì— ì €ìž¥í•˜ë©´ í•˜ë‚˜ì˜ urlë¡œ ì €ìž¥í•˜ëŠ” ëª¨ë“  íŽ˜ì´ì§€ì—ì„œ ê³µìœ  ê°€ëŠ¥
+(=ê°™ì€ ë¦¬í€˜ìŠ¤íŠ¸ë¡œë¬¶ìŒ)
 
-<jsp:include> ¾×¼ÇÅÂ±× 
+<jsp:include> ì•¡ì…˜íƒœê·¸ 
 <jsp:include page="sub.jsp" flush="false" />
 
-¸®Äù½ºÆ® -> µÎ jspÆäÀÌÁö¸¦ ÇÑ url·Î ¹­Àº°É ¸®Äù½ºÆ®¶ó°í ÇÔ
-¹­´Â¹æ¹ý -> <jsp:include> ¾×¼ÇÅÂ±× 
+ë¦¬í€˜ìŠ¤íŠ¸ -> ë‘ jspíŽ˜ì´ì§€ë¥¼ í•œ urlë¡œ ë¬¶ì€ê±¸ ë¦¬í€˜ìŠ¤íŠ¸ë¼ê³  í•¨
+ë¬¶ëŠ”ë°©ë²• -> <jsp:include> ì•¡ì…˜íƒœê·¸ 
 
-<°æ·Î>
-Àý´ë°æ·Î(¾Õ¿¡ /²À ºÙ¿©ÁÖ±â) (À¥ÄÜÅÙÃ÷´Â ÁøÂ¥°æ·Î°¡ ¾Æ´Ï´Ï±î Áö¿ö¾ßÇÔ) 
+<ê²½ë¡œ>
+ì ˆëŒ€ê²½ë¡œ(ì•žì— /ê¼­ ë¶™ì—¬ì£¼ê¸°) (ì›¹ì½˜í…ì¸ ëŠ” ì§„ì§œê²½ë¡œê°€ ì•„ë‹ˆë‹ˆê¹Œ ì§€ì›Œì•¼í•¨) 
 "/JinJSP/0701/img/images.jpg"
-»ó´ë°æ·Î(ÆÄÀÏÀÌ ÀÖ´Â°÷ÀÌ ¾Æ´Ñ Æú´õºÎÅÍ ½ÃÀÛ)\
+ìƒëŒ€ê²½ë¡œ(íŒŒì¼ì´ ìžˆëŠ”ê³³ì´ ì•„ë‹Œ í´ë”ë¶€í„° ì‹œìž‘)\
 "../../img/images.jpg"
 
-<jsp:param> ¾×¼Ç ÅÂ±×
-ex) ½Å±Ô ÆÄ¶ó¹ÌÅÍ Ãß°¡ 
+<jsp:param> ì•¡ì…˜ íƒœê·¸
+ex) ì‹ ê·œ íŒŒë¼ë¯¸í„° ì¶”ê°€ 
 <jsp:include page="infoSub.jsp" flush="false">
 	<jsp:param name="type" value="A" />
-</jsp:include>                 //B·Î ¹Ù²Ù¸é B·Î¹Ù²ã¼­ °¡Á®¿È
-                            ¡Ú¡Ú//Á¾·á / ²À ºÙÀÌ±â!!  
+</jsp:include>                 //Bë¡œ ë°”ê¾¸ë©´ Bë¡œë°”ê¿”ì„œ ê°€ì ¸ì˜´
+                            â˜…â˜…//ì¢…ë£Œ / ê¼­ ë¶™ì´ê¸°!!  
 
-<Àü´Þ¹ÞÀº ÆÄ¶ó¹ÌÅÍ¸¦ ÇÑ±Û·Î Ãâ·ÂÇÒ ¼ö ÀÖ°ÔÇÔ>
+<ì „ë‹¬ë°›ì€ íŒŒë¼ë¯¸í„°ë¥¼ í•œê¸€ë¡œ ì¶œë ¥í•  ìˆ˜ ìžˆê²Œí•¨>
 <%request.setCharacterEncoding("utf-8");%>
 
-<ÆÄ¶ó¹ÌÅÍ°ªÀ¸·Î º¸³»±â> -> ´Ü String¹Û¿¡ ¾ÈµÊ 
+<íŒŒë¼ë¯¸í„°ê°’ìœ¼ë¡œ ë³´ë‚´ê¸°> -> ë‹¨ Stringë°–ì— ì•ˆë¨ 
 <jsp:include page="body_sub.jsp" flush="false">
-	<jsp:param name="name" value="ÃÖ¹ü±Õ" />
-	<jsp:param name="name" value="ÃÖ¹ü±Õdd" />
+	<jsp:param name="name" value="ìµœë²”ê· " />
+	<jsp:param name="name" value="ìµœë²”ê· dd" />
 
-parameter : Æû¿¡ ÀÔ·ÂÇÑ µ¥ÀÌÅÍ/Äõ¸®¹®ÀÚ¿­·Î Àü¼ÛµÈ µ¥ÀÌÅÍ
-            request¿¡ ´ã¾Æ¼­ º¸³»´Â °ªÀÌ¶ó set¾øÀ½ 
+parameter : í¼ì— ìž…ë ¥í•œ ë°ì´í„°/ì¿¼ë¦¬ë¬¸ìžì—´ë¡œ ì „ì†¡ëœ ë°ì´í„°
+            requestì— ë‹´ì•„ì„œ ë³´ë‚´ëŠ” ê°’ì´ë¼ setì—†ìŒ 
 ex)
 request.getParameter("name");
 
-attribute : ¼Ó¼º. ±âº»°´Ã¼¿¡ Á÷Á¢ ÀúÀåÇÏ´Â °ª 
+attribute : ì†ì„±. ê¸°ë³¸ê°ì²´ì— ì§ì ‘ ì €ìž¥í•˜ëŠ” ê°’ 
             setAttribute(String name, Object value)
-°øÀ¯ÇÏ´Â jsp¿¡´Â->(¿øº»Å¸ÀÔ)getAttribute(String name);
+ê³µìœ í•˜ëŠ” jspì—ëŠ”->(ì›ë³¸íƒ€ìž…)getAttribute(String name);
 
-<include µð·ºÆ¼ºê> ->µÎ ÆÄÀÏ Å¸ÀÔÀÌ ¶È°°¾Æ¾ßÇÔ!! 
-jspfÆÄÀÏÀ» jsp¿¡ º¸³»¼­ ÇÑ²¨¹ø¿¡ ½ÇÇàÇÔ
-(request´Â ½ÇÇà jsp¿¡¼­ ´Ù¸¥ jsp¿¡ °¬´Ù°¡ ½ÇÇàjsp·Î Àü´ÞÇÔ)
-jspf : Á¶°¢ÆÄÀÏ È®ÀåÀÚ. È¥ÀÚ ½ÇÇàµÇ´Â ÆÄÀÏÀÌ ¾Æ´Ï°í 
-       ´Ù¸¥ ¹®¼­¿¡ Á¶°¢À¸·Î µé¾î°¡ ½ÇÇàµÇ´Â ÄÚµå
+<include ë””ë ‰í‹°ë¸Œ> ->ë‘ íŒŒì¼ íƒ€ìž…ì´ ë˜‘ê°™ì•„ì•¼í•¨!! 
+jspfíŒŒì¼ì„ jspì— ë³´ë‚´ì„œ í•œêº¼ë²ˆì— ì‹¤í–‰í•¨
+(requestëŠ” ì‹¤í–‰ jspì—ì„œ ë‹¤ë¥¸ jspì— ê°”ë‹¤ê°€ ì‹¤í–‰jspë¡œ ì „ë‹¬í•¨)
+jspf : ì¡°ê°íŒŒì¼ í™•ìž¥ìž. í˜¼ìž ì‹¤í–‰ë˜ëŠ” íŒŒì¼ì´ ì•„ë‹ˆê³  
+       ë‹¤ë¥¸ ë¬¸ì„œì— ì¡°ê°ìœ¼ë¡œ ë“¤ì–´ê°€ ì‹¤í–‰ë˜ëŠ” ì½”ë“œ
        
-¡Ú¡Ú<jsp:forward> ¾×¼Ç ÅÂ±×   
+â˜…â˜…<jsp:forward> ì•¡ì…˜ íƒœê·¸   
 <%@ page contentType = "text/html; charset=utf-8" %>
 <%--
-<jsp:foward> ¾×¼Ç ÅÂ±×¸¦ ½ÇÇàÇÏ¸é
-»ý¼ºÇß´ø Ãâ·Â °á°ú´Â ¸ðµÎ Á¦°ÅµÊ   
+<jsp:foward> ì•¡ì…˜ íƒœê·¸ë¥¼ ì‹¤í–‰í•˜ë©´
+ìƒì„±í–ˆë˜ ì¶œë ¥ ê²°ê³¼ëŠ” ëª¨ë‘ ì œê±°ë¨   
 
 <%@ page contentType = "text/html; charset=utf-8" %>
 <%@ page buffer="2kb" %>
--2kb¸é ÇÃ·¯½¬°¡ ¾ÈµÅ¼­ Á¦°ÅµÇÁö ¾Ê°í ³ª¿È
--8kb¸é ÇÃ·¯½¬°¡ µÅ¼­ Àß Á¦°Å µÇ°í ¿¬°áµÈ ÆäÀÌÁö ±ÛÀÌ ³ª¿È
+-2kbë©´ í”ŒëŸ¬ì‰¬ê°€ ì•ˆë¼ì„œ ì œê±°ë˜ì§€ ì•Šê³  ë‚˜ì˜´
+-8kbë©´ í”ŒëŸ¬ì‰¬ê°€ ë¼ì„œ ìž˜ ì œê±° ë˜ê³  ì—°ê²°ëœ íŽ˜ì´ì§€ ê¸€ì´ ë‚˜ì˜´
 
-<°æ·Î>
+<ê²½ë¡œ>
 <form action="<%= request.getContextPath() %>/0701/chap07/view.jsp">
-°°Àº °æ·ÎÀÇ ÆÄÀÏÀÌ¸é
+ê°™ì€ ê²½ë¡œì˜ íŒŒì¼ì´ë©´
 <form action="view.jsp">
 
-<%--jspÁÖ¼®--%> : ÁÖ¼® Àü¼Û ¾ÈµÊ
-<!--htmlÁÖ¼®--> : ÁÖ¼®Àü¼ÛµÊ(È­¸é¿¡¸¸ º¸ÀÌÁö ¾ÊÀ½)
+<%--jspì£¼ì„--%> : ì£¼ì„ ì „ì†¡ ì•ˆë¨
+<!--htmlì£¼ì„--> : ì£¼ì„ì „ì†¡ë¨(í™”ë©´ì—ë§Œ ë³´ì´ì§€ ì•ŠìŒ)
 
-¿¡·¯ 404 - °æ·Î ¿¡·¯
+ì—ëŸ¬ 404 - ê²½ë¡œ ì—ëŸ¬
 
-cookie¿Í session - Å¬¶óÀÌ¾ðÆ®ÀÇ »óÅÂ°ªÀ» ÀúÀå 
-                   °è¼Ó À¯ÁöÇÏ°í ÀÖ¾î¾ß ÇÏ´Â °ª 
+cookieì™€ session - í´ë¼ì´ì–¸íŠ¸ì˜ ìƒíƒœê°’ì„ ì €ìž¥ 
+                   ê³„ì† ìœ ì§€í•˜ê³  ìžˆì–´ì•¼ í•˜ëŠ” ê°’ 
 
 <cookie>
-- ÀÌ¸§, °ªÀ¸·Î ÀÌ·ç¾îÁü (ÇÊ¼ö)
-- À¯È¿½Ã°£ cookie.setMaxAge(0);
-- Æ¯Á¤ µµ¸ÞÀÎ
-- ÄíÅ° ÀÌ¸§ : ¾ËÆÄºª, ¼ýÀÚ, _$°¡´É (_$·Î ½ÃÀÛºÒ°¡)
+- ì´ë¦„, ê°’ìœ¼ë¡œ ì´ë£¨ì–´ì§ (í•„ìˆ˜)
+- ìœ íš¨ì‹œê°„ cookie.setMaxAge(0);
+- íŠ¹ì • ë„ë©”ì¸
+- ì¿ í‚¤ ì´ë¦„ : ì•ŒíŒŒë²³, ìˆ«ìž, _$ê°€ëŠ¥ (_$ë¡œ ì‹œìž‘ë¶ˆê°€)
 
 www.naver.com
 
@@ -442,169 +442,169 @@ mail.naver.com/
 cloud.naver.com/
 calender.naver.com/
 
-<cookie °æ·Î>
-¸ðµç °æ·Î¿¡ º¸³»°í½ÍÀ»¶§ (/ºÙÀÌ±â)
+<cookie ê²½ë¡œ>
+ëª¨ë“  ê²½ë¡œì— ë³´ë‚´ê³ ì‹¶ì„ë•Œ (/ë¶™ì´ê¸°)
 Cookie cookie3 = new Cookie("path3",
-			URLEncoder.encode("°æ·Î:/", "utf-8"));
+			URLEncoder.encode("ê²½ë¡œ:/", "utf-8"));
 	cookie3.setPath("/");
 	response.addCookie(cookie3);
 	
 
-<·Î±×ÀÎ¸¸µé±â> jsp - chap09 - member 
+<ë¡œê·¸ì¸ë§Œë“¤ê¸°> jsp - chap09 - member 
 
-<È¨ÆäÀÌÁö ¸¸µé±â>
-ÁÖÁ¦ ¼±Á¤
-±â´ÉºÐ¼® 1. ·Î±×ÀÎ 1-1. id/pw ÀÔ·Â¹Þ´Â´Ù.
-                1-2. submitÇÏ±â Àü¿¡ °ªÀÌ ÀÔ·ÂµÆ´ÂÁö È®ÀÎÇÑ´Ù.
+<í™ˆíŽ˜ì´ì§€ ë§Œë“¤ê¸°>
+ì£¼ì œ ì„ ì •
+ê¸°ëŠ¥ë¶„ì„ 1. ë¡œê·¸ì¸ 1-1. id/pw ìž…ë ¥ë°›ëŠ”ë‹¤.
+                1-2. submití•˜ê¸° ì „ì— ê°’ì´ ìž…ë ¥ëëŠ”ì§€ í™•ì¸í•œë‹¤.
                 1-3. ...
                 
-½ºÅä¸®º¸µå 
+ìŠ¤í† ë¦¬ë³´ë“œ 
 
-¡Ú¡Ú¡ÚÀÚ¹Ùºó ¸¸µé¶§ ÄÃ·³ÀÌ¸§°ú º¯¼ö¸í,Å¸ÀÔ±îÁö °°¾Æ¾ß db°¡ ÀÌµ¿ÇÔ
+â˜…â˜…â˜…ìžë°”ë¹ˆ ë§Œë“¤ë•Œ ì»¬ëŸ¼ì´ë¦„ê³¼ ë³€ìˆ˜ëª…,íƒ€ìž…ê¹Œì§€ ê°™ì•„ì•¼ dbê°€ ì´ë™í•¨
 1.
-databean=DTO=VO=ÀÚ¹Ùºó=CO => µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â ¿ëµµ
-                         => Ä¸½¶È­ ÆÐÅÏ »ç¿ë
+databean=DTO=VO=ìžë°”ë¹ˆ=CO => ë°ì´í„°ë¥¼ ì €ìž¥í•˜ëŠ” ìš©ë„
+                         => ìº¡ìŠí™” íŒ¨í„´ ì‚¬ìš©
      
-2. DBBean => ÇÏ³ªÀÇ °´Ã¼·Î ¿©·µÀÌ¼­ ¾¸(½Ì±ÛÅÏÆÐÅÏ)
+2. DBBean => í•˜ë‚˜ì˜ ê°ì²´ë¡œ ì—¬ëŸ¿ì´ì„œ ì”€(ì‹±ê¸€í„´íŒ¨í„´)
 	public static LogonDBBean getInstance() {
 		return instance;
 	}
-static¸Þ¼­µå·Î È£Ãâ¿¡¼­ ¸¸µé¾îÁø °´Ã¼ÀÇ ¸â¹öµéÀ» »ç¿ëÇÒ¼ö ÀÖ°Ô
+staticë©”ì„œë“œë¡œ í˜¸ì¶œì—ì„œ ë§Œë“¤ì–´ì§„ ê°ì²´ì˜ ë©¤ë²„ë“¤ì„ ì‚¬ìš©í• ìˆ˜ ìžˆê²Œ
 
-3. colorÆÄÀÏ°°ÀÌ Á¶°¢ÆÄÀÏÀº .jpfÃ³¸®ÇØÁÖ¸é ÁÁÀ½ 
+3. coloríŒŒì¼ê°™ì´ ì¡°ê°íŒŒì¼ì€ .jpfì²˜ë¦¬í•´ì£¼ë©´ ì¢‹ìŒ 
 
-·Î±×ÀÎÀÌ ¾ÈµÈ»óÅÂ -> session.getattribute(id)==null 
+ë¡œê·¸ì¸ì´ ì•ˆëœìƒíƒœ -> session.getattribute(id)==null 
 
-<% ÀÚ¹ÙÄÚµå %> ->class³ª jstl¿¡ »©¼­ ÀÛ¼º 
-<%= ÀÚ¹Ùº¯¼ö, ¿¬»ê½Ä, ¸Þ¼­µå È£Ãâ %> -> EL(°ªÀ» Ãâ·ÂÇØ¼­ È­¸é¿¡ Ãâ·ÂÇÏ´Â)
-<%@ µð·ºÆ¼ºê %>
+<% ìžë°”ì½”ë“œ %> ->classë‚˜ jstlì— ë¹¼ì„œ ìž‘ì„± 
+<%= ìžë°”ë³€ìˆ˜, ì—°ì‚°ì‹, ë©”ì„œë“œ í˜¸ì¶œ %> -> EL(ê°’ì„ ì¶œë ¥í•´ì„œ í™”ë©´ì— ì¶œë ¥í•˜ëŠ”)
+<%@ ë””ë ‰í‹°ë¸Œ %>
 
-JSP 15Àå 16Àå
-<Ç¥Çö ¾ð¾î>
-- ¡ÚJSPÀÇ ³× °¡Áö ±âº» °´Ã¼°¡ Á¦°øÇÏ´Â ¿µ¿ªÀÇ ¼Ó¼º »ç¿ë
-- ÁýÇÕ °´Ã¼¿¡ ´ëÇÑ Á¢±Ù ¹æ¹ý Á¦°ø
-- ¼öÄ¡ ¿¬»ê, °ü°è ¿¬»ê, ³í¸® ¿¬»êÀÚ Á¦°ø
-- ÀÚ¹Ù Å¬·¡½º ¸Þ¼­µå È£Ãâ ±â´É Á¦°ø
-- Ç¥Çö¾ð¾î¸¸ÀÇ ±âº» °´Ã¼ Á¦°ø
+JSP 15ìž¥ 16ìž¥
+<í‘œí˜„ ì–¸ì–´>
+- â˜…JSPì˜ ë„¤ ê°€ì§€ ê¸°ë³¸ ê°ì²´ê°€ ì œê³µí•˜ëŠ” ì˜ì—­ì˜ ì†ì„± ì‚¬ìš©
+- ì§‘í•© ê°ì²´ì— ëŒ€í•œ ì ‘ê·¼ ë°©ë²• ì œê³µ
+- ìˆ˜ì¹˜ ì—°ì‚°, ê´€ê³„ ì—°ì‚°, ë…¼ë¦¬ ì—°ì‚°ìž ì œê³µ
+- ìžë°” í´ëž˜ìŠ¤ ë©”ì„œë“œ í˜¸ì¶œ ê¸°ëŠ¥ ì œê³µ
+- í‘œí˜„ì–¸ì–´ë§Œì˜ ê¸°ë³¸ ê°ì²´ ì œê³µ
 
-<EL> ->getter°¡ ¾øÀ¸¸é »ç¿ëÇÒ ¼ö ¾øÀ½.
-(ELÀÇ ÇüÅÂ)
+<EL> ->getterê°€ ì—†ìœ¼ë©´ ì‚¬ìš©í•  ìˆ˜ ì—†ìŒ.
+(ELì˜ í˜•íƒœ)
 ${} , #{}
-<ELÀ» »ç¿ëÇÏ¸é ÄÚµå¸¦ Âª°Ô ¾µ¼ö ÀÖÀ½> 
+<ELì„ ì‚¬ìš©í•˜ë©´ ì½”ë“œë¥¼ ì§§ê²Œ ì“¸ìˆ˜ ìžˆìŒ> 
 ex)
 <%=session.getAttribute("name")%> -> ${ name } 
  
 
 <JSTL> 
-C:set (EL¿¡¼­ »ç¿ëÇÒ ¼ö ÀÖ´Â º¯¼ö¸¦ ¼±¾ðÇÏ°í °ª ÀúÀå)
-<c:set var="º¯¼ö¸í" value="°ª"/> ELº¯¼ö ¼±¾ð, °ª ÀúÀå 
+C:set (ELì—ì„œ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” ë³€ìˆ˜ë¥¼ ì„ ì–¸í•˜ê³  ê°’ ì €ìž¥)
+<c:set var="ë³€ìˆ˜ëª…" value="ê°’"/> ELë³€ìˆ˜ ì„ ì–¸, ê°’ ì €ìž¥ 
 ex)
 <% 
     Member m = new Member();
-    m.setName("ÀÌ¸§1"); //setÀÌ¶û getÀÌ ÀÖ´Â class°¡ ÀÖ°Ú±¸³ª~¿¹»ó
- m.->script³»¿¡¼­ »ç¿ë °¡´É 
+    m.setName("ì´ë¦„1"); //setì´ëž‘ getì´ ìžˆëŠ” classê°€ ìžˆê² êµ¬ë‚˜~ì˜ˆìƒ
+ m.->scriptë‚´ì—ì„œ ì‚¬ìš© ê°€ëŠ¥ 
 %>
 <c:set var="m" value="<%= m %>" />
-//"m¡° el ³»¿¡¼­¸¸ »ç¿ë °¡´É 
-<%-- ÀÌ ½ÃÁ¡¿¡´Â °ª »ý¼ºÇÏÁö ¾ÊÀ½ --%>
-<c:set var="name" value=¡°#{m.name}" />
-// " value=¡°${m.name}" -> nameÀÌ¶ó´Â º¯¼ö¸¦ »ç¿ëÇÏ´Â ½ÃÁ¡¿¡ °è»ê
-                                   (ÁÖ¼Ò¸¸ ÀúÀåÇÏ°í ÀÖ´Â °³³ä)
+//"mâ€œ el ë‚´ì—ì„œë§Œ ì‚¬ìš© ê°€ëŠ¥ 
+<%-- ì´ ì‹œì ì—ëŠ” ê°’ ìƒì„±í•˜ì§€ ì•ŠìŒ --%>
+<c:set var="name" value=â€œ#{m.name}" />
+// " value=â€œ${m.name}" -> nameì´ë¼ëŠ” ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•˜ëŠ” ì‹œì ì— ê³„ì‚°
+                                   (ì£¼ì†Œë§Œ ì €ìž¥í•˜ê³  ìžˆëŠ” ê°œë…)
 ex)<c:set var="favoriateColor" value="#{pre.color}"/> 
-	                            <!--              //pre ¸Ê¾ÈÀÇ key°ªÀ» °¡Á®¿Í¶ó 
-	                                          Áö±ÝÀº ¾ø´Âµ¥ ³ªÁß¿¡ "favoriateColor"¶ó´Â º¯¼ö¸¦ »ç¿ëÇÒ¶§  -->                                   
-//nameÀÌ¶ó´Â º¯¼ö¸¦ »ç¿ëÇÏ°Ú´Ù
-<% m.setName("ÀÌ¸§2"); %> // m.setName script³»¿¡¼­ »ç¿ë°¡´ÉÇÑ m
-${name} <%-- »ç¿ëµÉ ¶§ °ª °è»ê, "ÀÌ¸§2" Ãâ·Â --%>
-<% m.setName("ÀÌ¸§3"); %>
-${name} <%-- »ç¿ëµÉ ¶§ °ª °è»ê, "ÀÌ¸§3" Ãâ·Â --%>
+	                            <!--              //pre ë§µì•ˆì˜ keyê°’ì„ ê°€ì ¸ì™€ë¼ 
+	                                          ì§€ê¸ˆì€ ì—†ëŠ”ë° ë‚˜ì¤‘ì— "favoriateColor"ë¼ëŠ” ë³€ìˆ˜ë¥¼ ì‚¬ìš©í• ë•Œ  -->                                   
+//nameì´ë¼ëŠ” ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•˜ê² ë‹¤
+<% m.setName("ì´ë¦„2"); %> // m.setName scriptë‚´ì—ì„œ ì‚¬ìš©ê°€ëŠ¥í•œ m
+${name} <%-- ì‚¬ìš©ë  ë•Œ ê°’ ê³„ì‚°, "ì´ë¦„2" ì¶œë ¥ --%>
+<% m.setName("ì´ë¦„3"); %>
+${name} <%-- ì‚¬ìš©ë  ë•Œ ê°’ ê³„ì‚°, "ì´ë¦„3" ì¶œë ¥ --%>
 
-¡Ú¡Ú¡Ú value=¡°#{m.name} ¿¡ #´ë½Å $¸¦ ¾²¸é ÀúÀå ½ÃÁ¡ÀÇ °ªÀÌ ÀúÀå´ï
+â˜…â˜…â˜… value=â€œ#{m.name} ì— #ëŒ€ì‹  $ë¥¼ ì“°ë©´ ì €ìž¥ ì‹œì ì˜ ê°’ì´ ì €ìž¥ëŒ
 
-<ELÀÇ ±âº»°´Ã¼> 
+<ELì˜ ê¸°ë³¸ê°ì²´> 
 pageScope
 requestScope
 sessionScope
 applicationScope
-¡Ú¡Ú¡Ú param : ¿äÃ» ÆÄ¶ó¹ÌÅÍÀÇ <ÆÄ¶ó¹ÌÅÍ ÀÌ¸§, °ª> ¸ÅÇÎÀ» ÀúÀåÇÑ Map°´Ã¼.
+â˜…â˜…â˜… param : ìš”ì²­ íŒŒë¼ë¯¸í„°ì˜ <íŒŒë¼ë¯¸í„° ì´ë¦„, ê°’> ë§¤í•‘ì„ ì €ìž¥í•œ Mapê°ì²´.
 
 Map <k,v>
 map.get(key);
 
- <%=map.get(key)%>(¿ø·¡´Â ÀÌ·¸°Ô¾¸) 
-1. ${map.key}¦¥ ->key¸¦ ½á¼­ ¸ÅÇÎµÅ ÀÖ´Â °ªÀ» Ã£¾Æ¿È
-2. ¡Ú¡Ú¡Ú${param.id} ->Àü´Þ¹ÞÀº ÆÄ¶ó¹ÌÅÍ°ªÁß¿¡ id¶ó´Â °ª¿¡ ¸ÅÇÎµÅÀÖ´Â °ªÀ» ²¨³»¿È
- ${param.ÆÄ¶ó¹ÌÅÍ¸í} 
+ <%=map.get(key)%>(ì›ëž˜ëŠ” ì´ë ‡ê²Œì”€) 
+1. ${map.key}â”˜ ->keyë¥¼ ì¨ì„œ ë§¤í•‘ë¼ ìžˆëŠ” ê°’ì„ ì°¾ì•„ì˜´
+2. â˜…â˜…â˜…${param.id} ->ì „ë‹¬ë°›ì€ íŒŒë¼ë¯¸í„°ê°’ì¤‘ì— idë¼ëŠ” ê°’ì— ë§¤í•‘ë¼ìžˆëŠ” ê°’ì„ êº¼ë‚´ì˜´
+ ${param.íŒŒë¼ë¯¸í„°ëª…} 
 3. ${sessionScope.name} 
-${sessionScope.¼Ó¼º¸í} ->session ¿µ¿ªÀÇ Attribute¿¡ ¸ÅÇÎ µÈ °´Ã¼¸¦ ÂüÁ¶ÇÏ´Â Map°´Ã¼ 
+${sessionScope.ì†ì„±ëª…} ->session ì˜ì—­ì˜ Attributeì— ë§¤í•‘ ëœ ê°ì²´ë¥¼ ì°¸ì¡°í•˜ëŠ” Mapê°ì²´ 
 ex)${sessionScope.href} 
-<a href="mgrserch.jsp?mgr=<%= dept.getMgr()%>"> ÀÌ¸é
-"mgrserch.jsp?mgr=<%= dept.getMgr()%>"À» °¡Á®¿È 
-4. ${list.name} -> ÀÌ·±½ÄÀ¸·Î ¾²¸é ¾ÈµÊ(Á¤¼ö °ªÀÌ ¾Æ´Ò °æ¿ì ¿¡·¯ ¹ß»ý)
-5. ${m.name} ->getter¸¦ °¡Áö°í ÀÖÀ»°æ¿ì getnameÀ» È£ÃâÇÔ (boolean°°ÀÌ isÀÏ°æ¿ì isnameºÒ·¯¿È) 
+<a href="mgrserch.jsp?mgr=<%= dept.getMgr()%>"> ì´ë©´
+"mgrserch.jsp?mgr=<%= dept.getMgr()%>"ì„ ê°€ì ¸ì˜´ 
+4. ${list.name} -> ì´ëŸ°ì‹ìœ¼ë¡œ ì“°ë©´ ì•ˆë¨(ì •ìˆ˜ ê°’ì´ ì•„ë‹ ê²½ìš° ì—ëŸ¬ ë°œìƒ)
+5. ${m.name} ->getterë¥¼ ê°€ì§€ê³  ìžˆì„ê²½ìš° getnameì„ í˜¸ì¶œí•¨ (booleanê°™ì´ isì¼ê²½ìš° isnameë¶ˆëŸ¬ì˜´) 
 
-µÚ¿¡()ºÙ¾îÀÖÀ¸¸é ¸Þ¼­µåÀÓ
-el·Î ¸Þ¼­µåµµ È£Ãâ °¡´É 
-${null} -> ºó¹®ÀÚ¿­ Ãâ·ÂµÊ
+ë’¤ì—()ë¶™ì–´ìžˆìœ¼ë©´ ë©”ì„œë“œìž„
+elë¡œ ë©”ì„œë“œë„ í˜¸ì¶œ ê°€ëŠ¥ 
+${null} -> ë¹ˆë¬¸ìžì—´ ì¶œë ¥ë¨
 
-Æû¿¡ ÀÔ·ÂÇØ¼­ Àü¼ÛÇÑ °ª -> ÆÄ¶ó¹ÌÅÍ°ª 
-°°Àº ¿µ¿ª¿¡ÀÖ´Â ÆäÀÌÁöµé³¢¸® °øÀ¯µÉ°ªÀ» ¼Ó¼ºÀ¸·Î ÀúÀå - Attribute°ª 
-hrefÀ» ¼Ó¼º¸íÀÌ¶ó°í ÇÏ°í =µÚ¿¡ ÀÖ´Â°Ô °ª
+í¼ì— ìž…ë ¥í•´ì„œ ì „ì†¡í•œ ê°’ -> íŒŒë¼ë¯¸í„°ê°’ 
+ê°™ì€ ì˜ì—­ì—ìžˆëŠ” íŽ˜ì´ì§€ë“¤ë¼ë¦¬ ê³µìœ ë ê°’ì„ ì†ì„±ìœ¼ë¡œ ì €ìž¥ - Attributeê°’ 
+hrefì„ ì†ì„±ëª…ì´ë¼ê³  í•˜ê³  =ë’¤ì— ìžˆëŠ”ê²Œ ê°’
 
-<¿¬»êÀÚ>
-¡Ø ¼öÄ¡ ¿¬»êÀÚ 
-   +, -, *, / ¶Ç´Â div, % ¶Ç´Â mod
-¡Ø ºñ±³ ¿¬»êÀÚ
-   == ¶Ç´Â eq, != ¶Ç´Â ne
-   < ¶Ç´Â lt, <= ¶Ç´Â le, > ¶Ç´Â gt, >= ¶Ç´Â ge
-¡Ø ³í¸® ¿¬»êÀÚ
-   && ¶Ç´Â and
-   || ¶Ç´Â or
-   ! ¶Ç´Â not  
-¡Ø empty ¿¬»êÀÚ  ->if¹® ¾È¿¡¼­ ¸¹ÀÌ »ç¿ë
-   empty <°ª>
-   °ªÀÌ nullÀÌ¸é, true
-   °ªÀÌ ºó ¹®ÀÚ¿­("")ÀÌ¸é, true
-   °ªÀÇ ±æÀÌ°¡ 0ÀÎ ¹è¿­ÀÌ³ª ÄÝ·º¼ÇÀÌ¸é true
-   ÀÌ ¿ÜÀÇ °æ¿ì¿¡´Â false
-¡Ø ºñ±³ ¼±ÅÃ ¿¬»êÀÚ
-   <¼ö½Ä> ? <°ª1> : <°ª2>
+<ì—°ì‚°ìž>
+â€» ìˆ˜ì¹˜ ì—°ì‚°ìž 
+   +, -, *, / ë˜ëŠ” div, % ë˜ëŠ” mod
+â€» ë¹„êµ ì—°ì‚°ìž
+   == ë˜ëŠ” eq, != ë˜ëŠ” ne
+   < ë˜ëŠ” lt, <= ë˜ëŠ” le, > ë˜ëŠ” gt, >= ë˜ëŠ” ge
+â€» ë…¼ë¦¬ ì—°ì‚°ìž
+   && ë˜ëŠ” and
+   || ë˜ëŠ” or
+   ! ë˜ëŠ” not  
+â€» empty ì—°ì‚°ìž  ->ifë¬¸ ì•ˆì—ì„œ ë§Žì´ ì‚¬ìš©
+   empty <ê°’>
+   ê°’ì´ nullì´ë©´, true
+   ê°’ì´ ë¹ˆ ë¬¸ìžì—´("")ì´ë©´, true
+   ê°’ì˜ ê¸¸ì´ê°€ 0ì¸ ë°°ì—´ì´ë‚˜ ì½œë ‰ì…˜ì´ë©´ true
+   ì´ ì™¸ì˜ ê²½ìš°ì—ëŠ” false
+â€» ë¹„êµ ì„ íƒ ì—°ì‚°ìž
+   <ìˆ˜ì‹> ? <ê°’1> : <ê°’2>
    
    https://mvnrepository.com/
-   jarÆÄÀÏ ¸ð¾Æ³õÀº°÷ 
+   jaríŒŒì¼ ëª¨ì•„ë†“ì€ê³³ 
    
    JSTL
-   <% ÀÚ¹ÙÄÚµå %> -> class,JSTL
+   <% ìžë°”ì½”ë“œ %> -> class,JSTL
    
-   for -> custom tag   ->¸¹ÀÌ ¾²´Â°ÍµéÀ» ½ºÅÄ´ÙµåÇüÀ¸·Î ¸¸µé¾îµÐ ÅÂ±× 
+   for -> custom tag   ->ë§Žì´ ì“°ëŠ”ê²ƒë“¤ì„ ìŠ¤íƒ ë‹¤ë“œí˜•ìœ¼ë¡œ ë§Œë“¤ì–´ë‘” íƒœê·¸ 
    
-¡Ú¡Ú¡Ú   
+â˜…â˜…â˜…   
 if
 foreach
 choose
 
-<±¹Á¦È­> -> »ç¿ë ¾ð¾î¿¡ µû¶ó ÀúÀý·Î ¾ð¾î¸¦ ¹Ù²ãÁÜ 
-(¾ð¾î¸¦ ¸ð¾Æ³õÀº °É ¹øµéÀÌ¶ó°í ÇÔ)
+<êµ­ì œí™”> -> ì‚¬ìš© ì–¸ì–´ì— ë”°ë¼ ì €ì ˆë¡œ ì–¸ì–´ë¥¼ ë°”ê¿”ì¤Œ 
+(ì–¸ì–´ë¥¼ ëª¨ì•„ë†“ì€ ê±¸ ë²ˆë“¤ì´ë¼ê³  í•¨)
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-Æ÷¸ËÇÒ°æ¿ì ¸ÇÀ§¿¡ ÀÌ°Å ½áÁà¾ßµÊ
+í¬ë§·í• ê²½ìš° ë§¨ìœ„ì— ì´ê±° ì¨ì¤˜ì•¼ë¨
 
 ex) message_ko.properties
-<propertiesÆÄÀÏ>
-1. ¾ð´õ¹ÙµÚÀÇ ko´Â ÆÄÀÏ ÀÌ¸§ÀÌ ¾Æ´Ô
-2. ÇÁ·ÎÆÛÆ¼½º ÆÄÀÏÀº ¿µ¾î¸¸ ¾µ ¼ö ÀÖÀ½
+<propertiesíŒŒì¼>
+1. ì–¸ë”ë°”ë’¤ì˜ koëŠ” íŒŒì¼ ì´ë¦„ì´ ì•„ë‹˜
+2. í”„ë¡œí¼í‹°ìŠ¤ íŒŒì¼ì€ ì˜ì–´ë§Œ ì“¸ ìˆ˜ ìžˆìŒ
  
--¸®¼Ò½º ¹øµé ¹øÀ§¿¡¼­ ¸Þ½ÃÁö ÀÐ±â
-<fmt:bundle basename="resource.message" [prefix="Á¢µÎ¾î"]>
+-ë¦¬ì†ŒìŠ¤ ë²ˆë“¤ ë²ˆìœ„ì—ì„œ ë©”ì‹œì§€ ì½ê¸°
+<fmt:bundle basename="resource.message" [prefix="ì ‘ë‘ì–´"]>
     <fmt:message key="GREETING" />
 </fmt:bundle>
 
-¡Údate time format 
+â˜…date time format 
 ex) 
 <%@ page contentType = "text/html; charset=utf-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head><title>numberFormat ÅÂ±× »ç¿ë</title></head>
+<head><title>numberFormat íƒœê·¸ ì‚¬ìš©</title></head>
 <body>
 
 <c:set var="now" value="<%= new java.util.Date() %>" />
@@ -624,35 +624,35 @@ length(str1) = ${fn:length(str1)} <br>
 toUpperCase(str1) = "${fn:toUpperCase(str1)}" <br>
 toLowerCase(str1) = "${fn:toLowerCase(str1)}" <br>
 substring(str1, 3, 6) = "${fn:substring(str1, 3, 6)}" <br>
-//1¹ø ¹®Àå 3¹øÀÎµ¦½ººÎÅÍ 6¹øÀÎµ¦½º ¾Õ±îÁö 
+//1ë²ˆ ë¬¸ìž¥ 3ë²ˆì¸ë±ìŠ¤ë¶€í„° 6ë²ˆì¸ë±ìŠ¤ ì•žê¹Œì§€ 
 substringAfter(str1, str2) = "${fn:substringAfter(str1, str2)}" <br>
 substringBefore(str1, str2) = "${fn:substringBefore(str1, str2)}" <br>
 trim(str1) = "${fn:trim(str1)}" <br>
-//¾ÕµÚ °ø¹é Á¦°Å 
+//ì•žë’¤ ê³µë°± ì œê±° 
 replace(str1, src, dest) = "${fn:replace(str1, " ", "-")}" <br>
-//°ø¹éÀ» ÇÏÀÌÇÂÀ¸·Î ¹Ù²Ù°Ú´Ù 
+//ê³µë°±ì„ í•˜ì´í”ˆìœ¼ë¡œ ë°”ê¾¸ê² ë‹¤ 
 indexOf(str1, str2) = "${fn:indexOf(str1, str2)}" <br>
-//»ç¿ëÀÌ¶ó´Â ¹®ÀÚ¿­ÀÇ ½ÃÀÛÁöÁ¡ 
+//ì‚¬ìš©ì´ë¼ëŠ” ë¬¸ìžì—´ì˜ ì‹œìž‘ì§€ì  
 startsWith(str1, str2) = "${fn:startsWith(str1, 'Fun')}" <br>
-//str1¹®ÀÌ funÀÌ¶ó´Â ¹®ÀÚ¿­·Î ½ÃÀÛÇÏ´ÂÁö ->true
-endsWith(str1, str2) = "${fn:endsWith(str1, "ÇÕ´Ï´Ù.")}" <br>
-//str1¹®ÀÌ ÇÕ´Ï´Ù.·Î ³¡³ª´ÂÁö Æ²¸®¸é ->false
+//str1ë¬¸ì´ funì´ë¼ëŠ” ë¬¸ìžì—´ë¡œ ì‹œìž‘í•˜ëŠ”ì§€ ->true
+endsWith(str1, str2) = "${fn:endsWith(str1, "í•©ë‹ˆë‹¤.")}" <br>
+//str1ë¬¸ì´ í•©ë‹ˆë‹¤.ë¡œ ëë‚˜ëŠ”ì§€ í‹€ë¦¬ë©´ ->false
 contains(str1, str2) = "${fn:contains(str1, str2)}" <br>
-//str1¾È¿¡ str2°¡ Æ÷ÇÔÇÏ´ÂÁö  (´ë¼Ò¹®ÀÚ ±¸º°)
+//str1ì•ˆì— str2ê°€ í¬í•¨í•˜ëŠ”ì§€  (ëŒ€ì†Œë¬¸ìž êµ¬ë³„)
 containsIgnoreCase(str1, str2) = "${fn:containsIgnoreCase(str1, str2)}" <br>
-//´ë¼Ò¹®ÀÚ ¹«½ÃÇÏ°í Æ÷ÇÔÇÏ°íÀÖ´ÂÁö 
+//ëŒ€ì†Œë¬¸ìž ë¬´ì‹œí•˜ê³  í¬í•¨í•˜ê³ ìžˆëŠ”ì§€ 
 <c:set var="array" value="${fn:split(tokens, ',')}" />
-//ÅäÅ«À¸·Î ³ª´«°É array¶ó´Â ¹è¿­¿¡ ÀúÀåÇÔ
+//í† í°ìœ¼ë¡œ ë‚˜ëˆˆê±¸ arrayë¼ëŠ” ë°°ì—´ì— ì €ìž¥í•¨
 join(array, "-") = "${fn:join(array, "-")}" <br>
-//¹è¿­¿¡ µé¾î°£°É -À¸·Î ³ª´²¼­ º¸¿©ÁÜ 
+//ë°°ì—´ì— ë“¤ì–´ê°„ê±¸ -ìœ¼ë¡œ ë‚˜ëˆ ì„œ ë³´ì—¬ì¤Œ 
 escapeXml(str1) = "${fn:escapeXml(str1)}" <br>
-//ÆäÀÌÁö ¼Ò½ºº¸±â·Î ºÁ¾ßÇÔ <>ÀÇ ±âÈ£°¡ Æ¯¼ö¹®ÀÚ·Î ¹Ù²î¾îÀÖÀ½ 
+//íŽ˜ì´ì§€ ì†ŒìŠ¤ë³´ê¸°ë¡œ ë´ì•¼í•¨ <>ì˜ ê¸°í˜¸ê°€ íŠ¹ìˆ˜ë¬¸ìžë¡œ ë°”ë€Œì–´ìžˆìŒ 
 
-<ÆÄÀÏ ¾÷·Îµå>
+<íŒŒì¼ ì—…ë¡œë“œ>
 
-¡Ú¡ÚPOST ¹æ½Ä¿¡¼­ enctypeÀ» multipart/form-data·Î ¼³Á¤
-type ¼Ó¼ºÀÌ fileÀÎ <input> ÅÂ±×¸¦ ÅëÇØ ÆÄÀÏ ¼±ÅÃ
-(ÆÄÀÏ ³»¿ëµµ °°ÀÌ º¸³»·Á¸é ²À!!!)
+â˜…â˜…POST ë°©ì‹ì—ì„œ enctypeì„ multipart/form-dataë¡œ ì„¤ì •
+type ì†ì„±ì´ fileì¸ <input> íƒœê·¸ë¥¼ í†µí•´ íŒŒì¼ ì„ íƒ
+(íŒŒì¼ ë‚´ìš©ë„ ê°™ì´ ë³´ë‚´ë ¤ë©´ ê¼­!!!)
 ex)
 <form action="..." method="post" enctype="multipart/form-data">
      ...
@@ -660,26 +660,26 @@ ex)
 </form>
 
 Fileupload API
-ÆÄÀÏ ¾÷·Îµå
-ÀÏ¹Ý ÆÄ¶ó¹ÌÅÍ : ÆÄ¶ó¹ÌÅÍ ÀÌ¸§/ °ª
-ÆÄÀÏ ÆÄ¶ó¹ÌÅÍ : ÆÄ¶ó¹ÌÅÍ ÀÌ¸§/ÆÄÀÏÀÌ¸§/ÆÄÀÏ Å¸ÀÔ/³»¿ë
+íŒŒì¼ ì—…ë¡œë“œ
+ì¼ë°˜ íŒŒë¼ë¯¸í„° : íŒŒë¼ë¯¸í„° ì´ë¦„/ ê°’
+íŒŒì¼ íŒŒë¼ë¯¸í„° : íŒŒë¼ë¯¸í„° ì´ë¦„/íŒŒì¼ì´ë¦„/íŒŒì¼ íƒ€ìž…/ë‚´ìš©
 
-ÆÄ¶ó¹ÌÅÍ -> List<FileItem> (ÆÄ¶ó¹ÌÅÍ ¼ö¸¸Å­ »ý±â´Âµ¥ list·Î ¹­±â) 
+íŒŒë¼ë¯¸í„° -> List<FileItem> (íŒŒë¼ë¯¸í„° ìˆ˜ë§Œí¼ ìƒê¸°ëŠ”ë° listë¡œ ë¬¶ê¸°) 
 
-<º¸¿©ÁÙ ±ÛÀÌ ÀÖ´ÂÁö ¾ø´ÂÁö Ã¼Å©ÇÏ´Â getter> 
-public boolean isHasPdsItem() { //isHas°¡ ÀÖÀ¸´Ï±î boolean°ªÀ» ¸®ÅÏÇÏ´Â getter¶ó°í º¼¼ö ÀÖÀ½ 
+<ë³´ì—¬ì¤„ ê¸€ì´ ìžˆëŠ”ì§€ ì—†ëŠ”ì§€ ì²´í¬í•˜ëŠ” getter> 
+public boolean isHasPdsItem() { //isHasê°€ ìžˆìœ¼ë‹ˆê¹Œ booleanê°’ì„ ë¦¬í„´í•˜ëŠ” getterë¼ê³  ë³¼ìˆ˜ ìžˆìŒ 
 		return ! pdsItemList.isEmpty();
 	}
 
-ÀÎÅÍÆäÀÌ½º ±¸Çö -> Á¶»óÀÌ °¡Áö°íÀÖ´Â ¸ðµç°É ¹°·Á¹Þ¾Æ¼­ 
-¿À¹ö¶óÀÌµù ÇØ¼­ ±¸ÇöÇÑ°Í 
+ì¸í„°íŽ˜ì´ìŠ¤ êµ¬í˜„ -> ì¡°ìƒì´ ê°€ì§€ê³ ìžˆëŠ” ëª¨ë“ ê±¸ ë¬¼ë ¤ë°›ì•„ì„œ 
+ì˜¤ë²„ë¼ì´ë”© í•´ì„œ êµ¬í˜„í•œê²ƒ 
 
-<¡ÚÇÊÅÍ web.xml¿¡ µî·ÏÇØ¼­ ¾²´Â ¹æ¹ý>
+<â˜…í•„í„° web.xmlì— ë“±ë¡í•´ì„œ ì“°ëŠ” ë°©ë²•>
 <web-app ...>
     
     <filter>
         <filter-name>FilterName</filter-name>
-        <filter-class>javacan.filter.FileClass</filter-class>                             //ÆÐÅ°Áö¸íºÎÅÍ ÆÄÀÏ ÀÌ¸§±îÁö
+        <filter-class>javacan.filter.FileClass</filter-class>                             //íŒ¨í‚¤ì§€ëª…ë¶€í„° íŒŒì¼ ì´ë¦„ê¹Œì§€
         <init-param>
            <param-name>paramName</param-name>
            <param-value>value</param-value>
@@ -694,7 +694,7 @@ public boolean isHasPdsItem() { //isHas°¡ ÀÖÀ¸´Ï±î boolean°ªÀ» ¸®ÅÏÇÏ´Â getter¶ó
     ...
 </web-app>
 
-<¡Ú¸®½º³Ê Å¬·¡½º µî·Ï>
+<â˜…ë¦¬ìŠ¤ë„ˆ í´ëž˜ìŠ¤ ë“±ë¡>
 <web-app ...>
     <listener>
         <listener-class>kame.jdbc.loader.DBCPInitListener</listener-class>
@@ -706,40 +706,40 @@ public boolean isHasPdsItem() { //isHas°¡ ÀÖÀ¸´Ï±î boolean°ªÀ» ¸®ÅÏÇÏ´Â getter¶ó
     ...
 </web-app> 
 
-µðÀÚÀÎ ÆÐÅÏ - ÇÑÁÙ Á¤ÀÇ ¼³°è ¹®Á¦ÀÇ ÇØ´äÀ» ¹®¼­È­ÇÏ±â À§ÇØ °í¾ÈµÈ Çü½Ä
-¹æ¹ý. °ú°Å ¼ÒÇÁÆ®¿þ¾î °³¹ß °úÁ¤¿¡¼­ ¹ß°ßµÈ ¼³°è ³ëÇÏ¿ì¸¦ ÃàÀûÇÏ°í 
-ÀÌ¸§À» ºÙ¿© Àç»ç¿ëÇÏ±â ÁÁÀº ÇüÅÂÀÇ Æ¯Á¤ ±Ô¾àÀ¸·Î ¹­¾î Á¤¸®ÇÑ °Í 
+ë””ìžì¸ íŒ¨í„´ - í•œì¤„ ì •ì˜ ì„¤ê³„ ë¬¸ì œì˜ í•´ë‹µì„ ë¬¸ì„œí™”í•˜ê¸° ìœ„í•´ ê³ ì•ˆëœ í˜•ì‹
+ë°©ë²•. ê³¼ê±° ì†Œí”„íŠ¸ì›¨ì–´ ê°œë°œ ê³¼ì •ì—ì„œ ë°œê²¬ëœ ì„¤ê³„ ë…¸í•˜ìš°ë¥¼ ì¶•ì í•˜ê³  
+ì´ë¦„ì„ ë¶™ì—¬ ìž¬ì‚¬ìš©í•˜ê¸° ì¢‹ì€ í˜•íƒœì˜ íŠ¹ì • ê·œì•½ìœ¼ë¡œ ë¬¶ì–´ ì •ë¦¬í•œ ê²ƒ 
 
-servelet(¼­ºí¸´) : À¥ ¿äÃ»À» Ã³¸®ÇÏ´Â Å¬·¡½º
+servelet(ì„œë¸”ë¦¿) : ì›¹ ìš”ì²­ì„ ì²˜ë¦¬í•˜ëŠ” í´ëž˜ìŠ¤
 
-ÆûÅÂ±×¿¡ ¸Þ¼­µå:post¶ó°í ½èÀ»¶§¸¸ post ¹æ½Ä 
+í¼íƒœê·¸ì— ë©”ì„œë“œ:postë¼ê³  ì¼ì„ë•Œë§Œ post ë°©ì‹ 
 
-Á¶»óÅ¸ÀÔÀÇ ÂüÁ¶º¯¼ö·Î ÀÚ¼ÕÀÇ °´Ã¼¸¦ ´Ù·ë 
+ì¡°ìƒíƒ€ìž…ì˜ ì°¸ì¡°ë³€ìˆ˜ë¡œ ìžì†ì˜ ê°ì²´ë¥¼ ë‹¤ë£¸ 
 CommandHander c = new ListHandler()
 CommandHander c = new WriterFormHandler()
 
-<url ¿äÃ»ÇÏ´Â ¹ý>
+<url ìš”ì²­í•˜ëŠ” ë²•>
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		request.setAttribute("hello", "¾È³çÇÏ¼¼¿ä!");
-		request.getSession().setAttribute("memId", "id°ª");
+		request.setAttribute("hello", "ì•ˆë…•í•˜ì„¸ìš”!");
+		request.getSession().setAttribute("memId", "idê°’");
 		return "/view/hello.jsp";
 		
-<WebServlet¼³Á¤>
+<WebServletì„¤ì •>
 @WebServlet(urlPatterns = "*.do", initParams = {		
 @WebInitParam(name = "configFile2",        
 value = "/WEB-INF/commandHandler.properties") }),
 @WebInitParam(name = "configFile3", 
 value = "/WEB-INF/commandHandler.properties") }),
 @WebInitParam(name = "configFile4", 
-value = "/WEB-INF/commandHandler.properties") }), (ÄÄ¸¶Âï°í ¿©·¯°³ÀÇ ÆÄ¶ó¹ÌÅÍ¸¦ ÇÑ¹ø¿¡ º¸³¾ ¼ö ÀÖ´Ù.)
+value = "/WEB-INF/commandHandler.properties") }), (ì»´ë§ˆì°ê³  ì—¬ëŸ¬ê°œì˜ íŒŒë¼ë¯¸í„°ë¥¼ í•œë²ˆì— ë³´ë‚¼ ìˆ˜ ìžˆë‹¤.)
 
-°Ô½ÃÆÇ
-±â´É - ¿äÃ» uri- ½ÇÇàÇÒ Å¬·¡½º ¸í
-list(¸ñ·Ï) - list.do¶ó°í¸¸ ½áµµ ÆäÀÌÁö°¡ ³ª¿È
-¿©±â¿¡ listActionÀ» ¾²¸é ÆäÀÌÁö°¡ ³ª¿À¸é¼­ ³ª¿Ã ¾×¼Ç±îÁöµµ ÁöÁ¤ °¡´É
-±× ´ÙÀ½ ³ª¿Ã ÆäÀÌÁö list.jsp±îÁö ÀÛ¼ºÇÏ¸é ÁÁÀ½   
-content(»ó¼¼º¸±â)
+ê²Œì‹œíŒ
+ê¸°ëŠ¥ - ìš”ì²­ uri- ì‹¤í–‰í•  í´ëž˜ìŠ¤ ëª…
+list(ëª©ë¡) - list.doë¼ê³ ë§Œ ì¨ë„ íŽ˜ì´ì§€ê°€ ë‚˜ì˜´
+ì—¬ê¸°ì— listActionì„ ì“°ë©´ íŽ˜ì´ì§€ê°€ ë‚˜ì˜¤ë©´ì„œ ë‚˜ì˜¬ ì•¡ì…˜ê¹Œì§€ë„ ì§€ì • ê°€ëŠ¥
+ê·¸ ë‹¤ìŒ ë‚˜ì˜¬ íŽ˜ì´ì§€ list.jspê¹Œì§€ ìž‘ì„±í•˜ë©´ ì¢‹ìŒ   
+content(ìƒì„¸ë³´ê¸°)
 writeForm
 writepro
 updateForm
@@ -747,67 +747,67 @@ updatePro
 deleteForm
 deletePro
 
-<¸¸µå´Â ¼ø¼­> 
-µðºñºó dao´Â ¹Ì¸® ¸¸µé¾î³õ°í
-¾ê³×¸¦ ±¸ÇöÇÒ Á¶»ó Å¬·¡½º¿Í
-°¢°¢ÀÇ Å¬·¡½º¸¦ ¸¸µé°í ÇÁ·ÎÆÛÆ¼½º ÆÄÀÏ¿¡ ¿äÃ»ÇÒ°ÍµéÀ» ¸ð¾Æ¼­
-½á³õ±â (ÁÖ¼Ò ÀÛ¼ºÇÒ ¶§ ÇÁ·ÎÁ§Æ®¸í¸¸ ¶¾ ÁÖ¼Ò·Î ÀÛ¼º)
-¿äÃ»ÀÌ Á¤ÇØÁö¸é ÄÁÆ®·Ñ·¯ ->ÄÁÆ®·Ñ·¯¸¦ ¾ðÁ¦½ÇÇàÇÒ°ÇÁö ÀÛ¼º
--> ºäÀÛ¼º 
+<ë§Œë“œëŠ” ìˆœì„œ> 
+ë””ë¹„ë¹ˆ daoëŠ” ë¯¸ë¦¬ ë§Œë“¤ì–´ë†“ê³ 
+ì–˜ë„¤ë¥¼ êµ¬í˜„í•  ì¡°ìƒ í´ëž˜ìŠ¤ì™€
+ê°ê°ì˜ í´ëž˜ìŠ¤ë¥¼ ë§Œë“¤ê³  í”„ë¡œí¼í‹°ìŠ¤ íŒŒì¼ì— ìš”ì²­í• ê²ƒë“¤ì„ ëª¨ì•„ì„œ
+ì¨ë†“ê¸° (ì£¼ì†Œ ìž‘ì„±í•  ë•Œ í”„ë¡œì íŠ¸ëª…ë§Œ ë—€ ì£¼ì†Œë¡œ ìž‘ì„±)
+ìš”ì²­ì´ ì •í•´ì§€ë©´ ì»¨íŠ¸ë¡¤ëŸ¬ ->ì»¨íŠ¸ë¡¤ëŸ¬ë¥¼ ì–¸ì œì‹¤í–‰í• ê±´ì§€ ìž‘ì„±
+-> ë·°ìž‘ì„± 
 
-MVC C-> path¿¡¼­ contextroot¸¦ Á¦¿ÜÇÑ ºÎºÐ 
-       ->M : ºñÁö´Ï½º ·ÎÁ÷
-             È­¸é¿¡ º¸ÀÏ µ¥ÀÌÅÍ request, session ÀúÀå
-                setAttribute("ÀÌ¸§",°ª);
-                view °æ·Î ¸®ÅÏ
-                - WebContentÆú´õ ¾Æ·¡ JSPÆÄÀÏ °æ·Î
-        V -> JSP È­¸é ±¸Çö
-            -htmlÄÚµå, css, js
-            -request,session¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ
-                    ${ÀÌ¸§}
+MVC C-> pathì—ì„œ contextrootë¥¼ ì œì™¸í•œ ë¶€ë¶„ 
+       ->M : ë¹„ì§€ë‹ˆìŠ¤ ë¡œì§
+             í™”ë©´ì— ë³´ì¼ ë°ì´í„° request, session ì €ìž¥
+                setAttribute("ì´ë¦„",ê°’);
+                view ê²½ë¡œ ë¦¬í„´
+                - WebContentí´ë” ì•„ëž˜ JSPíŒŒì¼ ê²½ë¡œ
+        V -> JSP í™”ë©´ êµ¬í˜„
+            -htmlì½”ë“œ, css, js
+            -request,sessionì— ì €ìž¥ëœ ë°ì´í„°
+                    ${ì´ë¦„}
             -JSTL<c:if>,<c:forEach>,<c:choose> 
             
             
-<°æ·Î>
-do°¡Á®¿Ã¶© - ÇÁ·ÎÁ§Æ®ºÎÅÍ
-jsp °¡Á®¿Ã¶© - À¥ÄÁÅÙÃ÷ ¾È Æú´õÀÌ¸§ºÎÅÍ 
+<ê²½ë¡œ>
+doê°€ì ¸ì˜¬ë• - í”„ë¡œì íŠ¸ë¶€í„°
+jsp ê°€ì ¸ì˜¬ë• - ì›¹ì»¨í…ì¸  ì•ˆ í´ë”ì´ë¦„ë¶€í„° 
 
-±â´É - ¿äÃ» uri - modelÅ¬·¡½º - jsp 
+ê¸°ëŠ¥ - ìš”ì²­ uri - modelí´ëž˜ìŠ¤ - jsp 
 list/MVC/list.do - ListAction - List.jsp
 
-do·Î °æ·Î¸¦ ¾²¸é ÄÁÆ®·Ñ·¯°¡ ¹Þ¾Æ¼­ ½ÇÇàÇÔ 
+doë¡œ ê²½ë¡œë¥¼ ì“°ë©´ ì»¨íŠ¸ë¡¤ëŸ¬ê°€ ë°›ì•„ì„œ ì‹¤í–‰í•¨ 
 
-Project »ý¼º
+Project ìƒì„±
 
-ÄÁÆ®·Ñ·¯
-modelÅ¬·¡½º »ý¼º
+ì»¨íŠ¸ë¡¤ëŸ¬
+modelí´ëž˜ìŠ¤ ìƒì„±
 
-actionÀº Ç×»ó jsp ÆÄÀÏÀ» ¸®ÅÏÇÔ À¥ÄÁÅÙÃ÷ ¾Æ·¡ºÎÅÍ /°°ÀÌ ¾²±â 
+actionì€ í•­ìƒ jsp íŒŒì¼ì„ ë¦¬í„´í•¨ ì›¹ì»¨í…ì¸  ì•„ëž˜ë¶€í„° /ê°™ì´ ì“°ê¸° 
 
-<¸ðµ¨ 2 ¸¸µé¶§ ÇÊ¼ö>
+<ëª¨ë¸ 2 ë§Œë“¤ë•Œ í•„ìˆ˜>
 1. web.xml
 2. CommandAction
 3. ControllerUsingURI
-4. ÇÁ·ÎÁ§Æ®¸¸µé°í
-5. java ¸¸µé¶§ add command action
-6. index ¸¸µé±â  
+4. í”„ë¡œì íŠ¸ë§Œë“¤ê³ 
+5. java ë§Œë“¤ë•Œ add command action
+6. index ë§Œë“¤ê¸°  
 
-<½ºÇÁ¸µ mybatis ¼³Ä¡> ¸¶ÀÌ¹ÙÆ¼½º 
+<ìŠ¤í”„ë§ mybatis ì„¤ì¹˜> ë§ˆì´ë°”í‹°ìŠ¤ 
 POJO
 
-ORM ÇÁ·¹ÀÓ¿öÅ©(Oject-Relational-Mapping)
-:DB ¿¬µ¿À» ½±°ÔÇÒ ¼ö ÀÖ°Ô ÇÑ ÇÁ·¹ÀÓ ¿öÅ© 
+ORM í”„ë ˆìž„ì›Œí¬(Oject-Relational-Mapping)
+:DB ì—°ë™ì„ ì‰½ê²Œí•  ìˆ˜ ìžˆê²Œ í•œ í”„ë ˆìž„ ì›Œí¬ 
 
 maven/gradle
 
-*jarÆÄÀÏ¿¡ ¹®Á¦ »ý±â¸é .m2Æú´õ¸¦ »èÁ¦ÇÏ°í ´Ù½Ã ²°´Ù Å°¸é µÊ
+*jaríŒŒì¼ì— ë¬¸ì œ ìƒê¸°ë©´ .m2í´ë”ë¥¼ ì‚­ì œí•˜ê³  ë‹¤ì‹œ ê»ë‹¤ í‚¤ë©´ ë¨
 
-*¸ÞÀÌºì »ç¿ëÇÏ·Á¸é jdk¼³Ä¡½Ã ÀÚ¹ÙÈ¨ È¯°æº¯¼ö °æ·Î ÇØÁÙ°Í
+*ë©”ì´ë¸ ì‚¬ìš©í•˜ë ¤ë©´ jdkì„¤ì¹˜ì‹œ ìžë°”í™ˆ í™˜ê²½ë³€ìˆ˜ ê²½ë¡œ í•´ì¤„ê²ƒ
 
-SqlSession - sql¹® ½ÇÇà 
+SqlSession - sqlë¬¸ ì‹¤í–‰ 
 
 selectOne
-selectList (¿©·¯°³ °¡Á®¿Ã¶§)
+selectList (ì—¬ëŸ¬ê°œ ê°€ì ¸ì˜¬ë•Œ)
 insert
 update
 delete
@@ -815,11 +815,11 @@ delete
 <config.xml>
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL" />
-	</settings>         //null°ªµµ ¾²°Ú´Ù 
+	</settings>         //nullê°’ë„ ì“°ê² ë‹¤ 
 	
 <typeAliases>
-Å¸ÀÔ º°ÄªÀº ÀÚ¹Ù Å¸ÀÔ¿¡ ´ëÇÑ Á»´õ ÂªÀº ÀÌ¸§ÀÌ´Ù. ¿ÀÁ÷ XML ¼³Á¤¿¡¼­¸¸ »ç¿ëµÇ¸ç, Å¸ÀÌÇÎÀ» ÁÙÀÌ±â À§ÇØ Á¸ÀçÇÑ´Ù.
-¿¹¸¦µé¸é:
+íƒ€ìž… ë³„ì¹­ì€ ìžë°” íƒ€ìž…ì— ëŒ€í•œ ì¢€ë” ì§§ì€ ì´ë¦„ì´ë‹¤. ì˜¤ì§ XML ì„¤ì •ì—ì„œë§Œ ì‚¬ìš©ë˜ë©°, íƒ€ì´í•‘ì„ ì¤„ì´ê¸° ìœ„í•´ ì¡´ìž¬í•œë‹¤.
+ì˜ˆë¥¼ë“¤ë©´:
 <typeAliases>
 <typeAlias alias="Author" type="domain.blog.Author"/>
 <typeAlias alias="Blog" type="domain.blog.Blog"/>
@@ -828,54 +828,54 @@ delete
 <typeAlias alias="Section" type="domain.blog.Section"/>
 <typeAlias alias="Tag" type="domain.blog.Tag"/>
 </typeAliases>	
-                                          //¿©·¯°³ °¡Á®¿Ã¶© Å¬·¡½º
+                                          //ì—¬ëŸ¬ê°œ ê°€ì ¸ì˜¬ë• í´ëž˜ìŠ¤
 <insert id="insertAuthor" parameterType="domain.blog.Author">
 insert into Author (id,username,password,email,bio)
 values (#{id},#{username},#{password},#{email},#{bio})
 </insert>
-                                        //°¡Á®¿Ã°Ô ÇÑ°³ÀÏ¶§ 
-<delete id="deleteAuthor¡± parameterType="int">
+                                        //ê°€ì ¸ì˜¬ê²Œ í•œê°œì¼ë•Œ 
+<delete id="deleteAuthorâ€ parameterType="int">
 delete from Author where id = #{id}
 </delete>
 
-28ÆäÀÌÁö ÀÚ¹Ù sql 
+28íŽ˜ì´ì§€ ìžë°” sql 
 
-dao -sql½ÇÇàÇÏ´Â 
+dao -sqlì‹¤í–‰í•˜ëŠ” 
 
-½ÇÇà¼ø¼­ 
-config¿¡¼­ 
-db¸¦ ¾²°í
-config´Â Ä¿³Ø¼Ç Ç® ¿ªÇÒ
-deptMapper¿¡ÀÖ´Â sql¹®ÀÇ ¾ÆÀÌµð¸¦  
-dao¿¡¼­ ¾´´Ù
-sqlsessionÀÌ¶û dao¸¦ service¿¡¼­¾¸
-service¿¡¼­ ¾´°Å¸¦ main¿¡ Á¤¸®ÇØ¼­ »ç¿ë(mainÀº ÃÖ´ëÇÑ 
+ì‹¤í–‰ìˆœì„œ 
+configì—ì„œ 
+dbë¥¼ ì“°ê³ 
+configëŠ” ì»¤ë„¥ì…˜ í’€ ì—­í• 
+deptMapperì—ìžˆëŠ” sqlë¬¸ì˜ ì•„ì´ë””ë¥¼  
+daoì—ì„œ ì“´ë‹¤
+sqlsessionì´ëž‘ daoë¥¼ serviceì—ì„œì”€
+serviceì—ì„œ ì“´ê±°ë¥¼ mainì— ì •ë¦¬í•´ì„œ ì‚¬ìš©(mainì€ ìµœëŒ€í•œ 
 
 main - service - dao 
 
-sql ¼¼¼Ç sqlÀ» ½ÇÇà½ÃÅ°´Â¾Ö
-ÆåÅä¸® ¸ÞÀÌÅ©¸¦ ¸¸µé¾î¾ß dao¿¡¼­ ÆÑÅä¸®¸¦ ¾µ¼öÀÖÀ½ 
+sql ì„¸ì…˜ sqlì„ ì‹¤í–‰ì‹œí‚¤ëŠ”ì• 
+íŽ™í† ë¦¬ ë©”ì´í¬ë¥¼ ë§Œë“¤ì–´ì•¼ daoì—ì„œ íŒ©í† ë¦¬ë¥¼ ì“¸ìˆ˜ìžˆìŒ 
 
-¿ÀÇÂ¼¼¼ÇÀ» ÇØ¾ß sql¼¼¼ÇÀ» ¿ÀÇÂÇÒ¼ö ÀÖÀ½ 
-x´Â º¯°æµÈ ·¹ÄÚµå °¹¼ö
-¼¿·º Á¦¿ÜÇÑ ¸ðµç¾ÖµéÀº °¹¼ö°¡ º¯ÇÔ
+ì˜¤í”ˆì„¸ì…˜ì„ í•´ì•¼ sqlì„¸ì…˜ì„ ì˜¤í”ˆí• ìˆ˜ ìžˆìŒ 
+xëŠ” ë³€ê²½ëœ ë ˆì½”ë“œ ê°¯ìˆ˜
+ì…€ë ‰ ì œì™¸í•œ ëª¨ë“ ì• ë“¤ì€ ê°¯ìˆ˜ê°€ ë³€í•¨
 
-parameterType = ³»°¡ ÀÔ·ÂÇÒ°ªÀÌ ÀÖÀ»¶§
-resultType = select¿¡¸¸ ¾¸  
+parameterType = ë‚´ê°€ ìž…ë ¥í• ê°’ì´ ìžˆì„ë•Œ
+resultType = selectì—ë§Œ ì”€  
 
-where ÄÃ·³¸í like concat('%',#{keyword},'%') 
+where ì»¬ëŸ¼ëª… like concat('%',#{keyword},'%') 
 
-dao¿¡¼­ int¸¦ ¾²´Â°Å ¼¿·º»©°í ¸ðµÎ 
-¼¿·ºµµ ÇÑ°³ÀÌ¸é deptdto ¿©·¯°³ÀÌ¸é ¸®½ºÆ® 
+daoì—ì„œ intë¥¼ ì“°ëŠ”ê±° ì…€ë ‰ë¹¼ê³  ëª¨ë‘ 
+ì…€ë ‰ë„ í•œê°œì´ë©´ deptdto ì—¬ëŸ¬ê°œì´ë©´ ë¦¬ìŠ¤íŠ¸ 
 
-MapperÆÄÀÏ ÀÛ¼º
+MapperíŒŒì¼ ìž‘ì„±
 <select id parameterType="" resultType>
-¡Ú¡Ú¡Ú parameterType="°´Ã¼"-> #{º¯¼öÀÌ¸§}
+â˜…â˜…â˜… parameterType="ê°ì²´"-> #{ë³€ìˆ˜ì´ë¦„}
 "map" -> #{key}
-"¿ø½ÃÅ¸ÀÔ"(°ªÀÌ ÇÑ°³¸¸ Àü´ÞµÉ¶§) -> #{ÀÌ¸§}
+"ì›ì‹œíƒ€ìž…"(ê°’ì´ í•œê°œë§Œ ì „ë‹¬ë ë•Œ) -> #{ì´ë¦„}
 
 
-<sqlsession ¸Þ¼Òµå>
+<sqlsession ë©”ì†Œë“œ>
 update
 insert
 delete
@@ -887,7 +887,7 @@ selectlist
 select ename from emp where empno=#{no}
 </select>
 
-if´Â whereÀý¿¡¼­ »ç¿ë 
+ifëŠ” whereì ˆì—ì„œ ì‚¬ìš© 
 ex)
 <where>
 <if test ="no!=null">
@@ -896,42 +896,42 @@ ex)
 </where>
 
 <select id="sal"resultType="">
-select * from emp where sal>=3000     ->ºÎµîÈ£ »ç¿ë½Ã ÅÂ±×¿Í°ãÄ§
-ÀÌ¶§ <![CDATA[]]> ¾È¿¡ Äõ¸®¹® ½áÁÜ
+select * from emp where sal>=3000     ->ë¶€ë“±í˜¸ ì‚¬ìš©ì‹œ íƒœê·¸ì™€ê²¹ì¹¨
+ì´ë•Œ <![CDATA[]]> ì•ˆì— ì¿¼ë¦¬ë¬¸ ì¨ì¤Œ
 </select> 
 
-À¥¾Û Æú´õ¿£¾È¿¡ Æú´õ¸¸µé¾î¼­ jspÆÄÀÏ ³Ö±â
+ì›¹ì•± í´ë”ì—”ì•ˆì— í´ë”ë§Œë“¤ì–´ì„œ jspíŒŒì¼ ë„£ê¸°
 
-½ºÇÁ¸µ´Ù¿î
-https://spring.io/tools ¿©±â¼­ ´Ù¿î·ÎµåÇÏ°í jar¾ÐÃàÇ®°í ÄÁÅÙÃ÷ ¾ÐÃà Ç®°í exeÆÄÀÏ ½ÇÇà 
-help - ÀÌÅ¬¸³½º¸¶ÄÏ - spring3 °Ë»ö- ½ºÇÁ¸µ Åø 3.9.13 ÀÎ½ºÅç
-¼³Ä¡ÇÏ°í µ¿ÀÇÇÏ°í finish
-Àç½ÃÀÛ
-ÆÄÀÏ-new- other - ½ºÇÁ¸µ ÀÖ³ª È®ÀÎ
-maven ÇÁ·ÎÁ§Æ® ¸¸µé±â 
+ìŠ¤í”„ë§ë‹¤ìš´
+https://spring.io/tools ì—¬ê¸°ì„œ ë‹¤ìš´ë¡œë“œí•˜ê³  jarì••ì¶•í’€ê³  ì»¨í…ì¸  ì••ì¶• í’€ê³  exeíŒŒì¼ ì‹¤í–‰ 
+help - ì´í´ë¦½ìŠ¤ë§ˆì¼“ - spring3 ê²€ìƒ‰- ìŠ¤í”„ë§ íˆ´ 3.9.13 ì¸ìŠ¤í†¨
+ì„¤ì¹˜í•˜ê³  ë™ì˜í•˜ê³  finish
+ìž¬ì‹œìž‘
+íŒŒì¼-new- other - ìŠ¤í”„ë§ ìžˆë‚˜ í™•ì¸
+maven í”„ë¡œì íŠ¸ ë§Œë“¤ê¸° 
 -------------------------------------------
-Á¤¹ÎÀÌ²¨ 
-https://spring.io/tools Åø ¼³Ä¡
+ì •ë¯¼ì´êº¼ 
+https://spring.io/tools íˆ´ ì„¤ì¹˜
 help - eclipse marketplace
-- Spring Tools Add-On for Spring Tools 4 3.9.13 RELEASE ¼³Ä¡.
+- Spring Tools Add-On for Spring Tools 4 3.9.13 RELEASE ì„¤ì¹˜.
 
-1. Lombok v1.18.4.jar ÆÄÀÏ ½ÇÇà
-2. sts-4.7.0.RELEASE Æú´õ ¾È¿¡ spring °æ·Î Àâ¾ÆÁÖ°í install
+1. Lombok v1.18.4.jar íŒŒì¼ ì‹¤í–‰
+2. sts-4.7.0.RELEASE í´ë” ì•ˆì— spring ê²½ë¡œ ìž¡ì•„ì£¼ê³  install
 --------------------------------------------
 <DItest.xml>
 
-https://mvnrepository.com/search?q=spring+context¿¡¼­
-spring context°Ë»ö 
-Spring Context ¡í 4.3.27.RELEASE ¼Ò½ºÀúÀåÇØ³õ°í 
-dependencies ´­·¯¼­ 
+https://mvnrepository.com/search?q=spring+contextì—ì„œ
+spring contextê²€ìƒ‰ 
+Spring Context â‰« 4.3.27.RELEASE ì†ŒìŠ¤ì €ìž¥í•´ë†“ê³  
+dependencies ëˆŒëŸ¬ì„œ 
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
     <version>4.3.27.RELEASE</version>
 </dependency>
-¸ÂÃç¼­ 3°³ ³Ö¾îÁÖ°í Ãß°¡ÇØÁÖ¸é 
-pom.xml¿¡ Ãß°¡µÅÀÖÀ½ 
+ë§žì¶°ì„œ 3ê°œ ë„£ì–´ì£¼ê³  ì¶”ê°€í•´ì£¼ë©´ 
+pom.xmlì— ì¶”ê°€ë¼ìžˆìŒ 
 
 	<bean id="bar" class="spring.DI.Bar" />
 	<bean id="baz" class="spring.DI.Baz" />
@@ -948,17 +948,17 @@ pom.xml¿¡ Ãß°¡µÅÀÖÀ½
 		<property name="greeting">
 			<list>
 				<value>hello</value>
-				<value>¾È³çÇÏ¼¼¿ä</value>
+				<value>ì•ˆë…•í•˜ì„¸ìš”</value>
 			</list>
 		</property>
 
 		<property name="names">
 			<map>
 				<entry key="1">
-					<value>±èÀÚ¹Ù</value>
+					<value>ê¹€ìžë°”</value>
 				</entry>
 				<entry key="2">
-					<value>ÀÌÀÚ¹Ù</value>
+					<value>ì´ìžë°”</value>
 				</entry>
 			</map>
 		</property>
@@ -966,7 +966,7 @@ pom.xml¿¡ Ãß°¡µÅÀÖÀ½
 		<property name="props">
 			<props>
 				<prop key="ip">localhost</prop>
-				<prop key="port">8080ÀúÀå</prop>
+				<prop key="port">8080ì €ìž¥</prop>
 
 			</props>
 
@@ -980,36 +980,36 @@ class B implements A{}
 class C implements A{}
 
 class D extends B{} 
-//A¿Í Dµµ »ó¼Ó°ü°èÀÓ 
+//Aì™€ Dë„ ìƒì†ê´€ê³„ìž„ 
 
 @Setter
 class Test{
-    private A a;  //A¸¦ °´Ã¼·Î ¸¸µé¼ö ¾øÀ¸´Ï±î B,C,D¸¦ °¡Á®¿Í¼­ 
-                //°´Ã¼·Î ¸¸µé ¼ö ÀÖÀ½ 
+    private A a;  //Aë¥¼ ê°ì²´ë¡œ ë§Œë“¤ìˆ˜ ì—†ìœ¼ë‹ˆê¹Œ B,C,Dë¥¼ ê°€ì ¸ì™€ì„œ 
+                //ê°ì²´ë¡œ ë§Œë“¤ ìˆ˜ ìžˆìŒ 
     }
     <bean class="B" id="b"> 
-                            //ÀÌ°æ¿ì´Â B¸¦ ÀúÀåÇÔ(A¿Í °¡Àå °¡±î¿ö¼­)
-    <bean class="D" id="d"> //ÀÌ°Ô C¸é ¿¡·¯¹ß»ýÇÔ 
+                            //ì´ê²½ìš°ëŠ” Bë¥¼ ì €ìž¥í•¨(Aì™€ ê°€ìž¥ ê°€ê¹Œì›Œì„œ)
+    <bean class="D" id="d"> //ì´ê²Œ Cë©´ ì—ëŸ¬ë°œìƒí•¨ 
     <bean class="Test" id="t" autowire="byType">
     
-<AnnotationÀ¸·Î bean Ãß°¡ÇÏ´Â ¹ý> 
-@Repository - DAOÅ¬·¡½º
-@Component  -ÀÏ¹ÝÅ¬·¡½º¸¦ beanÀ¸·Î ¸¸µé¶§
- org.springframework.stereotype.Component ->ÀÌ°É ºÙÀÌ¸é
- -ÀÚµ¿À¸·Î ºóÀ¸·Î µî·ÏµÇ°Ô ÇÔ
- -ºóÀÇ ÀÌ¸§Àº Ã¹ ¹®ÀÚ¸¸ ¼Ò¹®ÀÚÀÌ°í ³ª¸ÓÁö´Â Å¬·¡½º ÀÌ¸§°ú µ¿ÀÏ
- -ºóÀÇ ÀÌ¸§À» ÁöÁ¤ÇØ ÁÖ·Á¸é @Component("myFoo");
- -@Scope("prototype")À¸·Î ºóÀÇ ¹üÀ§¸¦ ÁöÁ¤ÇÒ ¼ö ÀÖÀ½
- -org.springframework.context.annotation.Scope //scope ¾²·Á¸é ½áÁÖ±â
- @Service -¼­ºñ½º Å¬·¡½º
- @Controller -À¥ÇÁ·ÎÁ§Æ® ½Ã ÄÁÆ®·Ñ·¯Å¬·¡½º
+<Annotationìœ¼ë¡œ bean ì¶”ê°€í•˜ëŠ” ë²•> 
+@Repository - DAOí´ëž˜ìŠ¤
+@Component  -ì¼ë°˜í´ëž˜ìŠ¤ë¥¼ beanìœ¼ë¡œ ë§Œë“¤ë•Œ
+ org.springframework.stereotype.Component ->ì´ê±¸ ë¶™ì´ë©´
+ -ìžë™ìœ¼ë¡œ ë¹ˆìœ¼ë¡œ ë“±ë¡ë˜ê²Œ í•¨
+ -ë¹ˆì˜ ì´ë¦„ì€ ì²« ë¬¸ìžë§Œ ì†Œë¬¸ìžì´ê³  ë‚˜ë¨¸ì§€ëŠ” í´ëž˜ìŠ¤ ì´ë¦„ê³¼ ë™ì¼
+ -ë¹ˆì˜ ì´ë¦„ì„ ì§€ì •í•´ ì£¼ë ¤ë©´ @Component("myFoo");
+ -@Scope("prototype")ìœ¼ë¡œ ë¹ˆì˜ ë²”ìœ„ë¥¼ ì§€ì •í•  ìˆ˜ ìžˆìŒ
+ -org.springframework.context.annotation.Scope //scope ì“°ë ¤ë©´ ì¨ì£¼ê¸°
+ @Service -ì„œë¹„ìŠ¤ í´ëž˜ìŠ¤
+ @Controller -ì›¹í”„ë¡œì íŠ¸ ì‹œ ì»¨íŠ¸ë¡¤ëŸ¬í´ëž˜ìŠ¤
  
  
- @Configuration  ->      @Bean°ú °°ÀÌ ¾²ÀÓ (@Componentµµ)
+ @Configuration  ->      @Beanê³¼ ê°™ì´ ì“°ìž„ (@Componentë„)
    
 public class Foobar {
 	
-	@Bean(name="scottFoo")         ->beanÀ» ºÎºÐÀûÀ¸·Î ¾²°í½ÍÀ»¶§
+	@Bean(name="scottFoo")         ->beanì„ ë¶€ë¶„ì ìœ¼ë¡œ ì“°ê³ ì‹¶ì„ë•Œ
 	public Foo activeFoo() {
 		Foo foo = new Foo();
 		foo.setName("Scott");
@@ -1019,42 +1019,42 @@ public class Foobar {
 }
 
 @Required 
-	@Autowired  (@Required °¡ Æ÷ÇÔµÅÀÖÀ½)
+	@Autowired  (@Required ê°€ í¬í•¨ë¼ìžˆìŒ)
 	
 	
 	
-ÁÖÀÔ¹ÞÀ»¶§
-±âº»Çü String Àº value·Î ¹Þ¾Æ¿Í¾ßÇÔ
+ì£¼ìž…ë°›ì„ë•Œ
+ê¸°ë³¸í˜• String ì€ valueë¡œ ë°›ì•„ì™€ì•¼í•¨
 ("bin/")
-°´Ã¼¸é auto,¶Ç´Â ¸®¼Ò½º  
+ê°ì²´ë©´ auto,ë˜ëŠ” ë¦¬ì†ŒìŠ¤  
 
-bean -> ¸®ÅÏÇÑ°É beanÀ¸·Î Ãß°¡ÇÑ°Å°í 
-beanÀ» ¾È¾²°í component¸¸ ¾²¸é Å¬·¡½º ÀüÃ¼°¡ bean 
+bean -> ë¦¬í„´í•œê±¸ beanìœ¼ë¡œ ì¶”ê°€í•œê±°ê³  
+beanì„ ì•ˆì“°ê³  componentë§Œ ì“°ë©´ í´ëž˜ìŠ¤ ì „ì²´ê°€ bean 
 
 bean
 XML
 <bean id class>
-ÀÇÁ¸°ü°è 
-<property name="(setter¸¦ °¡Áö°íÀÖ´Â)º¯¼ö¸í">
-                (º¯¼ö°¡ ¾Æ´Ï¸é)<ref bean="ºóid">
+ì˜ì¡´ê´€ê³„ 
+<property name="(setterë¥¼ ê°€ì§€ê³ ìžˆëŠ”)ë³€ìˆ˜ëª…">
+                (ë³€ìˆ˜ê°€ ì•„ë‹ˆë©´)<ref bean="ë¹ˆid">
 </property>
 
-1. bean »ý¼º
-<context:component-scan base-package="ÆÐÅ°Áö¸í" />
-Å¬·¡½º¸í -> @Component, @Controller, @Servoce @Repository
-Å¬·¡½º¸í -> @Configuration, ¸Þ¼­µå -> @Bean
-2. ÀÇÁ¸ °´Ã¼¸¦ ÁÖÀÔÇÏ´Â @(¾î³ëÅ×ÀÌ¼Ç)
+1. bean ìƒì„±
+<context:component-scan base-package="íŒ¨í‚¤ì§€ëª…" />
+í´ëž˜ìŠ¤ëª… -> @Component, @Controller, @Servoce @Repository
+í´ëž˜ìŠ¤ëª… -> @Configuration, ë©”ì„œë“œ -> @Bean
+2. ì˜ì¡´ ê°ì²´ë¥¼ ì£¼ìž…í•˜ëŠ” @(ì–´ë…¸í…Œì´ì…˜)
 <context:annotation-config />
-@Autowire : ÄÁÅ×ÀÌ³Ê¿¡ ÀÖ´Â bean Áß¿¡¼­ °°Àº Å¸ÀÔ or ÀÚ¼ÕÅ¸ÀÔÀÇ °´Ã¼¸¦ ÁÖÀÔ
+@Autowire : ì»¨í…Œì´ë„ˆì— ìžˆëŠ” bean ì¤‘ì—ì„œ ê°™ì€ íƒ€ìž… or ìžì†íƒ€ìž…ì˜ ê°ì²´ë¥¼ ì£¼ìž…
 @Resource
 
-3. Spring/±âº»Çü µ¥ÀÌÅÍ ÁÖÀÔ @
-@Value("°ª")
+3. Spring/ê¸°ë³¸í˜• ë°ì´í„° ì£¼ìž… @
+@Value("ê°’")
 	
 	
 -------------------------------------------------------
-<½ºÇÁ¸µ db ¿¬µ¿><pom.xml¿¡ ³Ö¾îÁÖ±â>
-1. ÄÚµå³Ö±â
+<ìŠ¤í”„ë§ db ì—°ë™><pom.xmlì— ë„£ì–´ì£¼ê¸°>
+1. ì½”ë“œë„£ê¸°
 mysql connector  
 commons dbcp2
 mybatis
@@ -1118,14 +1118,14 @@ spring orm
 </project>
 
 
-2. MapperÆÄÀÏ ÀÛ¼º
+2. MapperíŒŒì¼ ìž‘ì„±
 
 
 
 parameterType="spring.mybatis.MemDto
-parameterTypeÀÌ ÀÖÀ»°æ¿ì 
+parameterTypeì´ ìžˆì„ê²½ìš° 
 return session.insert("mem.insert",dto);
-º¸³»´Â ¸Å°³º¯¼ö°¡ 2°³¿©¾ßµÊ 
+ë³´ë‚´ëŠ” ë§¤ê°œë³€ìˆ˜ê°€ 2ê°œì—¬ì•¼ë¨ 
 
 
 dept
@@ -1134,135 +1134,135 @@ dto
 dao
 service 
 
-1.selectlist ÀüÃ¼ºÎ¼­Ãâ·Â
-2.selectOne ºÎ¼­¹øÈ£ ¼±ÅÃ - ÇØ´ç ºÎ¼­ Á¤º¸Ãâ·Â
-3.insert ºÎ¼­¹øÈ£´Â ÀÚµ¿À¸·Î(±âÁ¸ ºÎ¼­¹øÈ£ max+10)
-  ºÎ¼­¸í,À§Ä¡ÀÔ·ÂÈÄ ÀúÀå
-4.update ºÎ¼­¹øÈ£, ¼öÁ¤ÇÒ À§Ä¡ ÀÔ·Â¹Þ¾Æ¼­ ¼öÁ¤
+1.selectlist ì „ì²´ë¶€ì„œì¶œë ¥
+2.selectOne ë¶€ì„œë²ˆí˜¸ ì„ íƒ - í•´ë‹¹ ë¶€ì„œ ì •ë³´ì¶œë ¥
+3.insert ë¶€ì„œë²ˆí˜¸ëŠ” ìžë™ìœ¼ë¡œ(ê¸°ì¡´ ë¶€ì„œë²ˆí˜¸ max+10)
+  ë¶€ì„œëª…,ìœ„ì¹˜ìž…ë ¥í›„ ì €ìž¥
+4.update ë¶€ì„œë²ˆí˜¸, ìˆ˜ì •í•  ìœ„ì¹˜ ìž…ë ¥ë°›ì•„ì„œ ìˆ˜ì •
 5.delete '
 
-µµÅä¸® ¾È¶ã¶§ -market¿¡¼­
+ë„í† ë¦¬ ì•ˆëœ°ë•Œ -marketì—ì„œ
 Spring Tools 3 Add-On for Spring Tools 4 
-Àç¼³Ä¡ 
+ìž¬ì„¤ì¹˜ 
 
-<AOP ÁÖ¿ä¿ë¾î>
--Advice : ¾ðÁ¦ °øÅë °ü½É ±â´ÉÀ» ÇÙ½É ·ÎÁ÷¿¡ Àû¿ëÇÒ Áö¸¦ Á¤ÀÇÇÏ°í ÀÖ´Ù. 
-¿¹¸¦ µé¾î, '¸Þ¼­µå¸¦ È£ÃâÇÏ±â Àü'(¾ðÁ¦)¿¡ 'TransactionÀ» ½ÃÀÛÇÑ´Ù'(°øÅë ±â´É) ±â´ÉÀ» Àû¿ëÇÑ´Ù´Â °ÍÀ» Á¤ÀÇÇÏ°í ÀÖ´Ù.
--Joinpoint : Advice¸¦ Àû¿ë °¡´ÉÇÑ ÁöÁ¡. ¸Þ¼­µå È£Ãâ, ÇÊµå °ª º¯°æ µîJoinpoint¿¡ ÇØ´çÇÑ´Ù.
--Pointcut : JoinpointÀÇ ºÎºÐ ÁýÇÕÀ¸·Î¼­ ½ÇÁ¦·Î Advice°¡ Àû¿ëµÇ´Â Joinpoint¸¦ ³ªÅ¸³½´Ù. 
--Weaving : Advice(°øÅë Code )¸¦ ÇÙ½É ·ÎÁ÷ Code¿¡ Àû¿ëÇÏ´Â °ÍÀ» weavingÀÌ¶ó°í ÇÑ´Ù. 
--Target object : ÇÏ³ª ¶Ç´Â ±× ÀÌ»óÀÇ Aspect¿¡ ÀÇÇØ AdviceµÇ´Â °´Ã¼, Áï ÇÙ½É ·ÎÁ÷À» ±¸ÇöÇÏ´Â Å¬·¡½º¸¦ ÀÇ¹ÌÇÑ´Ù. ½ºÇÁ¸µ¿¡¼­´Â ·±Å¸ÀÓ ÇÁ·Ï½Ã¸¦ »ç¿ëÇØ ±¸ÇöµÊ
--Aspect : ¿©·¯ °´Ã¼¿¡ °øÅëÀ¸·Î Àû¿ëµÇ´Â °øÅë °ü½É »çÇ×À» Aspect¶ó°í ÇÑ´Ù. 
-	 TransactionÀÌ³ª Security µîÀÌ AspectÀÇ ÁÁÀº ¿¹ÀÌ´Ù.
+<AOP ì£¼ìš”ìš©ì–´>
+-Advice : ì–¸ì œ ê³µí†µ ê´€ì‹¬ ê¸°ëŠ¥ì„ í•µì‹¬ ë¡œì§ì— ì ìš©í•  ì§€ë¥¼ ì •ì˜í•˜ê³  ìžˆë‹¤. 
+ì˜ˆë¥¼ ë“¤ì–´, 'ë©”ì„œë“œë¥¼ í˜¸ì¶œí•˜ê¸° ì „'(ì–¸ì œ)ì— 'Transactionì„ ì‹œìž‘í•œë‹¤'(ê³µí†µ ê¸°ëŠ¥) ê¸°ëŠ¥ì„ ì ìš©í•œë‹¤ëŠ” ê²ƒì„ ì •ì˜í•˜ê³  ìžˆë‹¤.
+-Joinpoint : Adviceë¥¼ ì ìš© ê°€ëŠ¥í•œ ì§€ì . ë©”ì„œë“œ í˜¸ì¶œ, í•„ë“œ ê°’ ë³€ê²½ ë“±Joinpointì— í•´ë‹¹í•œë‹¤.
+-Pointcut : Joinpointì˜ ë¶€ë¶„ ì§‘í•©ìœ¼ë¡œì„œ ì‹¤ì œë¡œ Adviceê°€ ì ìš©ë˜ëŠ” Joinpointë¥¼ ë‚˜íƒ€ë‚¸ë‹¤. 
+-Weaving : Advice(ê³µí†µ Code )ë¥¼ í•µì‹¬ ë¡œì§ Codeì— ì ìš©í•˜ëŠ” ê²ƒì„ weavingì´ë¼ê³  í•œë‹¤. 
+-Target object : í•˜ë‚˜ ë˜ëŠ” ê·¸ ì´ìƒì˜ Aspectì— ì˜í•´ Adviceë˜ëŠ” ê°ì²´, ì¦‰ í•µì‹¬ ë¡œì§ì„ êµ¬í˜„í•˜ëŠ” í´ëž˜ìŠ¤ë¥¼ ì˜ë¯¸í•œë‹¤. ìŠ¤í”„ë§ì—ì„œëŠ” ëŸ°íƒ€ìž„ í”„ë¡ì‹œë¥¼ ì‚¬ìš©í•´ êµ¬í˜„ë¨
+-Aspect : ì—¬ëŸ¬ ê°ì²´ì— ê³µí†µìœ¼ë¡œ ì ìš©ë˜ëŠ” ê³µí†µ ê´€ì‹¬ ì‚¬í•­ì„ Aspectë¼ê³  í•œë‹¤. 
+	 Transactionì´ë‚˜ Security ë“±ì´ Aspectì˜ ì¢‹ì€ ì˜ˆì´ë‹¤.
 
-<AOP»ç¿ë¹ý>
-¾î¶²Å¬·¡½º¸¦ aspect·Î ¾µ°ÇÁö
-¾î¶² ÇÙ½É ·ÎÁ÷À» ¾µ°ÇÁö 
-¾îµð ¾ÕµÚ·Î »ç¿ëÇÒ°ÇÁö
+<AOPì‚¬ìš©ë²•>
+ì–´ë–¤í´ëž˜ìŠ¤ë¥¼ aspectë¡œ ì“¸ê±´ì§€
+ì–´ë–¤ í•µì‹¬ ë¡œì§ì„ ì“¸ê±´ì§€ 
+ì–´ë”” ì•žë’¤ë¡œ ì‚¬ìš©í• ê±´ì§€
 
-ºä´Â ÄÁÆ®·Ñ·¯¸¦ °ÅÃÄ¼­ ½ÇÇàÇØ¾ßÇÔ 
+ë·°ëŠ” ì»¨íŠ¸ë¡¤ëŸ¬ë¥¼ ê±°ì³ì„œ ì‹¤í–‰í•´ì•¼í•¨ 
 
-<¿©·¯°³ ¾µ °æ¿ì>
+<ì—¬ëŸ¬ê°œ ì“¸ ê²½ìš°>
 <init-param>
 	<param-name>contextConfigLocation</param-name>
 	<param-value>/WEB-INF/main.xml,/WEB-INF/bbs.xml</param-value>
-	</init-param>                //½°Ç¥ (¶ç¾î¾²±âx)
+	</init-param>                //ì‰¼í‘œ (ë„ì–´ì“°ê¸°x)
 
-[ÀÚ¹Ù Á¤¹Î] [¿ÀÈÄ 2:49] web.xml
- - DispatcherServlet µî·Ï
- - »ç¿ëÇÒ ½ºÇÁ¸µ ¼³Á¤ÆÄÀÏ ÁöÁ¤ - »ý¼º
- - CharacterEncodingFilter µî·Ï
+[ìžë°” ì •ë¯¼] [ì˜¤í›„ 2:49] web.xml
+ - DispatcherServlet ë“±ë¡
+ - ì‚¬ìš©í•  ìŠ¤í”„ë§ ì„¤ì •íŒŒì¼ ì§€ì • - ìƒì„±
+ - CharacterEncodingFilter ë“±ë¡
  
 Controller
- - ÆÄ¶ó¹ÌÅÍ(from µ¥ÀÌÅÍ) ÀúÀå
-1. ÄÁÆ®·Ñ·¯ ¸Þ¼­µåÀÇ ¸Å°³º¯¼ö¿¡ ÀÚ¹Ùºó Å¸ÀÔÀÇ º¯¼ö ¼±¾ð
-(ÀÚ¹Ùºó Å¬·¡½ºÀÇ º¯¼ö¸í==ÆÄ¶ó¹ÌÅÍÀÌ¸§) 
-2. ÆÄ¶ó¹ÌÅÍÀÇ ÀÌ¸§°ú °°Àº ÀÌ¸§ÀÇ ¸Å°³º¯¼ö ¼±¾ð
-¡Ú¡Ú¡Ú¡Ú¡Ú3. @RequestParam("ÆÄ¶ó¹ÌÅÍ ÀÌ¸§")
-4. HttpServletRequestÅ¸ÀÔÀÇ ¸Å°³º¯¼ö ¼±¾ð ÈÄ
-Request.getParameter("ÀÌ¸§") »ç¿ë(ÃßÃµx)
- - view ÁöÁ¤
- - String Å¸ÀÔ ¸®ÅÏ - ¸®ÅÏ °ª:view name
- - ModelAndView»ý¼ºÀÚÀÇ Ã¹¹øÂ° ¸Å°³º¯¼ö - view name
+ - íŒŒë¼ë¯¸í„°(from ë°ì´í„°) ì €ìž¥
+1. ì»¨íŠ¸ë¡¤ëŸ¬ ë©”ì„œë“œì˜ ë§¤ê°œë³€ìˆ˜ì— ìžë°”ë¹ˆ íƒ€ìž…ì˜ ë³€ìˆ˜ ì„ ì–¸
+(ìžë°”ë¹ˆ í´ëž˜ìŠ¤ì˜ ë³€ìˆ˜ëª…==íŒŒë¼ë¯¸í„°ì´ë¦„) 
+2. íŒŒë¼ë¯¸í„°ì˜ ì´ë¦„ê³¼ ê°™ì€ ì´ë¦„ì˜ ë§¤ê°œë³€ìˆ˜ ì„ ì–¸
+â˜…â˜…â˜…â˜…â˜…3. @RequestParam("íŒŒë¼ë¯¸í„° ì´ë¦„")
+4. HttpServletRequestíƒ€ìž…ì˜ ë§¤ê°œë³€ìˆ˜ ì„ ì–¸ í›„
+Request.getParameter("ì´ë¦„") ì‚¬ìš©(ì¶”ì²œx)
+ - view ì§€ì •
+ - String íƒ€ìž… ë¦¬í„´ - ë¦¬í„´ ê°’:view name
+ - ModelAndViewìƒì„±ìžì˜ ì²«ë²ˆì§¸ ë§¤ê°œë³€ìˆ˜ - view name
  new ModelAndView("view name") 
 1.
 2.
 3. 
 4. 
- - modelµ¥ÀÌÅÍ Ãß°¡
-1. ÄÁÆ®·Ñ·¯¸Þ¼­´õÀÇ ¸Å°³º¯¼ö¿¡ ÀúÀåµÈ ÀÚ¹Ùºó °´Ã¼(ÆÄ¶ó¹ÌÅÍ°ªÀÌ ÀúÀåµÇ
+ - modelë°ì´í„° ì¶”ê°€
+1. ì»¨íŠ¸ë¡¤ëŸ¬ë©”ì„œë”ì˜ ë§¤ê°œë³€ìˆ˜ì— ì €ìž¥ëœ ìžë°”ë¹ˆ ê°ì²´(íŒŒë¼ë¯¸í„°ê°’ì´ ì €ìž¥ë˜
 2.
 3.
 4.
 
-1. D.s°¡ NewArticleCommand °´Ã¼ »ý¼º ÈÄ command¿¡ ÀúÀå
-2. Àü¼ÛµÈ ÆÄ¶ó¹ÌÅÍ°ªÀ» commandÀÇ º¯¼ö¿¡ ÀúÀå
-(ÀÌ¸§ÀÌ °°À¸¸é setter¸¦ ÅëÇØ¼­ ÀúÀåµÊ)
+1. D.sê°€ NewArticleCommand ê°ì²´ ìƒì„± í›„ commandì— ì €ìž¥
+2. ì „ì†¡ëœ íŒŒë¼ë¯¸í„°ê°’ì„ commandì˜ ë³€ìˆ˜ì— ì €ìž¥
+(ì´ë¦„ì´ ê°™ìœ¼ë©´ setterë¥¼ í†µí•´ì„œ ì €ìž¥ë¨)
 3.@ModelAttribute
-ÆÄ¶ó¹ÌÅÍ°ªÀÌ ÀúÀåµÈ NewArticleCommand°´Ã¼¸¦ command¶ó´Â ÀÌ¸§À¸·Î
-model¿¡ add
-(view¿¡¼­ command¶ó´Â ÀÌ¸§À¸·Î »ç¿ëÇÒ ¼ö ÀÖ´Ù.) 
+íŒŒë¼ë¯¸í„°ê°’ì´ ì €ìž¥ëœ NewArticleCommandê°ì²´ë¥¼ commandë¼ëŠ” ì´ë¦„ìœ¼ë¡œ
+modelì— add
+(viewì—ì„œ commandë¼ëŠ” ì´ë¦„ìœ¼ë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆë‹¤.) 
 
 server - web.xml
-encoding ÇÊÅÍ
-dispatcherservlet - À¥ ÄÁÅ×ÀÌ³Ê µî·Ï - ¼³Á¤ÆÄÀÏ 
+encoding í•„í„°
+dispatcherservlet - ì›¹ ì»¨í…Œì´ë„ˆ ë“±ë¡ - ì„¤ì •íŒŒì¼ 
 
 controller
 bean  
 viewresolver
 HandlerMapping(default
 
-¡Ú¡Ú¡Ú¡ÚMVC µ¿ÀÛ ¹æ½Ä ¿Ü¿ì±â(¼³¸íÇÒ ¼ö ÀÖ°Ô) ½ºÇÁ¸µ ÇÁ·¹ÀÓ¿öÅ© mvc ppt
+â˜…â˜…â˜…â˜…MVC ë™ìž‘ ë°©ì‹ ì™¸ìš°ê¸°(ì„¤ëª…í•  ìˆ˜ ìžˆê²Œ) ìŠ¤í”„ë§ í”„ë ˆìž„ì›Œí¬ mvc ppt
 
-ÄÁÆ®·Ñ·¯
-Http¸Þ¼­µå |URI | ¸Þ¼­µå
+ì»¨íŠ¸ë¡¤ëŸ¬
+Httpë©”ì„œë“œ |URI | ë©”ì„œë“œ
 get |/hello | HelloController.hello()
 post |/hell| HelloController.doHello()
 
-405 - ÇØ´ç ¿äÃ»¹æ½ÄÀ» Áö¿øÇÏÁö¾ÊÀ»¶§
-400 - ÆÄ¶ó¹ÌÅÍ °ª ÀúÀå½Ã Å¸ÀÔ ¹Í½º¸ÅÄ¡
-ÀÔ·ÂÇÑ °ª Ã¼Å©ÇØº¼°Í
+405 - í•´ë‹¹ ìš”ì²­ë°©ì‹ì„ ì§€ì›í•˜ì§€ì•Šì„ë•Œ
+400 - íŒŒë¼ë¯¸í„° ê°’ ì €ìž¥ì‹œ íƒ€ìž… ë¯¹ìŠ¤ë§¤ì¹˜
+ìž…ë ¥í•œ ê°’ ì²´í¬í•´ë³¼ê²ƒ
 
 @RequestMapping("/test")
 public String test(Model m){
-m.addAttribute("ÀÌ¸§",µ¥ÀÌÅÍ); ->viewÀü´Þ 
+m.addAttribute("ì´ë¦„",ë°ì´í„°); ->viewì „ë‹¬ 
 return viewname;
 }
 
-ÄíÅ°´Â Å¬¶óÀÌ¾ðÆ®ÀÇ ºê¶ó¿ìÀú¿¡ ÀúÀåµÊ 
+ì¿ í‚¤ëŠ” í´ë¼ì´ì–¸íŠ¸ì˜ ë¸Œë¼ìš°ì €ì— ì €ìž¥ë¨ 
 
-<¿Ü¿ì±â>
- ºä ÀÌ¸§ ÁöÁ¤(¸í½Ã)
+<ì™¸ìš°ê¸°>
+ ë·° ì´ë¦„ ì§€ì •(ëª…ì‹œ)
 
--¸®ÅÏÅ¸ÀÔÀÌ ModelAndView
-mav.setViewName(¡°viewname");  
-ModelAndView(¡°viewname¡±)
+-ë¦¬í„´íƒ€ìž…ì´ ModelAndView
+mav.setViewName(â€œviewname");  
+ModelAndView(â€œviewnameâ€)
 
--¸®ÅÏÅ¸ÀÔÀÌ String 
-return ¡°viewname"  
+-ë¦¬í„´íƒ€ìž…ì´ String 
+return â€œviewname"  
 
-ºä ÀÌ¸§ ÀÚµ¿ ÁöÁ¤  
--¸®ÅÏ Å¸ÀÔÀÌ ModelÀÌ³ª MapÀÎ °æ¿ì  ¸®ÅÏ Å¸ÀÔÀÌ voidÀÌ¸é¼­ ServletResponse ¶Ç´Â HttpServletResponse Å¸ÀÔÀÇ ÆÄ¶ó ¹ÌÅÍ°¡ ¾ø´Â °æ¿ì  
+ë·° ì´ë¦„ ìžë™ ì§€ì •  
+-ë¦¬í„´ íƒ€ìž…ì´ Modelì´ë‚˜ Mapì¸ ê²½ìš°  ë¦¬í„´ íƒ€ìž…ì´ voidì´ë©´ì„œ ServletResponse ë˜ëŠ” HttpServletResponse íƒ€ìž…ì˜ íŒŒë¼ ë¯¸í„°ê°€ ì—†ëŠ” ê²½ìš°  
 
--¿äÃ» URI¿¡¼­ ¸Ç ¾Õ /¿Í È®ÀåÀÚ¸¦ Á¦¿ÜÇÑ ³ª¸ÓÁö ºÎºÐÀÌ »ç¿ë 
+-ìš”ì²­ URIì—ì„œ ë§¨ ì•ž /ì™€ í™•ìž¥ìžë¥¼ ì œì™¸í•œ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì´ ì‚¬ìš© 
  /search/game2.do -> search/game2 
 
-¸®´ÙÀÌ·ºÆ®  ºä  : ÀÌ¸§¿¡  redirect: Á¢µÎ¾î¸¦ ºÙÀÌ¸é ¸®´ÙÀÌ·ºÆ® µÊ
+ë¦¬ë‹¤ì´ë ‰íŠ¸  ë·°  : ì´ë¦„ì—  redirect: ì ‘ë‘ì–´ë¥¼ ë¶™ì´ë©´ ë¦¬ë‹¤ì´ë ‰íŠ¸ ë¨
 
-1. ¸Å°³º¯¼ö
-2. @ModelAttribute ¸Þ¼­µå -> ¸®ÅÏ °´Ã¼¸¦ ¸ðµ¨·Î Ãß°¡
-@ModelAttribute ¸Å°³º¯¼ö -> ÀÌ¸§ ÁöÁ¤
-3. @RequestMapping ¸Þ¼­µå
- 1) ¸Å°³º¯¼ö·Î Map,Model,ModelMap ¼±¾ð   -->ÀÌ°Ô °¡Àå ¸¹ÀÌ¾¸ 
-    Map.put("ÀÌ¸§",°ª);
-    Model,addAttribute("ÀÌ¸§",°ª);
- 2) ¸®ÅÏÅ¸ÀÔ Map,Model,ModelMap ¼±¾ð
- Map,Model,ModelMap ±¸Çö °´Ã¼ »ý¼º
+1. ë§¤ê°œë³€ìˆ˜
+2. @ModelAttribute ë©”ì„œë“œ -> ë¦¬í„´ ê°ì²´ë¥¼ ëª¨ë¸ë¡œ ì¶”ê°€
+@ModelAttribute ë§¤ê°œë³€ìˆ˜ -> ì´ë¦„ ì§€ì •
+3. @RequestMapping ë©”ì„œë“œ
+ 1) ë§¤ê°œë³€ìˆ˜ë¡œ Map,Model,ModelMap ì„ ì–¸   -->ì´ê²Œ ê°€ìž¥ ë§Žì´ì”€ 
+    Map.put("ì´ë¦„",ê°’);
+    Model,addAttribute("ì´ë¦„",ê°’);
+ 2) ë¦¬í„´íƒ€ìž… Map,Model,ModelMap ì„ ì–¸
+ Map,Model,ModelMap êµ¬í˜„ ê°ì²´ ìƒì„±
 
----->¸®ÅÏÇÑ °´Ã¼°¡ ¸ðµ¨µ¥ÀÌÅÍ°¡ µÊ (ºä³×ÀÓ ¼³Á¤¾ÈÇÏ¸é ÀÚµ¿À¸·Î ¸ÅÇÎµÊ)
+---->ë¦¬í„´í•œ ê°ì²´ê°€ ëª¨ë¸ë°ì´í„°ê°€ ë¨ (ë·°ë„¤ìž„ ì„¤ì •ì•ˆí•˜ë©´ ìžë™ìœ¼ë¡œ ë§¤í•‘ë¨)
 
- 3) ¸®ÅÏ Å¸ÀÔ ModelAndView
- ModelAndView °´Ã¼ »ý¼º  ÇÏ´Â¹ý 3°¡Áö 
+ 3) ë¦¬í„´ íƒ€ìž… ModelAndView
+ ModelAndView ê°ì²´ ìƒì„±  í•˜ëŠ”ë²• 3ê°€ì§€ 
  new ModelAndView(); 
  
  ModelAndView.setViewName("viewname");
@@ -1270,67 +1270,67 @@ return ¡°viewname"
  
  new MdoelAndView("view name");
  ModelAndView("view name","modelname", data);
-                     ºä³×ÀÓ        ¸ðµ¨ ³×ÀÓ 
+                     ë·°ë„¤ìž„        ëª¨ë¸ ë„¤ìž„ 
                      
                      
 --------------------------------------------------------
-Å¬¶óÀÌ¾ðÆ®°¡ "/search/main.do"¸¦ ¿äÃ»ÇÏ¸é dispatcher servlet¿¡¼­
-handlerMapping ½ÇÇàÇÏ´Âµ¥ ModelAttribute°¡ ¸ÕÀú ½ÇÇàµÊ 
-ÄÁÆ®·Ñ·¯¿¡ ¿äÃ»ÇØ¼­ ¸ðµ¨ÀÌ¶û ºä³×ÀÓÀ» °¡Á®¿È
-ºä³×ÀÓ¸¸ ºä³×ÀÓ¸®Á¹¹ö·Î º¸³»¼­ ÇØ´çÇÏ´Â ºä°´Ã¼¸¦ ´Ù½Ã dispatcher servlet
-·Î º¸³»°í ¸ðµ¨ °´Ã¼¸¦ dispatcher servlet¿¡ º¸³»¼­ Å¬¶óÀÌ¾ðÆ®·Îº¸³¿
+í´ë¼ì´ì–¸íŠ¸ê°€ "/search/main.do"ë¥¼ ìš”ì²­í•˜ë©´ dispatcher servletì—ì„œ
+handlerMapping ì‹¤í–‰í•˜ëŠ”ë° ModelAttributeê°€ ë¨¼ì € ì‹¤í–‰ë¨ 
+ì»¨íŠ¸ë¡¤ëŸ¬ì— ìš”ì²­í•´ì„œ ëª¨ë¸ì´ëž‘ ë·°ë„¤ìž„ì„ ê°€ì ¸ì˜´
+ë·°ë„¤ìž„ë§Œ ë·°ë„¤ìž„ë¦¬ì¡¸ë²„ë¡œ ë³´ë‚´ì„œ í•´ë‹¹í•˜ëŠ” ë·°ê°ì²´ë¥¼ ë‹¤ì‹œ dispatcher servlet
+ë¡œ ë³´ë‚´ê³  ëª¨ë¸ ê°ì²´ë¥¼ dispatcher servletì— ë³´ë‚´ì„œ í´ë¼ì´ì–¸íŠ¸ë¡œë³´ëƒ„
 ---------------------------------------------------------------  
 
-ÀÌ´Ö¹ÙÀÎ´õ -> ¸ðµ¨¾îÆ®¸®ºäÆ® -> ·Î±ä Ä¿¸Çµå °´Ã¼ ¸¸µé°í 
-¸ðµ¨ °´Ã¼ Ãß°¡ÇÏ´Âµ¥ ÀÌ¸§ ·Î±×ÀÎ Ä¿¸Çµå
+ì´ë‹›ë°”ì¸ë” -> ëª¨ë¸ì–´íŠ¸ë¦¬ë·°íŠ¸ -> ë¡œê¸´ ì»¤ë§¨ë“œ ê°ì²´ ë§Œë“¤ê³  
+ëª¨ë¸ ê°ì²´ ì¶”ê°€í•˜ëŠ”ë° ì´ë¦„ ë¡œê·¸ì¸ ì»¤ë§¨ë“œ
 
-post·Î Àü¼ÛÇÏ´Â ¸ÅÇÎ 
-·Î±×ÀÎ Ä¿¸Çµå·Î µÈ °´Ã¼ Ãß°¡ ÀÌ¸§Àº ¼Ò¹®ÀÚl(1/¸ðµ¨µ¥ÀÌÅÍ¶û ÀÌ¸§ÀÌ °°À¸´Ï±î
-°°Àº°É Áý¾î³ÖÀ½)
-2/Àü¼Û¹ÞÀº ÆÄ¶ó¹ÌÅÍ °ª ÀúÀå 
+postë¡œ ì „ì†¡í•˜ëŠ” ë§¤í•‘ 
+ë¡œê·¸ì¸ ì»¤ë§¨ë“œë¡œ ëœ ê°ì²´ ì¶”ê°€ ì´ë¦„ì€ ì†Œë¬¸ìžl(1/ëª¨ë¸ë°ì´í„°ëž‘ ì´ë¦„ì´ ê°™ìœ¼ë‹ˆê¹Œ
+ê°™ì€ê±¸ ì§‘ì–´ë„£ìŒ)
+2/ì „ì†¡ë°›ì€ íŒŒë¼ë¯¸í„° ê°’ ì €ìž¥ 
 
-reject- ±Û·Î¹ú ¿¡·¯¸¦ Ãß°¡ÇÔ 
+reject- ê¸€ë¡œë²Œ ì—ëŸ¬ë¥¼ ì¶”ê°€í•¨ 
 
 <input type = "file" name="file">
-MultipartFile º¯¼ö ÀúÀå
+MultipartFile ë³€ìˆ˜ ì €ìž¥
 MultipartFile[]
 
 @ResponseBody
-¸Þ¼­µå°¡ ¸®ÅÏÇÑ °´Ã¼¸¦ response¿¡ ´ã¾Æ¼­ client¿¡ Àü¼ÛÇÔ
-(view¸¦ »ç¿ëÇÏÁö ¾ÊÀ½) 
+ë©”ì„œë“œê°€ ë¦¬í„´í•œ ê°ì²´ë¥¼ responseì— ë‹´ì•„ì„œ clientì— ì „ì†¡í•¨
+(viewë¥¼ ì‚¬ìš©í•˜ì§€ ì•ŠìŒ) 
 
-scanÀ» ¾²¸é ¾î³ëÅ×ÀÌ¼ÇÀ» ºÙ¿©Áà¾ßÇÏ°í 
-<bean~ > À» ³Ö¾îÁÖ¸é ¾î³ëÅ×ÀÌ¼Ç ¾ÈºÙ¿©Áàµµ µÊ  
+scanì„ ì“°ë©´ ì–´ë…¸í…Œì´ì…˜ì„ ë¶™ì—¬ì¤˜ì•¼í•˜ê³  
+<bean~ > ì„ ë„£ì–´ì£¼ë©´ ì–´ë…¸í…Œì´ì…˜ ì•ˆë¶™ì—¬ì¤˜ë„ ë¨  
 <bean id="fileInfoDao" class="spring.service.FileInfoDao">
 		<property name="sqlSessionFactory">
 			<ref bean = "sqlSessionFactory"/>
 		</property>
-		ÀÌ°Å´Â sqlSessionFactoryÀ» 
+		ì´ê±°ëŠ” sqlSessionFactoryì„ 
 
-ÄÃ·³ÀÌ µÎ°³ÀÏ¶© map ÁÁÀ½ 
-°¡°Ý°ú ¼ö Â¦Áö¾î¼­ ÀúÀåµÊ
-³ªÁß¿¡ key·Î getÇØ¼­ ¾²±â
+ì»¬ëŸ¼ì´ ë‘ê°œì¼ë• map ì¢‹ìŒ 
+ê°€ê²©ê³¼ ìˆ˜ ì§ì§€ì–´ì„œ ì €ìž¥ë¨
+ë‚˜ì¤‘ì— keyë¡œ getí•´ì„œ ì“°ê¸°
 
                      
-@RequestBody : request·Î Àü´ÞµÇ´Â °ªÀ» ¹Þ¾Æ¿È
-@ResponseBody : ¸®ÅÏ°ªÀ» response¿¡ ÀúÀå-client¿¡°Ô Àü´ÞµÊ
+@RequestBody : requestë¡œ ì „ë‹¬ë˜ëŠ” ê°’ì„ ë°›ì•„ì˜´
+@ResponseBody : ë¦¬í„´ê°’ì„ responseì— ì €ìž¥-clientì—ê²Œ ì „ë‹¬ë¨
 @RestController = @Controller + @ResponseBody 
 
-* ÆÄ¶ó¹ÌÅÍ ÀÌ¸§°ú ¸Å°³º¯¼öÀÇ ÀÌ¸§ÀÌ °°À¸¸é ¾Ë¾Æ¼­ ¾Ë¾ÆµéÀ½ 
+* íŒŒë¼ë¯¸í„° ì´ë¦„ê³¼ ë§¤ê°œë³€ìˆ˜ì˜ ì´ë¦„ì´ ê°™ìœ¼ë©´ ì•Œì•„ì„œ ì•Œì•„ë“¤ìŒ 
 
-¸ðµ¨¸¸µå´Â¹ý
-1. ¸Å°³º¯¼ö¿¡ ¸ÊÀÌ³ª ¸ðµ¨ÀÌ³ª ¸ðµ¨¸ÊÅ¸ÀÔ ¼±¾ð
-°Å±â¿¡ ÀúÀåÇÏ¸é ÀÚµ¿À¸·Î ¸ðµ¨ÀÌ µÊ
-¸Þ¼Òµå´Â addattribute
+ëª¨ë¸ë§Œë“œëŠ”ë²•
+1. ë§¤ê°œë³€ìˆ˜ì— ë§µì´ë‚˜ ëª¨ë¸ì´ë‚˜ ëª¨ë¸ë§µíƒ€ìž… ì„ ì–¸
+ê±°ê¸°ì— ì €ìž¥í•˜ë©´ ìžë™ìœ¼ë¡œ ëª¨ë¸ì´ ë¨
+ë©”ì†Œë“œëŠ” addattribute
                     
-2. ¸ðµ¨¾Øºä ¸¸µé¾î¼­ (²À ¸®ÅÏÅ¸ÀÔÀ¸·ÎÇÏ±â) 
-3. ¸®ÅÏÅ¸ÀÔ¿¡ ¸ÊÀÌ³ª ¸ðµ¨ ÁöÁ¤ÇØ¼­
-4. »ý¼ºÀÚ·Î 
-5. ¸Þ¼­µå¿¡ ¸ðµ¨ attribute ¾î³ëÅ×ÀÌ¼ÇÀ» ºÙÀÓ
-(ÀÌ¶§ ÀÌ¸§ ¾ÈºÙÀÌ¸é ¸®ÅÏÅ¸ÀÔÀ» ¼Ò¹®ÀÚ·Î ¹Ù²ã¼­ ÀÌ¸§À¸·Î »ïÀ½) 
-responsebody ¸®½ºÆùÁî¿¡ ´ã±ä ³»¿ë ±×´ë·Î È­¸é¿¡ Àü´ÞµÊ
+2. ëª¨ë¸ì•¤ë·° ë§Œë“¤ì–´ì„œ (ê¼­ ë¦¬í„´íƒ€ìž…ìœ¼ë¡œí•˜ê¸°) 
+3. ë¦¬í„´íƒ€ìž…ì— ë§µì´ë‚˜ ëª¨ë¸ ì§€ì •í•´ì„œ
+4. ìƒì„±ìžë¡œ 
+5. ë©”ì„œë“œì— ëª¨ë¸ attribute ì–´ë…¸í…Œì´ì…˜ì„ ë¶™ìž„
+(ì´ë•Œ ì´ë¦„ ì•ˆë¶™ì´ë©´ ë¦¬í„´íƒ€ìž…ì„ ì†Œë¬¸ìžë¡œ ë°”ê¿”ì„œ ì´ë¦„ìœ¼ë¡œ ì‚¼ìŒ) 
+responsebody ë¦¬ìŠ¤í°ì¦ˆì— ë‹´ê¸´ ë‚´ìš© ê·¸ëŒ€ë¡œ í™”ë©´ì— ì „ë‹¬ë¨
 
-¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú
+â˜…â˜…â˜…â˜…â˜…â˜…
 @Controller
 public class DownloadController implements ApplicationContextAware {
 private WebApplicationContext context = null;
@@ -1339,7 +1339,7 @@ public ModelAndView download() throws Exception {
 File downloadFile = getFile();
 return new ModelAndView
 ("download", "downloadFile", downloadFile);
-} Ã¹¹øÂ°²¨ ºä³×ÀÓ µÎ¹øÂ°²¨ ¸ðµ¨³×ÀÓ ¼¼¹øÂ°²¨ ¸ðµ¨ µ¥ÀÌÅÍ
+} ì²«ë²ˆì§¸êº¼ ë·°ë„¤ìž„ ë‘ë²ˆì§¸êº¼ ëª¨ë¸ë„¤ìž„ ì„¸ë²ˆì§¸êº¼ ëª¨ë¸ ë°ì´í„°
                      
-Tiles 3Á¡´ë ¹Þ±â(½ºÇÁ¸µ °³¹ß¿ë) (2Á¡´ë´Â À¥°³¹ß¿ë) 
+Tiles 3ì ëŒ€ ë°›ê¸°(ìŠ¤í”„ë§ ê°œë°œìš©) (2ì ëŒ€ëŠ” ì›¹ê°œë°œìš©) 
 https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp
