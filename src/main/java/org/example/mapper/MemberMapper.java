@@ -18,4 +18,6 @@ public interface MemberMapper {
 
     public MemberDto getMember(String memberId) throws Exception;
 
+    public void deleteMember(String memberId) throws Exception;
+
 }

@@ -40,6 +40,10 @@ public class MemberService {
     public MemberDto getMember(String memberId) throws Exception {
         return mapperMapper.getMember(memberId);
     }
+
+    public void deleteMember(String memberId) throws Exception {
+         mapperMapper.deleteMember(memberId);
+    }
 /*    public void MemberRegister(MemberDto dto) {
         mainDao.MemberRegister(dto);
     }

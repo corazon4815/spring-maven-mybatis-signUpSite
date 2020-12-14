@@ -9,6 +9,7 @@
     <script type="text/javascript" src="/libs/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/main/main.js"></script>
     <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/main/main.css">
 
 </head>
 <script>
@@ -20,7 +21,11 @@
 회원목록
 <div class="container">
     <div class="span5">
-        <div id="listInfo"></div>
+        <div id="listInfo">
+            <table id='tbl' class='tbl paginated table table-striped table-condensed'></table>
+
+
+        </div>
         <br>
     </div>
 </div>
@@ -39,12 +44,12 @@
 
             </div>
             <div class="modal-body">
-                <div class="container">
-                    <div class="span5">
+
+
                         <div id="memberInfo"></div>
-                        <br>
-                    </div>
-                </div>
+
+
+
             </div>
             <%--modalbody end--%>
             <div class="modal-footer">
@@ -54,8 +59,7 @@
                     </button>
                 </div>
                 <div id="del_btn_div">
-                    <button type="button" class="btn btn-primary" name="reg_submit" id="del_btn"
-                            onclick="$memberJoin.request.doDelete();">삭제
+                    <button type="button" class="btn btn-primary" name="member_del_btn" id="member_del_btn">삭제
                     </button>
                 </div>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>

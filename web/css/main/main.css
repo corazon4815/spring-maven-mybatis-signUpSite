@@ -1,0 +1,10 @@
+.clickable {cursor: pointer;}
+.hover {text-decoration: underline;}
+.active{ width:10px; height:10px; background:#c8c8c8; color:white;}
+.theadlist {
+    text-align: center; background:#c8c8c8;
+}
+td{
+    width:200px;
+    text-align: center;
+}

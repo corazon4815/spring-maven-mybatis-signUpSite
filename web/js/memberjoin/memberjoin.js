@@ -1,35 +1,36 @@
 (function(W, D) {
     W.$memberJoin = W.$memberJoin || {};
-
     let isMemberChecked;
 
     $memberJoin.event = {
         duplChk: function () {
-           /* $("#btn_duplChk").click(function () {*/
-                let memberId = $('#memberIdModal').val();
-                $.ajax({
-                    url: '/member/checkid/?memberId=' + memberId,
-                    type: 'get',
-                    success: function (data) {
-                        if (data.result=="true") {
-                            $("#id_check").text("사용중인 아이디입니다");
-                            $("#id_check").css("color", "red");
-                            $("#reg_submit").attr("disabled", true);
-                        } else {
-                            if (memberId == "") {
-                                $('#id_check').text('아이디를 입력해주세요');
-                                $('#id_check').css('color', 'red');
-                                $("#reg_submit").attr("disabled", true);
-                            } else {
-                                $('#id_check').text('사용 가능한 아이디 입니다.');
-                                $("#reg_submit").attr("disabled", false);
-                                isMemberChecked = 'y';
-                            }
+            /* $("#btn_duplChk").click(function () {*/
+            let memberId = $('#memberIdModal').val();
+            $.ajax({
+                url: '/member/checkid/?memberId=' + memberId,
+                data: memberId,
+                type: 'get',
+                success: function (data) {
+                    isMemberChecked = 'N';
+                    if(memberId == ""){
+                        $("#id_check").text("아이디를 입력해주세요.");
+                        $("#reg_submit").attr("disabled", false);
+                    }else if (data.result==false) {
+                        $("#id_check").text("사용중인 아이디입니다");
+                        $("#id_check").css("color", "red");
+                        $("#reg_submit").attr("disabled", true);}
+                    else {
+                            $('#id_check').text('사용 가능한 아이디 입니다.');
+                            $("#reg_submit").attr("disabled", false);
+                            isMemberChecked = 'Y';
                         }
-                    }, error: function () {
-                        console.log("실패");
                     }
-                });
+
+
+                , error: function () {
+                    console.log("실패");
+                }
+            });
         }
     }
 
@@ -70,7 +71,7 @@
                 alert("생년월일을 입력하세요");
                 return false;
             }
-            if (isMemberChecked!='y'){
+            if (isMemberChecked!='Y'){
                 alert("아이디 중복체크를 해주시기 바랍니다.");
                 return false;
             }
@@ -87,16 +88,18 @@
                     dataType: "json",
                     success: function (result) {
                         console.log(result.result)
+                        $('.inputbox').val('');
+                        $('.inputbox').text('');
                         alert('회원가입이 완료되었습니다.')
+                        isMemberChecked = 'N';
                         $('#memberModal').modal('hide');
                     },
                     error: function (request, status, error) {
                         alert("code:" + request.status + "\n" + "error:" + error);
-
                     }
                 });
             }
-        /*});*/
-    }
+            /*});*/
+        }
     }
 }(window, document));

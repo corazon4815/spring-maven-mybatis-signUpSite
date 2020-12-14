@@ -35,7 +35,6 @@ public class MemberController {
         map.put("memberPw", memberPw);
 
         int loginCnt = memberService.loginChk(map);
-        System.out.println(loginCnt);
         if(loginCnt==1) {
             session.setAttribute("memberId", memberId);
             resultMap.put("result", true);
@@ -48,6 +47,7 @@ public class MemberController {
     @GetMapping(value ="/member/checkid")
     @ResponseBody
     public Map isIdDuplicated(@RequestParam("memberId") String memberId) throws Exception {
+        System.out.println(memberId);
         Map resultMap = new HashMap();
         int DuplCnt = memberService.duplChk(memberId);
         if(DuplCnt>=1){
@@ -55,6 +55,8 @@ public class MemberController {
         }else{
             resultMap.put("result", true);
         }
+        System.out.println(DuplCnt);
+        System.out.println(resultMap.get("result"));
         return resultMap;
     }
 
@@ -80,13 +82,24 @@ public class MemberController {
     @GetMapping(value = "/member/memberInfo")
     @ResponseBody
     public Map getMember(@RequestParam("memberId") String memberId) throws Exception {
-        System.out.println(memberId);
         Map resultMap = new HashMap();
         MemberDto dto = memberService.getMember(memberId);
-        System.out.println(dto.getMemberId());
         resultMap.put("result", dto);
         return resultMap;
     }
+
+    @DeleteMapping(value = "/member/memberdel")
+    @ResponseBody
+    public Map deleteMember(@RequestParam("memberId") String memberId) throws Exception {
+        System.out.println(memberId);
+        Map resultMap = new HashMap();
+        memberService.deleteMember(memberId);
+        resultMap.put("result", true);
+        System.out.println(resultMap.get("result"));
+        return resultMap;
+    }
+
+
 
 
 

@@ -20,6 +20,7 @@
         WHERE  MEMBER_ID=#{memberId}
      </select>
 
+    <!--회원가입-->
     <insert id="memberRegister" parameterType="org.example.model.MemberDto">
         INSERT INTO MEMBER_TB
          (
@@ -37,6 +38,7 @@
          )
      </insert>
 
+    <!--메인 회원리스트-->
     <select id="getMemberList" resultType="org.example.model.MemberDto">
         SELECT
             MEMBER_ID,
@@ -46,6 +48,7 @@
         FROM   MEMBER_TB
     </select>
 
+    <!--회원 클릭시 정보 가져오기-->
     <select id="getMember" resultType="org.example.model.MemberDto" parameterType="String">
         SELECT
             MEMBER_ID,
@@ -56,6 +59,15 @@
         FROM   MEMBER_TB
         WHERE  MEMBER_ID = #{memberId};
     </select>
+
+    <!--멤버 삭제-->
+    <delete id="deleteMember" parameterType="String">
+        DELETE
+        FROM MEMBER_TB
+        WHERE MEMBER_ID = #{memberId};
+    </delete>
+
+
 
 
 

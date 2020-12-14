@@ -9,7 +9,6 @@
     <script type="text/javascript" src="/js/memberjoin/memberjoin.js"></script>
     <script type="text/javascript" src="/libs/bootstrap/js/bootstrap.js"></script>
     <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/memberJoin.css">
 
 
 </head>
@@ -48,80 +47,84 @@
 <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="text-center text-info" id="myModalLabel">Sign Up</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-            </div>
             <div class="modal-body">
-                <div class="span6" style="text-align: left;">
-                    <div class="area">
-                        <form class="form-horizontal">
-
-                            <div class="control-group">
-                                <label class="control-label" for="memberIdModal">아이디</label>
-                                <div class="controls">
-                                    <input id="memberIdModal" class="memberjoinwidth" type="text">&nbsp;&nbsp;&nbsp;
-                                    <button type="button" name="btn_duplChk" id="btn_duplChk" class="btn btn-secondary" onclick="$memberJoin.event.duplChk();">중복확인</button>
-                                </div>
-                                 <div class="check_font" id="id_check" style="font-size: 10px;"></div>
+                <form method="post">
+                    <div class="card border-primary rounded-0">
+                        <div class="card-header p-0">
+                            <div class="bg-info text-white text-center py-2">
+                                <h3><i class="fa fa-envelope"></i> 회원가입</h3>
                             </div>
+                        </div>
+                        <div class="card-body p-3">
 
-                            <div class="control-group">
-                                <label class="control-label" for="memberName">이름</label>
-
-                                <div class="controls">
-                                    <input id="memberName" class="memberjoinwidth" type="text">
+                            <!--Body-->
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">아이디</div>
+                                        <input type="text" class="form-control inputbox" id="memberIdModal" style="width: 260px" required>
+                                        <button type="button" name="btn_duplChk" id="btn_duplChk" class="btn btn-secondary" onclick="$memberJoin.event.duplChk();">중복확인</button>
+                                    </div>
                                 </div>
+                                <div class="check_font inputbox" id="id_check" style="font-size: 10px;"></div>
                             </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="memberAddress">주소</label>
-
-                                <div class="controls">
-                                    <input id="memberAddress" class="memberjoinwidth"
-                                           type="text">
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for=
-                                        "memberPwModal">비밀번호</label>
-
-                                <div class="controls">
-                                    <input id="memberPwModal" class="memberjoinwidth" type="text">
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">이름</div>
+                                    </div>
+                                    <input type="text" class="form-control inputbox" id="memberName" required>
                                 </div>
                             </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for=
-                                        "member_pw_chk">비밀번호 확인</label>
-
-                                <div class="controls">
-                                    <input id="member_pw_chk" class="memberjoinwidth" type="text">
-                                </div>
-                                <br>
-                                <div class="check_font" id="pw_check" style="font-size: 10px;"></div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for=
-                                        "memberBirth">생년월일</label>
-
-                                <div class="controls">
-                                    <input id="memberBirth" class="memberjoinwidth" type="date">
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">주소</div>
+                                    </div>
+                                    <input type="text" class="form-control inputbox" id="memberAddress" required>
                                 </div>
                             </div>
-                        </form>
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">비밀번호</div>
+                                    </div>
+                                    <input type="text" class="form-control inputbox" id="memberPwModal" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">비밀번호 확인</div>
+                                    </div>
+                                    <input type="text" class="form-control inputbox" id="member_pw_chk" required>
+                                </div>
+                                <div class="check_font inputbox" id="pw_check" style="font-size: 10px;"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">생년월일</div>
+                                    </div>
+                                    <input type="date" class="form-control inputbox" id="memberBirth" required>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-info btn-block rounded-0 py-2" name="reg_submit" id="reg_submit"
+                                        onclick="$memberJoin.request.doRegister();">등록</button>
+                                <button type="button" data-dismiss="modal" class="btn btn-info btn-block rounded-0 py-2">닫기</button>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-            </div>
-            <div class="modal-footer">
+                </form>
+            </div><%--모달바디--%>
+            <%--<div class="modal-footer">
                 <button type="button" class="btn btn-primary" name="reg_submit" id="reg_submit"
                         onclick="$memberJoin.request.doRegister();">등록
                 </button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-            </div>
+            </div>--%>
         </div>
     </div>
 </div>
