@@ -6,15 +6,15 @@
         $mainView.event.memberInfo();
         $mainView.event.logout_btn();
         $mainView.event.memberInfodel();
+        $mainView.event.datePicker();
 
     });
 
+    $mainView.ui = {
         /**
          * 현재 켜있는 모달창의 회원 아이디가 저장된다.
          */
-        let memberId;
-
-    $mainView.ui = {
+        memberId : null,
 
         /**
          * @name memberList
@@ -47,7 +47,7 @@
                     for (let i = 0; i < args.result.length; i++) {
                         html +=
                             "<tr>" +
-                            "<td id='memId' class='cursor' data-toggle='modal' data-target='#memberInfoModal' data-title=" + args.result[i].memberId + ">" +
+                            "<td id='memId_"+i+"' class='cursor' data-toggle='modal' data-target='#memberInfoModal' data-title=" + args.result[i].memberId + ">" +
                             args.result[i].memberId + "</td>" +
                             "<td>" + args.result[i].memberName + "</td>" +
                             "<td>" + args.result[i].memberAddress + "</td>" +
@@ -182,61 +182,96 @@
         /**
          * @name memberInfo
          * @description 회원 목록에서 아이디 클릭시 회원의 상세 정보를 가져온다.
-         *              (본인 아이디를 클릭시 수정버튼, 타인의 경우 삭제버튼 활성화)
+         *              (본인 아이디를 클릭시 수정화면 나오고 수정버튼, 타인의 경우 삭제버튼 활성화)
          */
         memberInfo: function () {
             $('#memberInfoModal').on('show.bs.modal', function (e) {
                 let button = $(e.relatedTarget);
                 memberId = button.data('title');
 
-                if(sessionStorage.getItem("userId") == memberId){
-                    window.location.href = '/view/mainview';
-                    }
-
                 $.ajax({
                     url: '/member/memberInfo/?memberId=' + memberId,
                     type: 'get',
                     success: function (data) {
-                        $("#memberInfo").html("");
 
-                        let html =
-                            "<table id='memberInfoTable' class='table table-condensed table-hover'>"
-                            + "</<table>";
-                        $("#memberInfo").append(html);
-
-                        let str =
-                            "<tr>" +
-                            "<td>아이디" +
-                            "</td>" +
-                            "<td>" + data.result.memberId + "</td>" +
-                            "<tr>" +
-                            "<td>이름" +
-                            "</td>" +
-                            "<td>" + data.result.memberName + "</td>" +
-                            "<tr>" +
-                            "<td>주소" +
-                            "</td>" +
-                            "<td>" + data.result.memberAddress + "</td>" +
-                            "<tr>" +
-                            "<td>생년월일" +
-                            "</td>" +
-                            "<td>" + data.result.memberBirth + "</td>" +
-                            "<tr>" +
-                            "<td>입사일" +
-                            "</td>" +
-                            "<td>" + data.result.regDate + "</td>" +
-                            "</tr>";
+                        if (sessionStorage.getItem("userId") != data.result.memberId) {
 
 
-                        $("#memberInfo table").append(str);
+                            $("#memberInfo").html("");
 
-                        if (sessionStorage.getItem("userId") == data.result.memberId) {
-                            $("#del_btn_div").hide();
-                            $("#update_btn_div").show();
+                            let html =
+                                "<table id='memberInfoTable' class='table table-condensed table-hover'>"
+                                + "</<table>";
+                            $("#memberInfo").append(html);
 
-                        } else {
+
+                            let str =
+                                "<tr>" +
+                                "<td>아이디" +
+                                "</td>" +
+                                "<td>" + data.result.memberId + "</td>" +
+                                "<tr>" +
+                                "<td>이름" +
+                                "</td>" +
+                                "<td>" + data.result.memberName + "</td>" +
+                                "<tr>" +
+                                "<td>주소" +
+                                "</td>" +
+                                "<td>" + data.result.memberAddress + "</td>" +
+                                "<tr>" +
+                                "<td>생년월일" +
+                                "</td>" +
+                                "<td>" + data.result.memberBirth + "</td>" +
+                                "<tr>" +
+                                "<td>가입일" +
+                                "</td>" +
+                                "<td>" + data.result.regDate + "</td>" +
+                                "</tr>";
+
+
+                            $("#memberInfo table").append(str);
                             $("#del_btn_div").show();
                             $("#update_btn_div").hide();
+                            memberId = data.result.memberId;
+
+                        }else{
+                            $("#memberInfo").html("");
+                            let html =
+                                "<table id='memberInfoTable' class='table table-condensed table-hover'>"
+                                + "</<table>";
+                            $("#memberInfo").append(html);
+                            /*+ data.result.memberAddress +*/
+
+                            let str =
+                                "<tr>" +
+                                "<td>아이디" +
+                                "</td>" +
+                                "<td>" + data.result.memberId + "</td>" +
+                                "<tr>" +
+                                "<td>이름" +
+                                "</td>" +
+                                "<td>" + data.result.memberName + "</td>" +
+                                "<tr>" +
+                                "<td>주소" +
+                                "</td>" +
+                                "<td><input type='text' id='modyfyAddress' value='"+ data.result.memberAddress +"'></td>" +
+                                "<tr>" +
+                                "<td>생년월일" +
+                                "</td>" +
+                                "<td>" +
+                                "<div className='input-group date' class='input-group date memberDatepickerfunc' id='modifyBirthDatepicker' onclick='$mainView.event.datePicker();' data-target-input='nearest'>" +
+                                "&emsp;<input type='text' class='modyfywidth' id='modyfyBirth' data-target='#modifyBirthDatepicker' value='"+ data.result.memberBirth +"'>" +
+                                "<div class='input-group-append' data-target='#modifyBirthDatepicker' data-toggle='datetimepicker'>"+
+                                "<div class='input-group-text'>날짜선택</div></div></div>"+
+                                "</td>" +
+                                "<tr>" +
+                                "<td>가입일" +
+                                "</td>" +
+                                "<td>" + data.result.regDate + "</td>" +
+                                "</tr>";
+                            $("#memberInfo table").append(str);
+                            $("#del_btn_div").hide();
+                            $("#update_btn_div").show();
                             memberId = data.result.memberId;
                         }
 
@@ -285,6 +320,37 @@
                 });
 
             });
+        },
+        datePicker: function () {
+            $('.memberDatepickerfunc').datetimepicker({format: 'YYYY-MM-DD'});
+
+        }
+    }
+
+    $mainView.request = {
+        doUpdate: function () {
+            let memberAddress = $('#modyfyAddress').val();
+            let memberBirth = $('#modyfyBirth').val();
+            let param ={"memberAddress" : memberAddress, "memberBirth" : memberBirth}
+            if(memberAddress==""| memberBirth=="") {
+                alert("값을 올바르게 입력 해주세요.")
+            }else{
+                $.ajax({
+                    type: "post",
+                    data: JSON.stringify(param),
+                    url:"member/updateMember/",
+                    dataType: "text",
+                    contentType:"application/json; charset=UTF-8",
+                success:function (data) {
+                    console.log(data);
+                        alert("변경이 완료되었습니다.")
+                },
+                    error:function(data){
+                        console.log(data);
+                    }
+                })
+
+            }
         }
     }
 }(window, document));

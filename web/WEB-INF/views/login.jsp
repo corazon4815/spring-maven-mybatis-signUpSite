@@ -18,12 +18,11 @@
 
 
 </head>
-<script type="text/javascript">
+<%--<script type="text/javascript">
     $(function () {
-        $('#memberBirthDatepicker').datetimepicker({ format: 'YYYY-MM-DD'});
+        $('.memberDatepickerfunc').datetimepicker({ format: 'YYYY-MM-DD'});
     });
-
-</script>
+</script>--%>
 <body>
 <div id="login">
     <h3 class="text-center text-white pt-5">Login form</h3>
@@ -121,11 +120,10 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text inputWidth">생년월일</div>
                                     </div>
-                                    <div class="input-group date" id="memberBirthDatepicker" data-target-input="nearest">
+                                    <div class="input-group date memberDatepickerfunc"  id="memberBirthDatepicker" data-target-input="nearest" onclick="$memberJoin.event.datePicker();">
                                         <input type="text" id="memberBirth" class="form-control birthInputbox inputbox" data-target="#memberBirthDatepicker" value="날짜선택">
                                         <div class="input-group-append" data-target="#memberBirthDatepicker" data-toggle="datetimepicker">
                                             <div class="input-group-text">날짜선택</div> </div> </div>
-
                                 </div>
 
                             </div>

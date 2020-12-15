@@ -3,6 +3,7 @@
 
     $(document).ready(function () {
         $loginView.event.setEventUI();
+        $memberJoin.event.datePicker();
     });
 
     /*$loginView.ui = {*/

@@ -8,8 +8,12 @@
     <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
     <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/main/main.js"></script>
+    <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
+    <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
     <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
     <link rel="stylesheet" href="/css/main/main.css">
+    <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
 
 </head>
 <script>

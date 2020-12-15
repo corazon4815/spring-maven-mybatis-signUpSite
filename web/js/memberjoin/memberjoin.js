@@ -41,7 +41,12 @@
                     console.log("실패");
                 }
             });
+        },
+        datePicker: function () {
+            $('.memberDatepickerfunc').datetimepicker({format: 'YYYY-MM-DD'});
+
         }
+
     }
 
     $memberJoin.request = {
