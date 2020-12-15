@@ -27,6 +27,10 @@
     /*};*/
 
     $loginView.event = {
+        /**
+         * @name setEventUI
+         * @description 로그인 버튼 클릭 이벤트
+         */
         setEventUI: function () {
             $('#btn_login').click(function () {
                 let memberId = $('#memberId').val();

@@ -5,10 +5,10 @@
 <html>
 <head>
     <title>Title</title>
-    <script type="text/javascript" src="/libs/jquery/jquery.js"></script>
-    <script type="text/javascript" src="/libs/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
+    <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/main/main.js"></script>
-    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
     <link rel="stylesheet" href="/css/main/main.css">
 
 </head>

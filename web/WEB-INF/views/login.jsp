@@ -4,13 +4,26 @@
 <html>
 <head>
     <title>Title</title>
-    <script type="text/javascript" src="/libs/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
     <script type="text/javascript" src="/js/login/login.js"></script>
     <script type="text/javascript" src="/js/memberjoin/memberjoin.js"></script>
-    <script type="text/javascript" src="/libs/bootstrap/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.css">
+    <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
+    <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/login/login.css">
+    <link rel="stylesheet" href="/css/memberjoin/memberjoin.css">
+    <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
+
 
 </head>
+<script type="text/javascript">
+    $(function () {
+        $('#memberBirthDatepicker').datetimepicker({ format: 'YYYY-MM-DD'});
+    });
+
+</script>
 <body>
 <div id="login">
     <h3 class="text-center text-white pt-5">Login form</h3>
@@ -28,13 +41,14 @@
                             <label for="memberPw" class="text-info">Password:</label><br>
                             <input type="password" name="memberPw" id="memberPw" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div>
                             <input type="button" name="submit" id="btn_login" class="btn btn-info btn-md" value="로그인">
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#memberModal">회원가입
+                            </button>
                         </div>
-                        <div id="register-link" class="text-right">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#memberModal">회원가입</button>
-                            <%--<a href="#" class="text-info">Register here</a>--%>
-                        </div>
+
                     </form>
                 </div>
             </div>
@@ -51,7 +65,7 @@
                     <div class="card border-primary rounded-0">
                         <div class="card-header p-0">
                             <div class="bg-info text-white text-center py-2">
-                                <h3><i class="fa fa-envelope"></i> 회원가입</h3>
+                                <h3>회원가입</h3>
                             </div>
                         </div>
                         <div class="card-body p-3">
@@ -60,9 +74,11 @@
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">아이디</div>
-                                        <input type="text" class="form-control inputbox" id="memberIdModal" style="width: 260px" required>
-                                        <button type="button" name="btn_duplChk" id="btn_duplChk" class="btn btn-secondary" onclick="$memberJoin.event.duplChk();">중복확인</button>
+                                        <div class="input-group-text inputWidth ">아이디</div>
+                                        <input type="text" class="form-control idInputbox inputbox" id="memberIdModal" required>
+                                        <button type="button" name="btn_duplChk" id="btn_duplChk"
+                                                class="btn btn-secondary" onclick="$memberJoin.event.duplChk();">중복확인
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="check_font inputbox" id="id_check" style="font-size: 10px;"></div>
@@ -70,7 +86,7 @@
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">이름</div>
+                                        <div class="input-group-text inputWidth" style="width: 130px;">이름</div>
                                     </div>
                                     <input type="text" class="form-control inputbox" id="memberName" required>
                                 </div>
@@ -78,7 +94,7 @@
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">주소</div>
+                                        <div class="input-group-text inputWidth">주소</div>
                                     </div>
                                     <input type="text" class="form-control inputbox" id="memberAddress" required>
                                 </div>
@@ -86,7 +102,7 @@
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">비밀번호</div>
+                                        <div class="input-group-text inputWidth">비밀번호</div>
                                     </div>
                                     <input type="text" class="form-control inputbox" id="memberPwModal" required>
                                 </div>
@@ -94,7 +110,7 @@
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">비밀번호 확인</div>
+                                        <div class="input-group-text inputWidth">비밀번호 확인</div>
                                     </div>
                                     <input type="text" class="form-control inputbox" id="member_pw_chk" required>
                                 </div>
@@ -103,75 +119,32 @@
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">생년월일</div>
+                                        <div class="input-group-text inputWidth">생년월일</div>
                                     </div>
-                                    <div class="input-group-prepend">
-                                    <input type="text" class="selectsize" id="year" name="year">년
-                                    </div>
-                                    <div class="input-group-prepend">
-                                    <select class="selectsize" id="month" name="month" >
-                                        <option value="01" selected(초기 선택된 항목)>01</option>
-                                        <option value="02">02</option>
-                                        <option value="03">03</option>
-                                        <option value="04">04</option>
-                                        <option value="05">05</option>
-                                        <option value="06">06</option>
-                                        <option value="07">07</option>
-                                        <option value="08">08</option>
-                                        <option value="09">09</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                    </select>월
-                                    </div>
-                                    <div class="input-group-prepend">
-                                    <select class="selectsize" id="day" name="day">
-                                        <option value="01" selected(초기 선택된 항목)>01</option>
-                                        <option value="02">02</option>
-                                        <option value="03">03</option>
-                                        <option value="04">04</option>
-                                        <option value="05">05</option>
-                                        <option value="06">06</option>
-                                        <option value="07">07</option>
-                                        <option value="08">08</option>
-                                        <option value="09">09</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
-                                        <option value="30">30</option>
-                                        <option value="31">31</option>
-                                    </select>일
-                                    </div>
-                                    <%--<input type="date" class="form-control inputbox" id="memberBirth" required>--%>
+                                    <div class="input-group date" id="memberBirthDatepicker" data-target-input="nearest">
+                                        <input type="text" id="memberBirth" class="form-control birthInputbox inputbox" data-target="#memberBirthDatepicker" value="날짜선택">
+                                        <div class="input-group-append" data-target="#memberBirthDatepicker" data-toggle="datetimepicker">
+                                            <div class="input-group-text">날짜선택</div> </div> </div>
+
                                 </div>
+
                             </div>
+
                             <div class="text-center">
-                                <button type="button" class="btn btn-info btn-block rounded-0 py-2" name="reg_submit" id="reg_submit"
-                                        onclick="$memberJoin.request.doRegister();">등록</button>
-                                <button type="button" data-dismiss="modal" class="btn btn-info btn-block rounded-0 py-2">닫기</button>
+                                <button type="button" class="btn btn-info btn-block rounded-0 py-2" name="reg_submit"
+                                        id="reg_submit"
+                                        onclick="$memberJoin.request.doRegister();">등록
+                                </button>
+                                <button type="button" data-dismiss="modal"
+                                        class="btn btn-info btn-block rounded-0 py-2">닫기
+                                </button>
                             </div>
                         </div>
 
                     </div>
                 </form>
-            </div><%--모달바디--%>
+            </div>
+            <%--모달바디--%>
             <%--<div class="modal-footer">
                 <button type="button" class="btn btn-primary" name="reg_submit" id="reg_submit"
                         onclick="$memberJoin.request.doRegister();">등록
