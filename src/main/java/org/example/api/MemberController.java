@@ -3,24 +3,41 @@ package org.example.api;
 import org.example.model.MemberDto;
 import org.example.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+
 @RestController
 public class MemberController {
+    /**
+     * MemberService 객체
+     */
+    private final MemberService memberService;
 
+    /**
+     * @name MemberController
+     * @description MemberController 클래스 생성자
+     * @param memberService : MemberService 객체
+     */
     @Autowired
-    MemberService memberService;
-
-    public void setMainService(MemberService memberService) {
+    public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }
 
+    /**
+     * @name doLogin
+     * @description 아이디와 비밀번호를 확인하여 로그인한다.
+     * @param session
+     * @param memberId 회원 아이디
+     * @param memberPw 회원 비밀번호
+     * @param response
+     * @return loginCnt(회원 조회해서 나온 갯수)가 1이면 resultMap의 result 키에 true값을 저장(반대의 경우 false)
+     * @throws Exception 예외
+     */
     @RequestMapping(value ="/member/login")
     @ResponseBody
     public Map doLogin(HttpSession session, String memberId, String memberPw, HttpServletResponse response) throws Exception {
@@ -44,6 +61,13 @@ public class MemberController {
         return resultMap;
     }
 
+    /**
+     * @name isIdDuplicated
+     * @description 회원가입시 아이디 중복검사
+     * @param memberId 회원 아이디
+     * @return DuplCnt(아이디 조회 후 나온 갯수)가 1이상이면 resultMap의 result 키에 "false"(반대의 경우 "true" )
+     * @throws Exception 예외
+     */
     @GetMapping(value ="/member/checkid")
     @ResponseBody
     public Map isIdDuplicated(@RequestParam("memberId") String memberId) throws Exception {
@@ -60,6 +84,13 @@ public class MemberController {
         return resultMap;
     }
 
+    /**
+     * @name registerMember
+     * @description 회원가입을 한다.
+     * @param dto 사용자 정보 파라미터
+     * @return resultMap의 result키에 success값
+     * @throws Exception 예외
+     */
     @PostMapping(value = "/member/register")
     @ResponseBody
     public Map registerMember(@RequestBody MemberDto dto) throws Exception {
@@ -70,6 +101,12 @@ public class MemberController {
         return resultMap;
     }
 
+    /**
+     * @name getMemberList
+     * @description 메인화면의 회원 목록을 가져온다.
+     * @return List<MemberDto> : resultMap의 result키에 회원 목록
+     * @throws Exception
+     */
     @GetMapping(value = "/member/memberlist")
     @ResponseBody
     public Map getMemberList() throws Exception {
@@ -79,6 +116,13 @@ public class MemberController {
         return resultMap;
     }
 
+    /**
+     * @name getMember
+     * @description 목록에서 아이디 클릭시 모달창을 띄워 회원 상세정보를 보여준다.
+     * @param memberId
+     * @return MemberDto dto : 회원 상세 정보
+     * @throws Exception 예외
+     */
     @GetMapping(value = "/member/memberInfo")
     @ResponseBody
     public Map getMember(@RequestParam("memberId") String memberId) throws Exception {
@@ -88,6 +132,13 @@ public class MemberController {
         return resultMap;
     }
 
+    /**
+     * @name deleteMember
+     * @description 모달창에서 삭제버튼 클릭시 회원을 삭제한다.
+     * @param memberId
+     * @return 삭제 완료시 resultMap의 result키에 true
+     * @throws Exception 예외
+     */
     @DeleteMapping(value = "/member/memberdel")
     @ResponseBody
     public Map deleteMember(@RequestParam("memberId") String memberId) throws Exception {
@@ -95,27 +146,8 @@ public class MemberController {
         Map resultMap = new HashMap();
         memberService.deleteMember(memberId);
         resultMap.put("result", true);
-        System.out.println(resultMap.get("result"));
         return resultMap;
     }
-
-
-
-
-
-/*    @RequestMapping (value ="/view/mainview")
-    public String getMainPage() {*/
-//        List<MemberDto> list = staff.selectDepts();
-//        Gson json = new Gson();
-//        resp.setContentType("text/html;charset=utf-8");
-//        PrintWriter out = resp.getWriter();
-//        out.print(json.toJson(list));
-//        mainService.getMemberList();
-
-/*
-        return "main";
-    }
-*/
 
 
 }

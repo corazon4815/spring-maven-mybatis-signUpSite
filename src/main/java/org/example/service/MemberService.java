@@ -40,7 +40,7 @@ public class MemberService {
     public MemberDto getMember(String memberId) throws Exception {
         return mapperMapper.getMember(memberId);
     }
-
+    @Transactional
     public void deleteMember(String memberId) throws Exception {
          mapperMapper.deleteMember(memberId);
     }
