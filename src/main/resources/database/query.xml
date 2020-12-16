@@ -57,23 +57,31 @@
             MEMBER_BIRTH,
             DATE(REGDATE) AS regDate
         FROM   MEMBER_TB
-        WHERE  MEMBER_ID = #{memberId};
+        WHERE  MEMBER_ID = #{memberId}
     </select>
 
     <!--회원 삭제-->
     <delete id="deleteMember" parameterType="String">
         DELETE
         FROM MEMBER_TB
-        WHERE MEMBER_ID = #{memberId};
+        WHERE MEMBER_ID = #{memberId}
     </delete>
 
     <!--회원 정보 변경-->
     <update id="updateMember" parameterType="hashMap">
         UPDATE MEMBER_TB
-        SET
-            MEMBER_ADDRESS = #{memberA};
-        WHERE MEMBER_ID = #{memberId};
+        SET MEMBER_ADDRESS = #{memberAddress},
+            MEMBER_BIRTH = #{memberBirth}
+        WHERE MEMBER_ID = #{memberId}
     </update>
+</mapper>
+
+
+
+
+
+
+
 
 
     <!--update member_tb set regdate="2020-03-03" where member_id = "root";-->
@@ -90,4 +98,3 @@
              <!--AND-->
              <!--ORDER BY  AA-->
 
-</mapper>

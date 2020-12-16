@@ -8,6 +8,7 @@
     <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
     <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/main/main.js"></script>
+    <script type="text/javascript" src="/js/common/common.js"></script>
     <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
     <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
     <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
@@ -59,7 +60,7 @@
             <div class="modal-footer">
                 <div id="update_btn_div">
                     <button type="button" class="btn btn-primary" name="reg_submit" id="update_btn"
-                            onclick="$memberJoin.request.doUpdate();">수정
+                            onclick="$mainView.request.doUpdate();">수정
                     </button>
                 </div>
                 <div id="del_btn_div">

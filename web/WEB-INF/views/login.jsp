@@ -7,6 +7,7 @@
     <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
     <script type="text/javascript" src="/js/login/login.js"></script>
     <script type="text/javascript" src="/js/memberjoin/memberjoin.js"></script>
+    <script type="text/javascript" src="/js/common/common.js"></script>
     <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
     <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
     <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
@@ -120,7 +121,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text inputWidth">생년월일</div>
                                     </div>
-                                    <div class="input-group date memberDatepickerfunc"  id="memberBirthDatepicker" data-target-input="nearest" onclick="$memberJoin.event.datePicker();">
+                                    <div class="input-group date memberDatepickerfunc"  id="memberBirthDatepicker" data-target-input="nearest" onclick="$common.control.datePicker();">
                                         <input type="text" id="memberBirth" class="form-control birthInputbox inputbox" data-target="#memberBirthDatepicker" value="날짜선택">
                                         <div class="input-group-append" data-target="#memberBirthDatepicker" data-toggle="datetimepicker">
                                             <div class="input-group-text">날짜선택</div> </div> </div>

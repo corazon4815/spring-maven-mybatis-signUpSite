@@ -20,4 +20,5 @@ public interface MemberMapper {
 
     public void deleteMember(String memberId) throws Exception;
 
+    public void updateMember(Map<String, Object> map) throws Exception;
 }

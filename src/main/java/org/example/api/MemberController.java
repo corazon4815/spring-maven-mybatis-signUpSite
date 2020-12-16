@@ -39,7 +39,6 @@ public class MemberController {
      * @throws Exception 예외
      */
     @RequestMapping(value ="/member/login")
-    @ResponseBody
     public Map doLogin(HttpSession session, String memberId, String memberPw, HttpServletResponse response) throws Exception {
         Map resultMap = new HashMap();
 
@@ -52,6 +51,7 @@ public class MemberController {
         map.put("memberPw", memberPw);
 
         int loginCnt = memberService.loginChk(map);
+        System.out.println(map.get("memberId"));
         if(loginCnt==1) {
             session.setAttribute("memberId", memberId);
             resultMap.put("result", true);
@@ -69,7 +69,6 @@ public class MemberController {
      * @throws Exception 예외
      */
     @GetMapping(value ="/member/checkid")
-    @ResponseBody
     public Map isIdDuplicated(@RequestParam("memberId") String memberId) throws Exception {
         System.out.println(memberId);
         Map resultMap = new HashMap();
@@ -92,7 +91,6 @@ public class MemberController {
      * @throws Exception 예외
      */
     @PostMapping(value = "/member/register")
-    @ResponseBody
     public Map registerMember(@RequestBody MemberDto dto) throws Exception {
         Map resultMap = new HashMap();
         memberService.memberRegister(dto);
@@ -108,7 +106,6 @@ public class MemberController {
      * @throws Exception
      */
     @GetMapping(value = "/member/memberlist")
-    @ResponseBody
     public Map getMemberList() throws Exception {
         Map resultMap = new HashMap();
         List<MemberDto> list = (List<MemberDto>) memberService.getMemberList();
@@ -124,7 +121,6 @@ public class MemberController {
      * @throws Exception 예외
      */
     @GetMapping(value = "/member/memberInfo")
-    @ResponseBody
     public Map getMember(@RequestParam("memberId") String memberId) throws Exception {
         Map resultMap = new HashMap();
         MemberDto dto = memberService.getMember(memberId);
@@ -140,12 +136,22 @@ public class MemberController {
      * @throws Exception 예외
      */
     @DeleteMapping(value = "/member/memberdel")
-    @ResponseBody
     public Map deleteMember(@RequestParam("memberId") String memberId) throws Exception {
         System.out.println(memberId);
         Map resultMap = new HashMap();
         memberService.deleteMember(memberId);
         resultMap.put("result", true);
+        return resultMap;
+    }
+
+    @PutMapping(value ="/member/updateMember")
+    public Map updateMember(@RequestBody Map paramsMap) throws Exception {
+        Map resultMap = new HashMap();
+
+        memberService.updateMember(paramsMap);
+
+        resultMap.put("result", true);
+
         return resultMap;
     }
 

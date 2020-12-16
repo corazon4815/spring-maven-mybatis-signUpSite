@@ -11,6 +11,8 @@
     <title>$Title$</title>
   </head>
   <body>
-  index
+    <script>
+      window.location.href = "/view/loginview";
+    </script>
   </body>
 </html>

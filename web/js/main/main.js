@@ -14,7 +14,7 @@
         /**
          * 현재 켜있는 모달창의 회원 아이디가 저장된다.
          */
-        memberId : null,
+        currentMemberId : "",
 
         /**
          * @name memberList
@@ -232,7 +232,8 @@
                             $("#memberInfo table").append(str);
                             $("#del_btn_div").show();
                             $("#update_btn_div").hide();
-                            memberId = data.result.memberId;
+                            $mainView.ui.currentMemberId = data.result.memberId;
+                            console.log(data.$mainView.ui.currentMemberId);
 
                         }else{
                             $("#memberInfo").html("");
@@ -240,7 +241,6 @@
                                 "<table id='memberInfoTable' class='table table-condensed table-hover'>"
                                 + "</<table>";
                             $("#memberInfo").append(html);
-                            /*+ data.result.memberAddress +*/
 
                             let str =
                                 "<tr>" +
@@ -259,7 +259,7 @@
                                 "<td>생년월일" +
                                 "</td>" +
                                 "<td>" +
-                                "<div className='input-group date' class='input-group date memberDatepickerfunc' id='modifyBirthDatepicker' onclick='$mainView.event.datePicker();' data-target-input='nearest'>" +
+                                "<div className='input-group date' class='input-group date memberDatepickerfunc' id='modifyBirthDatepicker' onclick='$common.control.datePicker(this);' data-target-input='nearest'>" +
                                 "&emsp;<input type='text' class='modyfywidth' id='modyfyBirth' data-target='#modifyBirthDatepicker' value='"+ data.result.memberBirth +"'>" +
                                 "<div class='input-group-append' data-target='#modifyBirthDatepicker' data-toggle='datetimepicker'>"+
                                 "<div class='input-group-text'>날짜선택</div></div></div>"+
@@ -272,12 +272,23 @@
                             $("#memberInfo table").append(str);
                             $("#del_btn_div").hide();
                             $("#update_btn_div").show();
-                            memberId = data.result.memberId;
+                            $mainView.ui.currentMemberId = data.result.memberId;
+                            console.log($mainView.ui.currentMemberId);
+
+                          /*  $("#modifyBirthDatepicker").on("click", function() {
+                                $common.control.datePicker(this);
+                            });
+
+                            $common.control.datePicker("#datepicker", "YYY/MM/DD");
+                            $common.control.datePicker(".datepicker", "YYYY-MM-DD");
+                            $common.control.datePicker("#datepicker");
+                            */
+
                         }
 
                     }, error: function (data) {
                         console.log("실패");
-                        console.log(data.memberId);
+                        console.log($mainView.ui.currentMemberId);
 
                     }
                 });//ajax
@@ -293,7 +304,7 @@
          */
         memberInfodel: function () {
             $('#member_del_btn').click(function () {
-                let delMemberId = memberId;
+                let delMemberId = $mainView.ui.currentMemberId;
                 console.log(delMemberId);
                 $.ajax({
                     method: "DELETE",
@@ -306,16 +317,9 @@
                         } else {
                             return;
                         }
-
-                        /* if (data.result) {
-                             $('#memberInfoModal').modal('hide');
-                             window.location.href = '/view/mainview';
-                         }*/
-                    }
-                    ,
+                    },
                     error: function (data, request, status, error) {
                         alert(data.result);
-                        /*alert("code:" + request.status + "\n" + "error:" + error);*/
                     }
                 });
 
@@ -331,22 +335,34 @@
         doUpdate: function () {
             let memberAddress = $('#modyfyAddress').val();
             let memberBirth = $('#modyfyBirth').val();
-            let param ={"memberAddress" : memberAddress, "memberBirth" : memberBirth}
+            let memberId = $mainView.ui.currentMemberId;
+            console.log("가져온값="+memberAddress+"+"+memberBirth+"+"+memberId)
+
             if(memberAddress==""| memberBirth=="") {
                 alert("값을 올바르게 입력 해주세요.")
             }else{
                 $.ajax({
-                    type: "post",
-                    data: JSON.stringify(param),
-                    url:"member/updateMember/",
-                    dataType: "text",
-                    contentType:"application/json; charset=UTF-8",
-                success:function (data) {
-                    console.log(data);
-                        alert("변경이 완료되었습니다.")
+                    type: "put",
+                    url:"/member/updateMember",
+                    data: JSON.stringify({
+                        //"memberId=" + memberId + "&memberBirth=" + memberBirth + "&memberAddress=" + memberAddress
+                        "memberId" : memberId,
+                        "memberBirth" : memberBirth,
+                        "memberAddress" : memberAddress
+                    }),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8;",
+                    success:function (data) {
+                    console.log(data.result);
+                    console.log("성공");
+                    alert("회원 정보가 수정되었습니다.")
+                    $('#memberInfoModal').modal('hide');
+                    window.location.href = '/view/mainview';
+
                 },
                     error:function(data){
-                        console.log(data);
+                        console.log("실패");
+                        console.log(data.result);
                     }
                 })
 

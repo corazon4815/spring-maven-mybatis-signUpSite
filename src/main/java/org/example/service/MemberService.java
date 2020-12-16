@@ -44,25 +44,12 @@ public class MemberService {
     public void deleteMember(String memberId) throws Exception {
          mapperMapper.deleteMember(memberId);
     }
-/*    public void MemberRegister(MemberDto dto) {
-        mainDao.MemberRegister(dto);
+    @Transactional
+    public void updateMember(Map<String, Object> map) throws Exception {
+       mapperMapper.updateMember(map);
     }
 
-    public BoardListModel list(int pageNum, int per){
-		int count = dao.count();
-		if(count == 0) {
-			return new BoardListModel();
-		}
 
-		int start = (pageNum - 1) * per;
-		List<BoardDto> list = dao.getList(start, per);
-
-		Paging p = new Paging().paging(pageNum, count, per);
-
-		return new BoardListModel(list,pageNum,p.totalPageCount,start,p,count);
-	}
-
-    getMemberList*/
 
 
 }
