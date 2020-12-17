@@ -1,0 +1,18 @@
+body {
+    background-color: #f3f3f3;
+}
+.textgreen {
+    color: #93B874; !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #c8c8c8;
+    border-color: #c8c8c8;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #93B874;
+    border-color: #93B874;
+}

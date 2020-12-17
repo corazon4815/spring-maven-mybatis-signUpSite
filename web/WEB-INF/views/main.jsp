@@ -14,28 +14,26 @@
     <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
     <link rel="stylesheet" href="/css/main/main.css">
     <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="/css/memberjoin/calender/font-awesome.css">
+    <%--<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />--%>
 
 </head>
 <script>
     sessionStorage.setItem("userId", "${memberId}");
-    console.log(sessionStorage.getItem("userId"));
+    /*console.log(sessionStorage.getItem("userId"));*/
 </script>
 <body>
-메인입니다
-회원목록
+<jsp:include page="header.jsp"></jsp:include>
 <div class="container">
     <div class="span5">
         <div id="listInfo">
-            <table id='tbl' class='tbl paginated table table-striped table-condensed'></table>
+            <table id='tbl' class='tbl paginated table table-striped table-condensed table-hover'></table>
 
 
         </div>
         <br>
     </div>
 </div>
-
-<button id="logoutBtn" type="button">로그아웃</button>
 
 <!-- Modal -->
 <div class="modal fade" id="memberInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"

@@ -3,11 +3,7 @@
 
     $(document).ready(function () {
         $mainView.ui.memberList();
-        $mainView.event.memberInfo();
-        $mainView.event.logout_btn();
-        $mainView.event.memberInfodel();
-        $mainView.event.datePicker();
-
+        $mainView.event.setEventUI();
     });
 
     $mainView.ui = {
@@ -21,47 +17,45 @@
          * @description 회원 목록을 가져온다.
          */
         memberList: function () {
-            let url = "/member/memberlist";
             $.ajax({
                 type: "get",
-                url: url,
-                dataType: "json"
+                url: "/member/memberlist",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8;"
             })
                 .done(function (args) {
                     let html =
-                        "<thead class='theadlist'><tr>" +
-                        "<td>아이디" +
+                        "<thead  class='theadlist' ><tr>" +
+                        "<td class='notd'>번호" +
                         "</td>" +
-                        "<td>이름" +
+                        "<td class='idtd'>아이디" +
                         "</td>" +
-                        "<td>주소" +
+                        "<td class='nametd'>이름" +
                         "</td>" +
-                        "<td>가입일" +
+                        "<td class='addresstd'>주소" +
+                        "</td>" +
+                        "<td class='regdatetd'>가입일" +
                         "</td>" +
                         "</tr></thead>";
 
                     /*$("#listInfo").html(html);*/
-
-
                     /*  onclick='$mainView.event.memberInfo("+args.result[i].memberId +");'*/
                     for (let i = 0; i < args.result.length; i++) {
                         html +=
-                            "<tr>" +
-                            "<td id='memId_"+i+"' class='cursor' data-toggle='modal' data-target='#memberInfoModal' data-title=" + args.result[i].memberId + ">" +
+                            "<tr class='cursor' data-toggle='modal' data-target='#memberInfoModal' data-title=" + args.result[i].memberId + ">" +
+                            "<td class='notd'>"+(i+1)+"</td>" +
+                            "<td id='memId_"+i+"' class='idtd'>" +
                             args.result[i].memberId + "</td>" +
-                            "<td>" + args.result[i].memberName + "</td>" +
-                            "<td>" + args.result[i].memberAddress + "</td>" +
-                            "<td>" + args.result[i].regDate + "</td>" +
+                            "<td class='nametd'>" + args.result[i].memberName + "</td>" +
+                            "<td class='addresstd'>" + args.result[i].memberAddress + "</td>" +
+                            "<td class='regdatetd'>" + args.result[i].regDate + "</td>" +
                             "</tr>";
-
                     }
                     $("#tbl").html(html);
-
                     $mainView.ui.paging();
                 }).fail(function (e) {
                 alert(e.responseText);
             });
-
         },
 
         /**
@@ -162,181 +156,152 @@
                 $table.trigger('repaginate');
             });
         }
+    };
 
-    }
+    $mainView.template = {
+        getMemberInfoForm : function(data, mode) {
+            let html =
+                "<table id='memberInfoTable' class='table table-condensed table-striped table-hover'>" +
+                    "<tr>" +
+                        "<td>아이디" + "</td>" +
+                        "<td>" + data.result.memberId + "</td>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td>이름" + "</td>" +
+                        "<td>" + data.result.memberName + "</td>" +
+                    "</tr>";
+
+            switch(mode) {
+                case "READ":
+                    html +=
+                        "<tr>" +
+                            "<td>주소" + "</td>" +
+                            "<td>" + data.result.memberAddress + "</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                            "<td>생년월일" + "</td>" +
+                            "<td>" + data.result.memberBirth + "</td>" +
+                        "</tr>";
+                    break;
+                case "MOD":
+                    html +=
+                        "<tr>" +
+                            "<td>주소" +"</td>" +
+                            "<td><input type='text' id='modyfyAddress' value='"+ data.result.memberAddress +"'></td>" +
+                        "</tr>" +
+                        "<tr>" +
+                            "<td>생년월일" +"</td>" +
+                            "<td>" +
+                                "<div className='input-group date' class='input-group date memberDatepickerfunc' id='modifyBirthDatepicker' onclick='$common.control.datePicker(this);' data-target-input='nearest'>" +
+                                    "&emsp;<input type='text' class='modyfywidth' id='modyfyBirth' data-target='#modifyBirthDatepicker' value='"+ data.result.memberBirth +"'>" +
+                                    "<div class='input-group-append' data-target='#modifyBirthDatepicker' data-toggle='datetimepicker'>"+
+                                        "<div class='input-group-text'>날짜선택</div>" +
+                                    "</div>" +
+                                "</div>"+
+                            "</td>" +
+                        "</tr>";
+                    break;
+                default:
+                    break;
+            }
+            html +=
+                    "<tr>" +
+                        "<td>가입일" +"</td>" +
+                        "<td>" + data.result.regDate + "</td>" +
+                    "</tr>" +
+                "</<table>";
+
+                return html;
+        }
+    };
 
     $mainView.event = {
-
-        /**
-         * @name logout_btn
-         * @description 로그아웃을 한다.
-         */
-        logout_btn: function () {
-            $("#logoutBtn").click(function () {
-                location.href = "/view/logout";
-            });
-
-
-        },
-
-        /**
-         * @name memberInfo
-         * @description 회원 목록에서 아이디 클릭시 회원의 상세 정보를 가져온다.
-         *              (본인 아이디를 클릭시 수정화면 나오고 수정버튼, 타인의 경우 삭제버튼 활성화)
-         */
-        memberInfo: function () {
+        setEventUI: function () {
+            /**
+             * @name memberInfo
+             * @description 회원 목록에서 아이디 클릭시 회원의 상세 정보를 가져온다.
+             *              (본인 아이디를 클릭시 수정화면 나오고 수정버튼, 타인의 경우 삭제버튼 활성화)
+             */
             $('#memberInfoModal').on('show.bs.modal', function (e) {
                 let button = $(e.relatedTarget);
                 memberId = button.data('title');
 
                 $.ajax({
-                    url: '/member/memberInfo/?memberId=' + memberId,
                     type: 'get',
+                    url: '/member/memberInfo',
+                    data: "memberId=" + memberId,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8;",
                     success: function (data) {
 
                         if (sessionStorage.getItem("userId") != data.result.memberId) {
-
-
                             $("#memberInfo").html("");
-
-                            let html =
-                                "<table id='memberInfoTable' class='table table-condensed table-hover'>"
-                                + "</<table>";
-                            $("#memberInfo").append(html);
-
-
-                            let str =
-                                "<tr>" +
-                                "<td>아이디" +
-                                "</td>" +
-                                "<td>" + data.result.memberId + "</td>" +
-                                "<tr>" +
-                                "<td>이름" +
-                                "</td>" +
-                                "<td>" + data.result.memberName + "</td>" +
-                                "<tr>" +
-                                "<td>주소" +
-                                "</td>" +
-                                "<td>" + data.result.memberAddress + "</td>" +
-                                "<tr>" +
-                                "<td>생년월일" +
-                                "</td>" +
-                                "<td>" + data.result.memberBirth + "</td>" +
-                                "<tr>" +
-                                "<td>가입일" +
-                                "</td>" +
-                                "<td>" + data.result.regDate + "</td>" +
-                                "</tr>";
-
-
-                            $("#memberInfo table").append(str);
+                            $("#memberInfo").html($mainView.template.getMemberInfoForm(data, "READ"));
                             $("#del_btn_div").show();
                             $("#update_btn_div").hide();
-                            $mainView.ui.currentMemberId = data.result.memberId;
-                            console.log(data.$mainView.ui.currentMemberId);
-
-                        }else{
+                        } else {
                             $("#memberInfo").html("");
-                            let html =
-                                "<table id='memberInfoTable' class='table table-condensed table-hover'>"
-                                + "</<table>";
-                            $("#memberInfo").append(html);
-
-                            let str =
-                                "<tr>" +
-                                "<td>아이디" +
-                                "</td>" +
-                                "<td>" + data.result.memberId + "</td>" +
-                                "<tr>" +
-                                "<td>이름" +
-                                "</td>" +
-                                "<td>" + data.result.memberName + "</td>" +
-                                "<tr>" +
-                                "<td>주소" +
-                                "</td>" +
-                                "<td><input type='text' id='modyfyAddress' value='"+ data.result.memberAddress +"'></td>" +
-                                "<tr>" +
-                                "<td>생년월일" +
-                                "</td>" +
-                                "<td>" +
-                                "<div className='input-group date' class='input-group date memberDatepickerfunc' id='modifyBirthDatepicker' onclick='$common.control.datePicker(this);' data-target-input='nearest'>" +
-                                "&emsp;<input type='text' class='modyfywidth' id='modyfyBirth' data-target='#modifyBirthDatepicker' value='"+ data.result.memberBirth +"'>" +
-                                "<div class='input-group-append' data-target='#modifyBirthDatepicker' data-toggle='datetimepicker'>"+
-                                "<div class='input-group-text'>날짜선택</div></div></div>"+
-                                "</td>" +
-                                "<tr>" +
-                                "<td>가입일" +
-                                "</td>" +
-                                "<td>" + data.result.regDate + "</td>" +
-                                "</tr>";
-                            $("#memberInfo table").append(str);
+                            $("#memberInfo").html($mainView.template.getMemberInfoForm(data, "MOD"));
                             $("#del_btn_div").hide();
                             $("#update_btn_div").show();
-                            $mainView.ui.currentMemberId = data.result.memberId;
-                            console.log($mainView.ui.currentMemberId);
 
-                          /*  $("#modifyBirthDatepicker").on("click", function() {
-                                $common.control.datePicker(this);
-                            });
+                            /*  $("#modifyBirthDatepicker").on("click", function() {
+                                  $common.control.datePicker(this);
+                              });
 
-                            $common.control.datePicker("#datepicker", "YYY/MM/DD");
-                            $common.control.datePicker(".datepicker", "YYYY-MM-DD");
-                            $common.control.datePicker("#datepicker");
-                            */
-
+                              $common.control.datePicker("#datepicker", "YYY/MM/DD");
+                              $common.control.datePicker(".datepicker", "YYYY-MM-DD");
+                              $common.control.datePicker("#datepicker");
+                              */
                         }
+                        $mainView.ui.currentMemberId = data.result.memberId;
 
                     }, error: function (data) {
                         console.log("실패");
                         console.log($mainView.ui.currentMemberId);
-
-                    }
-                });//ajax
-
-
-            });
-
-
-        },
-        /**
-         * @name memberInfodel
-         * @description 회원 상세정보창에서 삭제 클릭시 회원을 삭제한다.
-         */
-        memberInfodel: function () {
-            $('#member_del_btn').click(function () {
-                let delMemberId = $mainView.ui.currentMemberId;
-                console.log(delMemberId);
-                $.ajax({
-                    method: "DELETE",
-                    url: '/member/memberdel/?memberId=' + delMemberId,
-                    dataType: "json",
-                    success: function (data) {/*, textStatus, xhr*/
-                        if (confirm("회원정보를 삭제하시겠습니까 ?") == true) {
-                            $('#memberInfoModal').modal('hide');
-                            window.location.href = '/view/mainview';
-                        } else {
-                            return;
-                        }
-                    },
-                    error: function (data, request, status, error) {
-                        alert(data.result);
                     }
                 });
-
             });
-        },
-        datePicker: function () {
-            $('.memberDatepickerfunc').datetimepicker({format: 'YYYY-MM-DD'});
 
+            /**
+             * @name memberInfodel
+             * @description 회원 상세정보창에서 삭제 클릭시 회원을 삭제한다.
+             */
+            $('#member_del_btn').click(function () {
+                    let delMemberId = $mainView.ui.currentMemberId;
+                    console.log(delMemberId);
+
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/member/memberdel?memberId=' + delMemberId,
+                        dataType: 'json',
+                        contentType: 'application/json; charset=utf-8;',
+                        success: function (data) {/*, textStatus, xhr*/
+                            if (confirm("회원정보를 삭제하시겠습니까 ?") == true) {
+                                $('#memberInfoModal').modal('hide');
+                                window.location.href = '/view/mainview';
+                            } else {
+                                return;
+                            }
+                        },
+                        error: function (data, request, status, error) {
+                            alert(data.result);
+                        }
+                    });
+                });
         }
-    }
+    };
 
     $mainView.request = {
+
+        /**
+         * @name doUpdate
+         * @description 회원 목록에서 본인을 클릭해서 정보를 수정한다.
+         */
         doUpdate: function () {
             let memberAddress = $('#modyfyAddress').val();
             let memberBirth = $('#modyfyBirth').val();
             let memberId = $mainView.ui.currentMemberId;
-            console.log("가져온값="+memberAddress+"+"+memberBirth+"+"+memberId)
 
             if(memberAddress==""| memberBirth=="") {
                 alert("값을 올바르게 입력 해주세요.")
@@ -354,19 +319,15 @@
                     contentType: "application/json; charset=utf-8;",
                     success:function (data) {
                     console.log(data.result);
-                    console.log("성공");
                     alert("회원 정보가 수정되었습니다.")
                     $('#memberInfoModal').modal('hide');
                     window.location.href = '/view/mainview';
-
                 },
                     error:function(data){
-                        console.log("실패");
                         console.log(data.result);
                     }
                 })
-
             }
         }
-    }
+    };
 }(window, document));

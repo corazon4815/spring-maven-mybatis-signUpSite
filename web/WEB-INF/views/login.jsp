@@ -15,8 +15,11 @@
     <link rel="stylesheet" href="/css/login/login.css">
     <link rel="stylesheet" href="/css/memberjoin/memberjoin.css">
     <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
-
+    <%--<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />--%>
+    <%--<link rel="stylesheet" href="/css/memberjoin/calender/fontawesome.min.css">--%>
+<%--    <link rel="stylesheet" href="/css/memberjoin/calender/font-awesome.css">--%>
+<%--    <link rel="stylesheet" href="/css/memberjoin/calender/fontawesomeAll.css">--%>
+<%--    <link rel="stylesheet" href="/css/memberjoin/calender/fontawesome.css">--%>
 
 </head>
 <%--<script type="text/javascript">
@@ -26,27 +29,27 @@
 </script>--%>
 <body>
 <div id="login">
-    <h3 class="text-center text-white pt-5">Login form</h3>
+    <div style="margin-top: 150px "></div>
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
                 <div id="login-box" class="col-md-12">
                     <form id="login-form" class="form" action="" method="post">
-                        <h3 class="text-center text-info">Login</h3>
+                        <h2 class="text-center textgreen">LOGIN</h2>
                         <div class="form-group">
-                            <label for="memberId" class="text-info">Username:</label><br>
+                            <label for="memberId" class="textgreen">Username:</label><br>
                             <input type="text" name="memberId" id="memberId" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="memberPw" class="text-info">Password:</label><br>
+                            <label for="memberPw" class="textgreen">Password:</label><br>
                             <input type="password" name="memberPw" id="memberPw" class="form-control">
                         </div>
                         <div>
-                            <input type="button" name="submit" id="btn_login" class="btn btn-info btn-md" value="로그인">
-                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#memberModal">회원가입
                             </button>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            <input type="button" name="submit" id="btn_login" class="btn btn-info btn-md" value="로그인">
                         </div>
 
                     </form>

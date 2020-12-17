@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @RestController
 public class MemberController {
     /**
@@ -21,6 +20,7 @@ public class MemberController {
     /**
      * @name MemberController
      * @description MemberController 클래스 생성자
+     * - Field Injection 문제로 바로 @Autowired를 걸지않고, 생성자로 안전하게 사용
      * @param memberService : MemberService 객체
      */
     @Autowired
@@ -35,7 +35,7 @@ public class MemberController {
      * @param memberId 회원 아이디
      * @param memberPw 회원 비밀번호
      * @param response
-     * @return loginCnt(회원 조회해서 나온 갯수)가 1이면 resultMap의 result 키에 true값을 저장(반대의 경우 false)
+     * @return 조회결과가 있으면 resultMap의 result 키에 true값을 저장(반대의 경우 false)
      * @throws Exception 예외
      */
     @RequestMapping(value ="/member/login")
@@ -50,10 +50,9 @@ public class MemberController {
         map.put("memberId", memberId);
         map.put("memberPw", memberPw);
 
-        int loginCnt = memberService.loginChk(map);
-        System.out.println(map.get("memberId"));
-        if(loginCnt==1) {
-            session.setAttribute("memberId", memberId);
+        MemberDto memberDto = memberService.loginChk(map);
+        if(memberDto!=null) {
+            session.setAttribute("memberInfo", memberDto);
             resultMap.put("result", true);
         }else{
             resultMap.put("result", false);
@@ -70,7 +69,6 @@ public class MemberController {
      */
     @GetMapping(value ="/member/checkid")
     public Map isIdDuplicated(@RequestParam("memberId") String memberId) throws Exception {
-        System.out.println(memberId);
         Map resultMap = new HashMap();
         int DuplCnt = memberService.duplChk(memberId);
         if(DuplCnt>=1){
@@ -78,21 +76,20 @@ public class MemberController {
         }else{
             resultMap.put("result", true);
         }
-        System.out.println(DuplCnt);
-        System.out.println(resultMap.get("result"));
         return resultMap;
     }
 
     /**
      * @name registerMember
      * @description 회원가입을 한다.
-     * @param dto 사용자 정보 파라미터
+     * @param dto 회원 정보 파라미터
      * @return resultMap의 result키에 success값
      * @throws Exception 예외
      */
     @PostMapping(value = "/member/register")
     public Map registerMember(@RequestBody MemberDto dto) throws Exception {
         Map resultMap = new HashMap();
+
         memberService.memberRegister(dto);
         resultMap.put("result", "success");
 
@@ -116,7 +113,7 @@ public class MemberController {
     /**
      * @name getMember
      * @description 목록에서 아이디 클릭시 모달창을 띄워 회원 상세정보를 보여준다.
-     * @param memberId
+     * @param memberId 회원 아이디
      * @return MemberDto dto : 회원 상세 정보
      * @throws Exception 예외
      */
@@ -131,29 +128,30 @@ public class MemberController {
     /**
      * @name deleteMember
      * @description 모달창에서 삭제버튼 클릭시 회원을 삭제한다.
-     * @param memberId
+     * @param memberId 회원 아이디
      * @return 삭제 완료시 resultMap의 result키에 true
      * @throws Exception 예외
      */
     @DeleteMapping(value = "/member/memberdel")
     public Map deleteMember(@RequestParam("memberId") String memberId) throws Exception {
-        System.out.println(memberId);
         Map resultMap = new HashMap();
         memberService.deleteMember(memberId);
         resultMap.put("result", true);
         return resultMap;
     }
 
+    /**
+     * @name updateMember
+     * @description 자신의 회원정보를 수정한다.
+     * @param paramsMap 회원 아이디, 주소, 생년월일
+     * @return 삭제 완료시 resultMap의 result키에 true
+     * @throws Exception 예외
+     */
     @PutMapping(value ="/member/updateMember")
     public Map updateMember(@RequestBody Map paramsMap) throws Exception {
         Map resultMap = new HashMap();
-
         memberService.updateMember(paramsMap);
-
         resultMap.put("result", true);
-
         return resultMap;
     }
-
-
 }

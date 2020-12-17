@@ -1,13 +1,86 @@
+body {
+    background-color: #f3f3f3;
+}
 .clickable {cursor: pointer;}
 .hover {text-decoration: underline;}
 .active{ width:10px; height:10px; background:#c8c8c8; color:white;}
 .theadlist {
     text-align: center; background:#c8c8c8;
 }
-td{
+td.notd{
+    width:10px;
+    text-align: center;
+}
+td.idtd{
+    width:150px;
+    text-align: center;
+}
+td.nametd{
+    width:150px;
+    text-align: center;
+}
+td.addresstd{
+    width:280px;
+    text-align: center;
+}
+
+td.regdatetd{
     width:200px;
     text-align: center;
 }
 .cursor {cursor: pointer}
 
 .modyfywidth {width: 100px}
+
+.table-striped tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #93B874;
+}
+
+.header_container {
+    background-color: #f3f3f3;
+    border: 0;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+}
+.logouta {
+    margin-right: 20px;
+    color: #ffffff}
+a:hover { color: #ffffff; text-decoration: none;}
+.header {
+    text-align: left;
+    height: 40px;
+    background-color: #93B874;
+}
+.headerlogouta {
+    text-align: right;
+    height: 20px;
+    background-color: #93B874;
+}
+
+.headertext {
+    padding-left: 10px;
+    float:left;
+    height: 40px;
+    color: #ffffff;
+}
+.headerid {
+    padding-right: 10px;
+    padding-top: 10px;
+    font-size : 20px;
+    float:right; display:inline-block;
+    height: 40px;
+    color: #ffffff;
+}
+
+.span6 {margin-top: 50px;
+        text-align: center;
+        color :#93B874; }
+.header h2,
+.header h4 {
+    display: inline;
+}

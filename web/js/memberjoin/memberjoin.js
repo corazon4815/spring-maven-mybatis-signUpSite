@@ -4,9 +4,11 @@
     /**
      * 아이디 중복확인 버튼 클릭 상태를 저장 (회원가입버튼 클릭시 'N'으로 초기화됨)
      */
-    let isMemberChecked;
+    //let isMemberChecked;
 
     $memberJoin.event = {
+        isMemberChecked : "",
+
         /**
          * @name duplChk
          * @description 회원가입의 아이디 중복확인 버튼 클릭시 실행한다.
@@ -15,11 +17,15 @@
             /* $("#btn_duplChk").click(function () {*/
             let memberId = $('#memberIdModal').val();
             $.ajax({
-                url: '/member/checkid/?memberId=' + memberId,
-                data: memberId,
                 type: 'get',
+                url: '/member/checkid',
+                data: {
+                   "memberId" : memberId
+                },
+                dataType: "json",
+                contentType: "application/json; charset=utf-8;",
                 success: function (data) {
-                    isMemberChecked = 'N';
+                    $memberJoin.event.isMemberChecked = 'N';
                     if(memberId == ""){
                         $("#id_check").text("아이디를 입력해주세요.");
                         $("#id_check").css("color", "black");
@@ -32,11 +38,9 @@
                             $('#id_check').text('사용 가능한 아이디 입니다.');
                             $("#id_check").css("color", "black");
                             $("#reg_submit").attr("disabled", false);
-                            isMemberChecked = 'Y';
+                        $memberJoin.event.isMemberChecked = 'Y';
                         }
                     }
-
-
                 , error: function () {
                     console.log("실패");
                 }
@@ -99,27 +103,28 @@
                 alert("날짜는 yyyy-mm-dd 형식으로 입력해주세요.");
                 return false;
             }
-            if (isMemberChecked!='Y'){
+            if ($memberJoin.event.isMemberChecked!='Y'){
                 alert("아이디 중복체크를 해주시기 바랍니다.");
                 return false;
             }
-            if (memberPw!=member_pw_chk){
+            if (memberPw !== member_pw_chk){
                 $('#pw_check').text('비밀번호가 일치하지 않습니다.');
                 $('#pw_check').css('color', 'red');
                 return false;
             }else {
                 $.ajax({
-                    url: "/member/register",
                     type: "POST",
+                    url: "/member/register",
                     data: JSON.stringify(form),
-                    contentType: "application/json; charset=utf-8;",
                     dataType: "json",
+                    contentType: "application/json; charset=utf-8;",
                     success: function (result) {
+                        console.log(this);
                         console.log(result.result)
                         $('.inputbox').val('');
                         $('.inputbox').text('');
                         alert('회원가입이 완료되었습니다.')
-                        isMemberChecked = 'N';
+                        $memberJoin.event.isMemberChecked = 'N';
                         $('#memberModal').modal('hide');
                     },
                     error: function (request, status, error) {
@@ -130,4 +135,4 @@
             /*});*/
         }
     }
-}(window, document));
+})(window, document);
