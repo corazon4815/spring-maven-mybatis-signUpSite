@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
 
-
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,13 +13,6 @@
 </head>
 <body>
 
-<%--/**
-* @name logout_btn
-* @description 로그아웃을 한다.
-*/--%>
-<%--$("#logoutBtn").click(function () {
-location.href = "/view/logout";
-});--%>
 <div class="header_container">
     <div class="headerlogouta">
         <a class="logouta" href="/view/logout">LOGOUT</a>

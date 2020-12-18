@@ -30,30 +30,10 @@
 
     $loginView.event = {
         /**
-         * @name setEventUI
-         * @description 로그인 버튼 클릭 이벤트
+         * @name enter_login
+         * @description 엔터키로 로그인 할 수 있게 함.
          */
-       /* setEventUI: function () {*/
-          /* $("#btn_login").keyup(function(e){
-               if(e.keyCode == 13){
-                $loginView.event.btn_login();
-                   }
-            });*/
-
-
-    //     $("#sample").keydown(function(key) {
-    //
-    //     if (key.keyCode == 13) {
-    //
-    //         엔터키 입력 시 작업할 내용
-    //
-    //     }
-    //
-    // });
-
-
-
-           enter_login : function() {
+            enter_login : function() {
                $(".btn_login").keydown(function(key) {
 
                    if (key.keyCode == 13) {
@@ -65,6 +45,10 @@
                });
            },
 
+        /**
+         * @name setEventUI
+         * @description 로그인 버튼 클릭 이벤트
+         */
           /*  $('#btn_login').click(function () {*/
             btn_login : function() {
 

@@ -4,29 +4,26 @@
 <html>
 <head>
     <title>Title</title>
-    <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
-    <script type="text/javascript" src="/js/login/login.js"></script>
-    <script type="text/javascript" src="/js/memberjoin/memberjoin.js"></script>
-    <script type="text/javascript" src="/js/common/common.js"></script>
-    <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
-    <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
-    <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
     <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="/css/font/all.css">
     <link rel="stylesheet" href="/css/login/login.css">
     <link rel="stylesheet" href="/css/memberjoin/memberjoin.css">
-    <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
-    <%--<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />--%>
-    <%--<link rel="stylesheet" href="/css/memberjoin/calender/fontawesome.min.css">--%>
-<%--    <link rel="stylesheet" href="/css/memberjoin/calender/font-awesome.css">--%>
-<%--    <link rel="stylesheet" href="/css/memberjoin/calender/fontawesomeAll.css">--%>
-<%--    <link rel="stylesheet" href="/css/memberjoin/calender/fontawesome.css">--%>
+    <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
+    <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
+    <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="/js/login/login.js"></script>
+    <script type="text/javascript" src="/js/memberjoin/memberjoin.js"></script>
+
+
 
 </head>
-<%--<script type="text/javascript">
+<script type="text/javascript">
     $(function () {
-        $('.memberDatepickerfunc').datetimepicker({ format: 'YYYY-MM-DD'});
+        $('#datetimepickerlogin').datetimepicker({ format: 'YYYY-MM-DD'});
     });
-</script>--%>
+</script>
 <body>
 <div id="login">
     <div style="margin-top: 150px "></div>
@@ -124,10 +121,17 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text inputWidth">생년월일</div>
                                     </div>
-                                    <div class="input-group date memberDatepickerfunc"  id="memberBirthDatepicker" data-target-input="nearest" onclick="$common.control.datePicker();">
-                                        <input type="text" id="memberBirth" class="form-control birthInputbox inputbox" data-target="#memberBirthDatepicker" value="날짜선택">
-                                        <div class="input-group-append" data-target="#memberBirthDatepicker" data-toggle="datetimepicker">
-                                            <div class="input-group-text">날짜선택</div> </div> </div>
+                                    <div class="input-group input-group-lg date" id="datetimepickerlogin" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" id="memberBirth" data-target="#datetimepickerlogin"/>
+                                        <div class="input-group-append" data-target="#datetimepickerlogin" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                    <%--<input type="text" id="memberBirth" class="form-control birthInputbox inputbox" value="날짜선택">--%>
+<%--                                    <div class="input-group date memberDatepickerfunc"  id="memberBirthDatepicker" data-target-input="nearest" onclick="$common.control.datePicker();">--%>
+<%--                                        <input type="text" id="memberBirth" class="form-control birthInputbox inputbox" data-target="#memberBirthDatepicker" value="날짜선택">--%>
+<%--                                        <div class="input-group-append" data-target="#memberBirthDatepicker" data-toggle="datetimepicker">--%>
+<%--                                            <div class="input-group-text">날짜선택</div> </div> </div>--%>
                                 </div>
 
                             </div>

@@ -56,9 +56,9 @@
                 }).fail(function (e) {
                 alert(e.responseText);
             });
-        },
+        }
 
-        paging: function () {
+      /*  paging: function () {
             $('#listInfo').jqPagination({
                     dataSource:
                         $mainView.ui.memberList(),
@@ -75,7 +75,7 @@
                     }
                 })
 
-        }
+        }*/
     };
 
     $mainView.template = {
@@ -182,7 +182,12 @@
                         console.log($mainView.ui.currentMemberId);
                     }
                 });
-            });
+
+                $('#alertModal').on('show.bs.modal', function (e) {
+                    console.log("alert show");
+                });
+                $('#alertModal').modal("show");
+;            });
 
             /**
              * @name memberInfodel
