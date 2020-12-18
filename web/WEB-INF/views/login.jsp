@@ -42,14 +42,14 @@
                         </div>
                         <div class="form-group">
                             <label for="memberPw" class="textgreen">Password:</label><br>
-                            <input type="password" name="memberPw" id="memberPw" class="form-control">
+                            <input type="password" name="memberPw" id="memberPw" class="form-control btn_login">
                         </div>
                         <div>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#memberModal">회원가입
                             </button>
                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                            <input type="button" name="submit" id="btn_login" class="btn btn-info btn-md" value="로그인">
+                            <input type="button" id="btn_login" class="btn btn-info btn-md" onclick="$loginView.event.btn_login();" value="로그인">
                         </div>
 
                     </form>

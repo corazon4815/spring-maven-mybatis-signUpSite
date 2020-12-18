@@ -2,7 +2,8 @@
     W.$loginView = W.$loginView || {};
 
     $(document).ready(function () {
-        $loginView.event.setEventUI();
+        $loginView.event.enter_login();
+
        // $memberJoin.event.datePicker();
     });
 
@@ -32,8 +33,41 @@
          * @name setEventUI
          * @description 로그인 버튼 클릭 이벤트
          */
-        setEventUI: function () {
-            $('#btn_login').click(function () {
+       /* setEventUI: function () {*/
+          /* $("#btn_login").keyup(function(e){
+               if(e.keyCode == 13){
+                $loginView.event.btn_login();
+                   }
+            });*/
+
+
+    //     $("#sample").keydown(function(key) {
+    //
+    //     if (key.keyCode == 13) {
+    //
+    //         엔터키 입력 시 작업할 내용
+    //
+    //     }
+    //
+    // });
+
+
+
+           enter_login : function() {
+               $(".btn_login").keydown(function(key) {
+
+                   if (key.keyCode == 13) {
+
+                       $loginView.event.btn_login();
+
+                   }
+
+               });
+           },
+
+          /*  $('#btn_login').click(function () {*/
+            btn_login : function() {
+
                 let memberId = $('#memberId').val();
                 let memberPw = $('#memberPw').val();
                 if (memberId == "") {
@@ -60,8 +94,8 @@
                         }
                     });
                 }
-            });
-        }
+            }
+
     };
 
 
