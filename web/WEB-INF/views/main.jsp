@@ -4,7 +4,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>회원목록</title>
     <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
     <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
     <script type="text/javascript" src="/libs/paging/Pagination.js"></script>

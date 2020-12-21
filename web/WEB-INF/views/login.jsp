@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>로그인</title>
     <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
     <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
     <link rel="stylesheet" href="/css/font/all.css">

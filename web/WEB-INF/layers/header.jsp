@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Insert title here</title>
+    <title>헤더</title>
     <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
     <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
 
