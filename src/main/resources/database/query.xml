@@ -76,20 +76,6 @@
     </update>
 </mapper>
 
-
-
-
-
-
-
-
-
-    <!--update member_tb set regdate="2020-03-03" where member_id = "root";-->
-
-
-
-
-
     <!--SELECT-->
                      <!--A,-->
                      <!--B,-->

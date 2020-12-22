@@ -18,8 +18,6 @@
         <typeAlias alias="resultMap" type="java.util.HashMap" />
         <typeAlias alias="resultList" type="java.util.List" />
         <typeAlias alias="memberDto" type="org.example.model.MemberDto" />
-
-        <package name="com.archi"/>
     </typeAliases>
 
 </configuration>
