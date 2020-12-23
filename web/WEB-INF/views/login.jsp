@@ -13,6 +13,7 @@
     <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
     <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="/js/common/common.js"></script>
     <script type="text/javascript" src="/js/login/login.js"></script>
     <script type="text/javascript" src="/js/memberjoin/memberjoin.js"></script>
 
@@ -42,7 +43,7 @@
                             <input type="password" name="memberPw" id="memberPw" class="form-control btn_login">
                         </div>
                         <div>
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                            <button type="button" class="btn btn-primary" id="join_btn" data-toggle="modal"
                                     data-target="#memberModal">회원가입
                             </button>
                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -81,7 +82,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="check_font inputbox" id="id_check" style="font-size: 10px;"></div>
+                                <div class="check_font inputbox error-next-box" id="id_check" style="font-size: 10px;"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group mb-2">
@@ -90,6 +91,7 @@
                                     </div>
                                     <input type="text" class="form-control inputbox" id="memberName" required>
                                 </div>
+                                <div class="check_font inputbox error-next-box" id="name_check" style="font-size: 10px;"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group mb-2">
@@ -98,14 +100,16 @@
                                     </div>
                                     <input type="text" class="form-control inputbox" id="memberAddress" required>
                                 </div>
+                                <div class="check_font inputbox error-next-box" id="address_check" style="font-size: 10px;"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text inputWidth">비밀번호</div>
                                     </div>
-                                    <input type="text" class="form-control inputbox" id="memberPwModal" required>
+                                    <input type="text" class="form-control inputbox error-next-box" id="memberPwModal" required>
                                 </div>
+                                <div class="check_font inputbox error-next-box" id="pre_pw_check" style="font-size: 10px;"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group mb-2">
@@ -114,7 +118,7 @@
                                     </div>
                                     <input type="text" class="form-control inputbox" id="member_pw_chk" required>
                                 </div>
-                                <div class="check_font inputbox" id="pw_check" style="font-size: 10px;"></div>
+                                <div class="check_font inputbox error-next-box" id="pw_check" style="font-size: 10px;"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group mb-2">
@@ -122,17 +126,13 @@
                                         <div class="input-group-text inputWidth">생년월일</div>
                                     </div>
                                     <div class="input-group input-group-lg date" id="datetimepickerlogin" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="memberBirth" data-target="#datetimepickerlogin"/>
+                                        <input type="text" class="form-control datetimepicker-input inputbox" id="memberBirth" data-target="#datetimepickerlogin"/>
                                         <div class="input-group-append" data-target="#datetimepickerlogin" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
-                                    <%--<input type="text" id="memberBirth" class="form-control birthInputbox inputbox" value="날짜선택">--%>
-<%--                                    <div class="input-group date memberDatepickerfunc"  id="memberBirthDatepicker" data-target-input="nearest" onclick="$common.control.datePicker();">--%>
-<%--                                        <input type="text" id="memberBirth" class="form-control birthInputbox inputbox" data-target="#memberBirthDatepicker" value="날짜선택">--%>
-<%--                                        <div class="input-group-append" data-target="#memberBirthDatepicker" data-toggle="datetimepicker">--%>
-<%--                                            <div class="input-group-text">날짜선택</div> </div> </div>--%>
                                 </div>
+                                <div class="check_font inputbox error-next-box" id="birth_check" style="font-size: 10px;"></div>
 
                             </div>
 

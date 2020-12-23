@@ -52,7 +52,7 @@
                             "</tr>";
                     }
                     $("#tbl").html(html);
-                    $mainView.ui.paging();
+                    /*$mainView.ui.paging();*/
                 }).fail(function (e) {
                 alert(e.responseText);
             });
@@ -183,11 +183,13 @@
                     }
                 });
 
-                $('#alertModal').on('show.bs.modal', function (e) {
+                /*$('#alertModal').on('show.bs.modal', function (e) {
                     console.log("alert show");
-                });
-                $('#alertModal').modal("show");
-;            });
+                });*/
+            /*    $commonFunc.message.alert("알림","틀렸어요")*/
+                /*$('#alertModal').modal("show");*/
+
+            });
 
             /**
              * @name memberInfodel
@@ -203,12 +205,32 @@
                         dataType: 'json',
                         contentType: 'application/json; charset=utf-8;',
                         success: function (data) {/*, textStatus, xhr*/
-                            if (confirm("회원정보를 삭제하시겠습니까 ?") == true) {
-                                $('#memberInfoModal').modal('hide');
-                                window.location.href = '/view/mainview';
-                            } else {
-                                return;
-                            }
+                            $commonFunc.message.confirm("알림","회원정보를 삭제하시겠습니까 ?");
+
+                            // $("#confirmOkBtn").click(function () {
+                            //     $('#confirmPopup').modal("hide");
+                            //     $('#confirmPopup').on("hidden.bs.modal", function(e) {
+                            //         $('#confirmPopup').modal("dispose");
+                            //         window.location.href = '/view/mainview';
+                            //     });
+                            //     if (okCallback != null && okCallback instanceof Function) {
+                            //         okCallback.call(undefined);
+                            //     }
+                            // });
+                            // $("#confirmCancelBtn").click(function () {
+                            //     $('#confirmPopup').modal("hide");
+                            //     $('#confirmPopup').on("hidden.bs.modal", function(e) {
+                            //         $('#confirmPopup').modal("dispose");
+                            //     });
+                            //     if (cancelCallback != null && cancelCallback instanceof Function) {
+                            //         cancelCallback.call(undefined);
+                            //     }
+                            // });
+
+
+                        /*    $('#memberInfoModal').modal('hide');
+                                window.location.href = '/view/mainview';*/
+
                         },
                         error: function (data, request, status, error) {
                             alert(data.result);
@@ -256,4 +278,61 @@
             }
         }
     };
+
+    $mainView.message = {
+        alert: function (title, message, callback) {
+            /*let html = "";
+            html += "<div>";
+            html += "<p style='font-size:14px;text-align:center;'>" + message + "</p>"
+            html += "<div class='window_btnset' style='padding:10px;'>";
+            html += "<button type='button' class='k-button  k-primary' id='alertOkBtn'>확인</button>";
+//          html +=       "<button type='button' class='k-button  k-button-icontext' id='alertOkBtn'><span class='k-icon k-i-check'></span>확인</button>";
+            html += "</div>";
+            html += "</div>";
+
+            var alert = $(html).kendoWindow({
+                width: 400,
+                title: title,
+                visible: false,
+                modal: true,
+                pinned: false,
+                position: {top: 100},
+                draggable: false,
+                actions: [
+                    "Close"
+                ],
+                close: function () {
+                    alert.destroy();
+                }
+            }).data("kendoWindow").center().open();
+
+            $("#alertOkBtn").click(function () {
+                alert.close();
+                if (callback != null && callback instanceof Function) {
+                    callback.call(undefined);
+                }
+            });*/
+            let html =
+                '<div class="modal fade" id="alertPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">' +
+                '<div class="modal-dialog modal-dialog-centered" role="document">' +
+                '<div class="modal-content">' +
+                '<div class="modal-header">' +
+                '<h5 class="modal-title" id="exampleModalLongTitle">' + title + '</h5>' +
+                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                '<span aria-hidden="true">&times;</span>' +
+                '</button>' +
+                '</div>' +
+                '<div class="modal-body">' +
+                message +
+                '</div>' +
+                '<div class="modal-footer">' +
+                '<button type="button" id="alertOkBtn" class="btn btn-primary" data-dismiss="modal">확인</button>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+
+            let alert = $(html).modal("show");
+        }
+    }
 }(window, document));

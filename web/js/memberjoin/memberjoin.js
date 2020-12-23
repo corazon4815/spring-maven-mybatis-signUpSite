@@ -49,6 +49,18 @@
         datePicker: function () {
             $('.memberDatepickerfunc').datetimepicker({format: 'YYYY-MM-DD'});
 
+        },
+       /* btn_join: function () {
+            $('.inputbox').val('');
+            $('.inputbox').text('');
+            return true;
+        }
+*/
+        btn_join : function() {
+            $('#join_btn').on('hidden.bs.modal', function (e) {
+                console.log('modal close');
+                $(this).find('form')[0].reset()
+            });
         }
 
     }
@@ -69,6 +81,7 @@
             let memberName = $('#memberName').val();
             let memberAddress = $('#memberAddress').val();
             let memberBirth = $('#memberBirth').val();
+            let datatimeRegexp = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
             let form = {
                 memberId: $('#memberIdModal').val(),
                 memberName: $('#memberName').val(),
@@ -76,40 +89,40 @@
                 memberPw: $('#memberPwModal').val(),
                 memberBirth: $('#memberBirth').val()
             };
-            console.log(memberBirth);
-            if(!memberId) {
-                alert("아이디를 입력하세요");
-                return false;
-            }
-            if(!memberName) {
-                alert("이름을 입력하세요");
-                return false;
-            }
-            if(!memberAddress) {
-                alert("주소를 입력하세요");
-                return false;
-            }
-            if(!memberPw) {
-                alert("비밀번호를 입력하세요");
-                return false;
-            }
-            if(!memberBirth) {
-                alert("생년월일을 입력하세요");
-                return false;
-            }
-            let datatimeRegexp = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
 
-            if ( !datatimeRegexp.test($('#memberBirth').val()) ) {
-                alert("날짜는 yyyy-mm-dd 형식으로 입력해주세요.");
+            if(memberName==="") {
+                $('#name_check').text("필수입력 사항입니다.");
+                $('#name_check').css("color", "red");
                 return false;
             }
-            if ($memberJoin.event.isMemberChecked!='Y'){
-                alert("아이디 중복체크를 해주시기 바랍니다.");
+            if(memberAddress==="") {
+                $('#address_check').text("필수입력 사항입니다.");
+                $('#address_check').css("color", "red");
                 return false;
             }
-            if (memberPw !== member_pw_chk){
+            if(memberPw==="") {
+                $('#pre_pw_check').text("필수입력 사항입니다.");
+                $('#pre_pw_check').css("color", "red");
+                return false;
+            }
+            if (memberPw !== member_pw_chk) {
                 $('#pw_check').text('비밀번호가 일치하지 않습니다.');
                 $('#pw_check').css('color', 'red');
+                return false;
+            }
+            if(memberBirth==="") {
+                $('#birth_check').text("필수입력 사항입니다.");
+                $('#birth_check').css("color", "red");
+                return false;
+            }
+            if ( !datatimeRegexp.test(memberBirth) ) {
+                $("#birth_check").text("날짜는 yyyy-mm-dd 형식으로 입력해주세요.");
+                $("#birth_check").css("color", "red");
+                return false;
+            }
+            if ($memberJoin.event.isMemberChecked!='Y') {
+                $('#id_check').text('아이디 중복체크를 해주세요.');
+                $("#id_check").css("color", "black");
                 return false;
             }else {
                 $.ajax({
@@ -123,7 +136,7 @@
                         console.log(result.result)
                         $('.inputbox').val('');
                         $('.inputbox').text('');
-                        alert('회원가입이 완료되었습니다.')
+                        $commonFunc.message.alert("알림","회원가입이 완료되었습니다.")
                         $memberJoin.event.isMemberChecked = 'N';
                         $('#memberModal').modal('hide');
                     },

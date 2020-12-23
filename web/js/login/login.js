@@ -1,6 +1,7 @@
 (function(W, D) {
     W.$loginView = W.$loginView || {};
 
+
     $(document).ready(function () {
         $loginView.event.enter_login();
 
@@ -55,10 +56,10 @@
                 let memberId = $('#memberId').val();
                 let memberPw = $('#memberPw').val();
                 if (memberId == "") {
-                    alert("ID를 입력하세요.");
+                    $commonFunc.message.alert("알림","ID를 입력하세요.")
                     return false;
                 } else if (memberPw == "") {
-                    alert("비밀번호를 입력하세요.");
+                    $commonFunc.message.alert("알림","비밀번호를 입력하세요.")
                     return false;
                 } else {
                     $.ajax({
@@ -70,7 +71,8 @@
                             if (data.result) {
                                 window.location.href = '/view/mainview';
                             }else{
-                            alert("아이디와 비밀번호를 확인해주세요.")}
+                            $commonFunc.message.alert("알림","아이디와 비밀번호를 확인해주세요.")
+                            }
                         }
                         ,
                         error: function (request, status, error) {
