@@ -4,6 +4,40 @@
     $(document).ready(function () {
         $mainView.ui.memberList();
         $mainView.event.setEventUI();
+        $('#pagination').pagination({
+            dataSource: [
+                {name: "hello1"},
+                {name: "hello2"},
+                {name: "hello3"},
+                {name: "hello4"},
+                {name: "hello5"},
+                {name: "hello6"},
+                {name: "hello7"},
+                {name: "hello8"},
+                {name: "hello9"},
+                {name: "hello10"},
+                {name: "hello11"},
+                {name: "hello12"},
+                {name: "hello13"},
+                {name: "hello14"},
+                {name: "hello15"},
+                {name: "hello16"},
+                {name: "hello17"},
+            ],
+            callback: function (data, pagination) {
+                var dataHtml = '<ul>';
+
+                $.each(data, function (index, item) {
+                    dataHtml += '<li>' + item.name + '</li>';
+                });
+
+                dataHtml += '</ul>';
+
+                $("#data-container").html(dataHtml);
+            }
+        })
+
+
     });
 
     $mainView.ui = {
@@ -24,6 +58,9 @@
                 contentType: "application/json; charset=utf-8;"
             })
                 .done(function (args) {
+                        // let container = $('#pagination');
+                        // container.pagination({
+                        //     dataSource: [
                     let html =
                         "<thead  class='theadlist' ><tr>" +
                         "<td class='notd'>번호" +
@@ -38,11 +75,9 @@
                         "</td>" +
                         "</tr></thead>";
 
-                    /*$("#listInfo").html(html);*/
-                    /*  onclick='$mainView.event.memberInfo("+args.result[i].memberId +");'*/
                     for (let i = 0; i < args.result.length; i++) {
                         html +=
-                            "<tr class='cursor' data-toggle='modal' data-target='#memberInfoModal' data-title=" + args.result[i].memberId + ">" +
+                            "<tr class='cursor' onclick=\"javascript:$mainView.ui.showMemberInfoPopup(\'" + args.result[i].memberId + "\')\"; data-title=" + args.result[i].memberId + ">" +
                             "<td class='notd'>"+(i+1)+"</td>" +
                             "<td id='memId_"+i+"' class='idtd'>" +
                             args.result[i].memberId + "</td>" +
@@ -51,10 +86,60 @@
                             "<td class='regdatetd'>" + args.result[i].regDate + "</td>" +
                             "</tr>";
                     }
+
                     $("#tbl").html(html);
+
+
+
+
+
                     /*$mainView.ui.paging();*/
                 }).fail(function (e) {
                 alert(e.responseText);
+            });
+        },
+        /**
+         * @name showMemberInfoPopup
+         * @description 회원 목록에서 아이디 클릭시 회원의 상세 정보를 가져온다.
+         *              (본인 아이디를 클릭시 수정화면 나오고 수정버튼, 타인의 경우 삭제버튼 활성화)
+         */
+        showMemberInfoPopup : function(memberId) {
+            $.ajax({
+                type: 'get',
+                url: '/member/memberInfo',
+                data: "memberId=" + memberId,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8;",
+                success: function (data) {
+                    //console.log(sessionStorage.getItem("userId"));
+                    //console.log( data.result.memberId);
+                    if (sessionStorage.getItem("userId") != data.result.memberId) {
+                        $("#memberInfo").html("");
+                        $("#memberInfo").html($mainView.template.getMemberInfoForm(data, "READ"));
+                        $("#del_btn_div").show();
+                        $("#update_btn_div").hide();
+                    } else {
+                        $("#memberInfo").html("");
+                        $("#memberInfo").html($mainView.template.getMemberInfoForm(data, "MOD"));
+                        $("#del_btn_div").hide();
+                        $("#update_btn_div").show();
+
+                        /*  $("#modifyBirthDatepicker").on("click", function() {
+                              $common.control.datePicker(this);
+                          });
+
+                          $common.control.datePicker("#datepicker", "YYY/MM/DD");
+                          $common.control.datePicker(".datepicker", "YYYY-MM-DD");
+                          $common.control.datePicker("#datepicker");
+                          */
+                    }
+                    $mainView.ui.currentMemberId = data.result.memberId;
+                    $("#memberInfoModal").modal("show");
+
+                }, error: function (data) {
+                    console.log("실패");
+                    console.log($mainView.ui.currentMemberId);
+                }
             });
         }
 
@@ -79,7 +164,16 @@
     };
 
     $mainView.template = {
+        /**
+         * @name getMemberInfoForm
+         * @description 회원을 클릭했을 때의 두가지 템플릿 (조회상태와 수정상태)
+         *
+         */
         getMemberInfoForm : function(data, mode) {
+            /*onclick='$mainView.event.datePicker();'*/
+          /*  $(function () {
+                $('#datetimepickerlogin').datetimepicker({ format: 'YYYY-MM-DD'});
+            });*/
             let html =
                 "<table id='memberInfoTable' class='table table-condensed table-striped table-hover'>" +
                     "<tr>" +
@@ -112,12 +206,21 @@
                         "<tr>" +
                             "<td>생년월일" +"</td>" +
                             "<td>" +
-                                "<div className='input-group date' class='input-group date memberDatepickerfunc' id='modifyBirthDatepicker' onclick='$common.control.datePicker(this);' data-target-input='nearest'>" +
+                                 "<div class='input-group input-group-lg date' id='modifyBirthDatepicker' data-target-input='nearest'>" +
+                                     "<input type='text' class='form-control datetimepicker-input inputbox' value='"+data.result.memberBirth+"' id='modyfyBirth' data-target='#modifyBirthDatepicker'/>" +
+                                        "<div class='input-group-append' data-target='#modifyBirthDatepicker' data-toggle='datetimepicker'>" +
+                                            "<div class='input-group-text'>" +
+                                               "<i class='fa fa-calendar'></i></div>" +
+                                        "</div>" +
+                                "</div>" +
+
+
+                                /*"<div className='input-group date' class='input-group date memberDatepickerfunc' id='modifyBirthDatepicker' onclick='$common.control.datePicker(this);' data-target-input='nearest'>" +
                                     "<input type='text' class='modyfywidth' id='modyfyBirth' data-target='#modifyBirthDatepicker' value='"+ data.result.memberBirth +"'>" +
                                     "<div class='input-group-append' data-target='#modifyBirthDatepicker' data-toggle='datetimepicker'>"+
                                         "<div class='input-group-text'>날짜선택</div>" +
                                     "</div>" +
-                                "</div>"+
+                                "</div>"+*/
                             "</td>" +
                         "</tr>";
                     break;
@@ -138,106 +241,32 @@
     $mainView.event = {
         setEventUI: function () {
             /**
-             * @name memberInfo
-             * @description 회원 목록에서 아이디 클릭시 회원의 상세 정보를 가져온다.
-             *              (본인 아이디를 클릭시 수정화면 나오고 수정버튼, 타인의 경우 삭제버튼 활성화)
-             */
-            $('#memberInfoModal').on('show.bs.modal', function (e) {
-                let button = $(e.relatedTarget);
-                memberId = button.data('title');
-
-                $.ajax({
-                    type: 'get',
-                    url: '/member/memberInfo',
-                    data: "memberId=" + memberId,
-                    dataType: "json",
-                    contentType: "application/json; charset=utf-8;",
-                    success: function (data) {
-                        console.log(sessionStorage.getItem("userId"));
-                        console.log( data.result.memberId);
-                        if (sessionStorage.getItem("userId") != data.result.memberId) {
-                            $("#memberInfo").html("");
-                            $("#memberInfo").html($mainView.template.getMemberInfoForm(data, "READ"));
-                            $("#del_btn_div").show();
-                            $("#update_btn_div").hide();
-                        } else {
-                            $("#memberInfo").html("");
-                            $("#memberInfo").html($mainView.template.getMemberInfoForm(data, "MOD"));
-                            $("#del_btn_div").hide();
-                            $("#update_btn_div").show();
-
-                            /*  $("#modifyBirthDatepicker").on("click", function() {
-                                  $common.control.datePicker(this);
-                              });
-
-                              $common.control.datePicker("#datepicker", "YYY/MM/DD");
-                              $common.control.datePicker(".datepicker", "YYYY-MM-DD");
-                              $common.control.datePicker("#datepicker");
-                              */
-                        }
-                        $mainView.ui.currentMemberId = data.result.memberId;
-
-                    }, error: function (data) {
-                        console.log("실패");
-                        console.log($mainView.ui.currentMemberId);
-                    }
-                });
-
-                /*$('#alertModal').on('show.bs.modal', function (e) {
-                    console.log("alert show");
-                });*/
-            /*    $commonFunc.message.alert("알림","틀렸어요")*/
-                /*$('#alertModal').modal("show");*/
-
-            });
-
-            /**
              * @name memberInfodel
              * @description 회원 상세정보창에서 삭제 클릭시 회원을 삭제한다.
              */
             $('#member_del_btn').click(function () {
                     let delMemberId = $mainView.ui.currentMemberId;
-                    console.log(delMemberId);
-
-                    $.ajax({
-                        type: 'DELETE',
-                        url: '/member/memberdel?memberId=' + delMemberId,
-                        dataType: 'json',
-                        contentType: 'application/json; charset=utf-8;',
-                        success: function (data) {/*, textStatus, xhr*/
-                            $commonFunc.message.confirm("알림","회원정보를 삭제하시겠습니까 ?");
-
-                            // $("#confirmOkBtn").click(function () {
-                            //     $('#confirmPopup').modal("hide");
-                            //     $('#confirmPopup').on("hidden.bs.modal", function(e) {
-                            //         $('#confirmPopup').modal("dispose");
-                            //         window.location.href = '/view/mainview';
-                            //     });
-                            //     if (okCallback != null && okCallback instanceof Function) {
-                            //         okCallback.call(undefined);
-                            //     }
-                            // });
-                            // $("#confirmCancelBtn").click(function () {
-                            //     $('#confirmPopup').modal("hide");
-                            //     $('#confirmPopup').on("hidden.bs.modal", function(e) {
-                            //         $('#confirmPopup').modal("dispose");
-                            //     });
-                            //     if (cancelCallback != null && cancelCallback instanceof Function) {
-                            //         cancelCallback.call(undefined);
-                            //     }
-                            // });
-
-
-                        /*    $('#memberInfoModal').modal('hide');
-                                window.location.href = '/view/mainview';*/
-
-                        },
-                        error: function (data, request, status, error) {
-                            alert(data.result);
-                        }
+                    $commonFunc.message.confirm("알림", "회원정보를 삭제하시겠습니까?", function() {
+                            $.ajax({
+                                type: 'DELETE',
+                                url: '/member/memberdel?memberId=' + delMemberId,
+                                dataType: 'json',
+                                contentType: 'application/json; charset=utf-8;',
+                                success: function (data) {/*, textStatus, xhr*/
+                                    $commonFunc.message.alert("알림", "정상적으로 삭제하였습니다.", function() {
+                                        window.location.href = '/view/mainview';
+                                    });
+                                },
+                                error: function (data, request, status, error) {
+                                    $commonFunc.message.alert("알림", data.result);
+                                }
+                            });
                     });
                 });
-        }
+        },
+        /*datePicker: function () {
+            $('#modifyBirthDatepicker').datetimepicker({ format: 'YYYY-MM-DD'});
+        }*/
     };
 
     $mainView.request = {
@@ -266,10 +295,9 @@
                     dataType: "json",
                     contentType: "application/json; charset=utf-8;",
                     success:function (data) {
-                    console.log(data.result);
-                    alert("회원 정보가 수정되었습니다.")
-                    $('#memberInfoModal').modal('hide');
-                    window.location.href = '/view/mainview';
+                        $commonFunc.message.alert("알림", "정상적으로 수정되었습니다.", function() {
+                            window.location.href = '/view/mainview';
+                        });
                 },
                     error:function(data){
                         console.log(data.result);
@@ -281,37 +309,6 @@
 
     $mainView.message = {
         alert: function (title, message, callback) {
-            /*let html = "";
-            html += "<div>";
-            html += "<p style='font-size:14px;text-align:center;'>" + message + "</p>"
-            html += "<div class='window_btnset' style='padding:10px;'>";
-            html += "<button type='button' class='k-button  k-primary' id='alertOkBtn'>확인</button>";
-//          html +=       "<button type='button' class='k-button  k-button-icontext' id='alertOkBtn'><span class='k-icon k-i-check'></span>확인</button>";
-            html += "</div>";
-            html += "</div>";
-
-            var alert = $(html).kendoWindow({
-                width: 400,
-                title: title,
-                visible: false,
-                modal: true,
-                pinned: false,
-                position: {top: 100},
-                draggable: false,
-                actions: [
-                    "Close"
-                ],
-                close: function () {
-                    alert.destroy();
-                }
-            }).data("kendoWindow").center().open();
-
-            $("#alertOkBtn").click(function () {
-                alert.close();
-                if (callback != null && callback instanceof Function) {
-                    callback.call(undefined);
-                }
-            });*/
             let html =
                 '<div class="modal fade" id="alertPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">' +
                 '<div class="modal-dialog modal-dialog-centered" role="document">' +

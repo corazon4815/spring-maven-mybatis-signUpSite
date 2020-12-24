@@ -5,17 +5,24 @@
 <html>
 <head>
     <title>회원목록</title>
-    <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
-    <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/libs/paging/Pagination.js"></script>
-    <script type="text/javascript" src="/js/main/main.js"></script>
-    <script type="text/javascript" src="/js/common/common.js"></script>
-    <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
-    <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
     <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
-    <link rel="stylesheet" href="/libs/paging/Pagination.css">
+    <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="/css/font/all.css">
+    <%--<link rel="stylesheet" href="/libs/paging/Pagination.css">--%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
     <link rel="stylesheet" href="/css/main/main.css">
     <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
+    <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+    <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
+    <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
+
+   <%-- <script type="text/javascript" src="/libs/paging/Pagination.js"></script>--%>
+    <script type="text/javascript" src="/js/main/main.js"></script>
+    <script type="text/javascript" src="/js/common/common.js"></script>
+
+
 
 <%--    <link rel="stylesheet" href="/css/memberjoin/calender/font-awesome.css">--%>
     <%--<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />--%>
@@ -29,13 +36,12 @@
 <jsp:include page="../layers/header.jsp"></jsp:include>
 <div class="container">
     <div class="span5">
+
         <div id="listInfo">
             <table id='tbl' class='tbl paginated table table-striped table-condensed table-hover'></table>
 
 
         </div>
-        <div id="pagination"></div>
-        <br>
     </div>
 </div>
 
@@ -96,6 +102,12 @@
         </div>
     </div>
 </div>
+
+<section>
+    <div id="data-container"></div>
+    <div id="pagination"></div>
+</section>
+
 
 
 </body>

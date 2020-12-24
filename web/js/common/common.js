@@ -1,10 +1,17 @@
     (function (W, D) {
         W.$commonFunc = W.$commonFunc || {};
 
-
-
-
-    $commonFunc.message = {
+      /*  $commonFunc.control = {
+            datePicker : function(el, options) {
+                if (options === undefined || options === null) {
+                    options = "YYYY-MM-DD";
+                }
+                $(el).datetimepicker({
+                    format: options
+                });
+            }
+        };*/
+        $commonFunc.message = {
 
         /**
          *
@@ -63,24 +70,25 @@
                 message +
                 '</div>' +
                 '<div class="modal-footer">' +
-                '<button type="button" id="alertOkBtn" class="btn btn-primary" data-dismiss="modal">확인</button>' +
+                '<button type="button" id="alertOkBtn"class="btn btn-primary" data-dismiss="modal">확인</button>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
                 '</div>';
 
-            let alert = $(html).modal("show");
+            $(html).on('shown.bs.modal', function (e) {
+                $("#alertOkBtn").click(function () {
+                    $('#alertPopup').modal("hide");
+                    $('#alertPopup').on("hidden.bs.modal", function(e) {
+                        $('#alertPopup').modal("dispose");
+                        $('#alertPopup').remove();
+                    });
 
-            $("#alertOkBtn").click(function () {
-                $('#alertPopup').modal("hide");
-                $('#alertPopup').on("hidden.bs.modal", function(e) {
-                    $('#alertPopup').modal("dispose");
+                    if (callback != null && callback instanceof Function) {
+                        callback.call(undefined);
+                    }
                 });
-
-                if (callback != null && callback instanceof Function) {
-                    callback.call(undefined);
-                }
-            });
+            }).modal("show");
         },
 
         /**
@@ -158,27 +166,30 @@
                 '</div>' +
                 '</div>';
 
-            let alert = $(html).modal("show");
 
-            $("#confirmOkBtn").click(function () {
-                $('#confirmPopup').modal("hide");
-                $('#confirmPopup').on("hidden.bs.modal", function(e) {
-                    $('#confirmPopup').modal("dispose");
+            $(html).on('shown.bs.modal', function (e) {
+                $("#confirmOkBtn").on("click", function() {
+                    $('#confirmPopup').modal("hide");
+                    $('#confirmPopup').on("hidden.bs.modal", function(e) {
+                        $('#confirmPopup').data("dispose");
+                        $('#confirmPopup').remove();
+                    });
+                    if (okCallback != null && okCallback instanceof Function) {
+                        okCallback.call(undefined);
+                    }
                 });
-                if (okCallback != null && okCallback instanceof Function) {
-                    okCallback.call(undefined);
-                }
-            });
 
-            $("#confirmCancelBtn").click(function () {
-                $('#confirmPopup').modal("hide");
-                $('#confirmPopup').on("hidden.bs.modal", function(e) {
-                    $('#confirmPopup').modal("dispose");
+                $("#confirmCancelBtn").click(function () {
+                    $('#confirmPopup').modal("hide");
+                    $('#confirmPopup').on("hidden.bs.modal", function(e) {
+                        $('#confirmPopup').modal("dispose");
+                        $('#confirmPopup').remove();
+                    });
+                    if (cancelCallback != null && cancelCallback instanceof Function) {
+                        cancelCallback.call(undefined);
+                    }
                 });
-                if (cancelCallback != null && cancelCallback instanceof Function) {
-                    cancelCallback.call(undefined);
-                }
-            });
+            }).modal("show");
         }
     };
 
