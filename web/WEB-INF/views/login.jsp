@@ -17,14 +17,7 @@
     <script type="text/javascript" src="/js/login/login.js"></script>
     <script type="text/javascript" src="/js/memberjoin/memberjoin.js"></script>
 
-
-
 </head>
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepickerlogin').datetimepicker({ format: 'YYYY-MM-DD'});
-    });
-</script>
 <body>
 <div id="login">
     <div style="margin-top: 150px "></div>
@@ -125,7 +118,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text inputWidth">생년월일</div>
                                     </div>
-                                    <div class="input-group input-group-lg date" id="datetimepickerlogin" data-target-input="nearest">
+                                    <div class="input-group input-group-lg date" id="datetimepickerlogin" data-target-input="nearest" onclick="$memberJoin.event.datePicker();">
                                         <input type="text" class="form-control datetimepicker-input inputbox" id="memberBirth" data-target="#datetimepickerlogin"/>
                                         <div class="input-group-append" data-target="#datetimepickerlogin" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>

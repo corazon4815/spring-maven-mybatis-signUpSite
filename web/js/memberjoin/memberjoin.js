@@ -47,23 +47,10 @@
             });
         },
         datePicker: function () {
-            $('.memberDatepickerfunc').datetimepicker({format: 'YYYY-MM-DD'});
+            $('#datetimepickerlogin').datetimepicker({format: 'YYYY-MM-DD'});
 
-        },
-       /* btn_join: function () {
-            $('.inputbox').val('');
-            $('.inputbox').text('');
-            return true;
         }
-*/
-        btn_join : function() {
-            $('#join_btn').on('hidden.bs.modal', function (e) {
-                console.log('modal close');
-                $(this).find('form')[0].reset()
-            });
-        }
-
-    }
+    };
 
     $memberJoin.request = {
 

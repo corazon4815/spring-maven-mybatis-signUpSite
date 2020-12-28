@@ -25,37 +25,6 @@
          * @param callback : 콜백함수
          */
         alert: function (title, message, callback) {
-            /*let html = "";
-            html += "<div>";
-            html += "<p style='font-size:14px;text-align:center;'>" + message + "</p>"
-            html += "<div class='window_btnset' style='padding:10px;'>";
-            html += "<button type='button' class='k-button  k-primary' id='alertOkBtn'>확인</button>";
-//          html +=       "<button type='button' class='k-button  k-button-icontext' id='alertOkBtn'><span class='k-icon k-i-check'></span>확인</button>";
-            html += "</div>";
-            html += "</div>";
-
-            var alert = $(html).kendoWindow({
-                width: 400,
-                title: title,
-                visible: false,
-                modal: true,
-                pinned: false,
-                position: {top: 100},
-                draggable: false,
-                actions: [
-                    "Close"
-                ],
-                close: function () {
-                    alert.destroy();
-                }
-            }).data("kendoWindow").center().open();
-
-            $("#alertOkBtn").click(function () {
-                alert.close();
-                if (callback != null && callback instanceof Function) {
-                    callback.call(undefined);
-                }
-            });*/
             let html =
                 '<div class="modal fade" id="alertPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">' +
                 '<div class="modal-dialog modal-dialog-centered" role="document">' +

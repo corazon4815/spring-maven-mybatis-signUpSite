@@ -4,27 +4,27 @@ body {
 .clickable {cursor: pointer;}
 .hover {text-decoration: underline;}
 .active{ width:10px; height:10px; background:#c8c8c8; color:white;}
-.theadlist {
+.thead {
     text-align: center; background:#c8c8c8;
 }
-td.notd{
-    width:10px;
+td.noWid{
+    width:100px;  !important;
     text-align: center;
 }
-td.idtd{
+td.idWid{
     width:150px;
     text-align: center;
 }
-td.nametd{
+td.nameWid{
     width:150px;
     text-align: center;
 }
-td.addresstd{
+td.addWid{
     width:280px;
     text-align: center;
 }
 
-td.regdatetd{
+td.regWid{
     width:200px;
     text-align: center;
 }

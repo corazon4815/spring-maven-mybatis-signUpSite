@@ -4,8 +4,6 @@
 
     $(document).ready(function () {
         $loginView.event.enter_login();
-
-       // $memberJoin.event.datePicker();
     });
 
     /*$loginView.ui = {*/

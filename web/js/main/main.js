@@ -2,42 +2,32 @@
     W.$mainView = W.$mainView || {};
 
     $(document).ready(function () {
+
         $mainView.ui.memberList();
         $mainView.event.setEventUI();
-        $('#pagination').pagination({
-            dataSource: [
-                {name: "hello1"},
-                {name: "hello2"},
-                {name: "hello3"},
-                {name: "hello4"},
-                {name: "hello5"},
-                {name: "hello6"},
-                {name: "hello7"},
-                {name: "hello8"},
-                {name: "hello9"},
-                {name: "hello10"},
-                {name: "hello11"},
-                {name: "hello12"},
-                {name: "hello13"},
-                {name: "hello14"},
-                {name: "hello15"},
-                {name: "hello16"},
-                {name: "hello17"},
-            ],
-            callback: function (data, pagination) {
-                var dataHtml = '<ul>';
+        $mainView.event.datePicker();
 
-                $.each(data, function (index, item) {
-                    dataHtml += '<li>' + item.name + '</li>';
-                });
-
-                dataHtml += '</ul>';
-
-                $("#data-container").html(dataHtml);
-            }
-        })
+    });
 
 
+    var $pagination = $('#pagination'),
+        totalRecords = 0,
+        records = [],
+        displayRecords = [],
+        recPerPage = 10,
+        page = 1,
+        totalPages = 0;
+    $.ajax({
+        url: "/member/memberlist",
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            records = data;
+            console.log(records);
+            totalRecords = records.length;
+            totalPages = Math.ceil(totalRecords / recPerPage);
+            //apply_pagination();
+        }
     });
 
     $mainView.ui = {
@@ -58,46 +48,48 @@
                 contentType: "application/json; charset=utf-8;"
             })
                 .done(function (args) {
-                        // let container = $('#pagination');
-                        // container.pagination({
-                        //     dataSource: [
-                    let html =
-                        "<thead  class='theadlist' ><tr>" +
-                        "<td class='notd'>번호" +
-                        "</td>" +
-                        "<td class='idtd'>아이디" +
-                        "</td>" +
-                        "<td class='nametd'>이름" +
-                        "</td>" +
-                        "<td class='addresstd'>주소" +
-                        "</td>" +
-                        "<td class='regdatetd'>가입일" +
-                        "</td>" +
-                        "</tr></thead>";
+                    $("#myTable").html("");
 
                     for (let i = 0; i < args.result.length; i++) {
-                        html +=
+                        let myTbody =
                             "<tr class='cursor' onclick=\"javascript:$mainView.ui.showMemberInfoPopup(\'" + args.result[i].memberId + "\')\"; data-title=" + args.result[i].memberId + ">" +
-                            "<td class='notd'>"+(i+1)+"</td>" +
-                            "<td id='memId_"+i+"' class='idtd'>" +
-                            args.result[i].memberId + "</td>" +
-                            "<td class='nametd'>" + args.result[i].memberName + "</td>" +
-                            "<td class='addresstd'>" + args.result[i].memberAddress + "</td>" +
-                            "<td class='regdatetd'>" + args.result[i].regDate + "</td>" +
+                                "<td class='noWid'>"+(i+1)+"</td>" +
+                                "<td id='memId_"+i+"' class='idWid'>" +
+                                    args.result[i].memberId + "</td>" +
+                                "<td class='nameWid'>" + args.result[i].memberName + "</td>" +
+                                "<td class='addWid'>" + args.result[i].memberAddress + "</td>" +
+                                "<td class='regWid'>" + args.result[i].regDate + "</td>" +
                             "</tr>";
+                        $("#myTable").append(myTbody);
                     }
-
-                    $("#tbl").html(html);
-
-
-
-
-
-                    /*$mainView.ui.paging();*/
+                    $mainView.ui.paging();
                 }).fail(function (e) {
                 alert(e.responseText);
             });
         },
+
+        paging: function () {
+            /*$('#myTable').pageMe({
+                pagerSelector:'#myPager',
+                activeColor:'green',
+                perPage: 10,
+                showPrevNext:true,
+                nextText:'>',
+                prevText:'<',
+                hidePageNumbers:false
+            });*/
+
+            $('#testPaging').twbsPagination({
+                totalPages: 100,
+                visiblePages: 10,
+                onPageClick: function (event, page) {
+                    $('#page-content').text('Page ' + page);
+
+                }
+            });
+
+        },
+
         /**
          * @name showMemberInfoPopup
          * @description 회원 목록에서 아이디 클릭시 회원의 상세 정보를 가져온다.
@@ -143,24 +135,6 @@
             });
         }
 
-      /*  paging: function () {
-            $('#listInfo').jqPagination({
-                    dataSource:
-                        $mainView.ui.memberList(),
-                    callback: function (data, pagination) {
-                        var dataHtml = '<table>';
-
-                        $.each(data, function (index, item) {
-                            dataHtml += '<td>' + item.name + '</td>';
-                        });
-
-                        dataHtml += '</table>';
-
-                        $("#listInfo").html(dataHtml);
-                    }
-                })
-
-        }*/
     };
 
     $mainView.template = {
@@ -206,21 +180,13 @@
                         "<tr>" +
                             "<td>생년월일" +"</td>" +
                             "<td>" +
-                                 "<div class='input-group input-group-lg date' id='modifyBirthDatepicker' data-target-input='nearest'>" +
-                                     "<input type='text' class='form-control datetimepicker-input inputbox' value='"+data.result.memberBirth+"' id='modyfyBirth' data-target='#modifyBirthDatepicker'/>" +
+                                 "<div class='input-group input-group-lg date' id='modifyBirthDatepicker' data-target-input='nearest' onclick='$mainView.event.datePicker();'>" +
+                                     "<input type='text' class='form-control datetimepicker-input inputbox' value='"+ data.result.memberBirth +"' id='modyfyBirth' data-target='#modifyBirthDatepicker'>" +
                                         "<div class='input-group-append' data-target='#modifyBirthDatepicker' data-toggle='datetimepicker'>" +
                                             "<div class='input-group-text'>" +
                                                "<i class='fa fa-calendar'></i></div>" +
                                         "</div>" +
                                 "</div>" +
-
-
-                                /*"<div className='input-group date' class='input-group date memberDatepickerfunc' id='modifyBirthDatepicker' onclick='$common.control.datePicker(this);' data-target-input='nearest'>" +
-                                    "<input type='text' class='modyfywidth' id='modyfyBirth' data-target='#modifyBirthDatepicker' value='"+ data.result.memberBirth +"'>" +
-                                    "<div class='input-group-append' data-target='#modifyBirthDatepicker' data-toggle='datetimepicker'>"+
-                                        "<div class='input-group-text'>날짜선택</div>" +
-                                    "</div>" +
-                                "</div>"+*/
                             "</td>" +
                         "</tr>";
                     break;
@@ -233,8 +199,7 @@
                         "<td>" + data.result.regDate + "</td>" +
                     "</tr>" +
                 "</<table>";
-
-                return html;
+            return html;
         }
     };
 
@@ -264,9 +229,10 @@
                     });
                 });
         },
-        /*datePicker: function () {
+        datePicker: function () {
             $('#modifyBirthDatepicker').datetimepicker({ format: 'YYYY-MM-DD'});
-        }*/
+        }
+
     };
 
     $mainView.request = {
@@ -307,7 +273,7 @@
         }
     };
 
-    $mainView.message = {
+  /*  $mainView.message = {
         alert: function (title, message, callback) {
             let html =
                 '<div class="modal fade" id="alertPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">' +
@@ -331,5 +297,5 @@
 
             let alert = $(html).modal("show");
         }
-    }
+    }*/
 }(window, document));
