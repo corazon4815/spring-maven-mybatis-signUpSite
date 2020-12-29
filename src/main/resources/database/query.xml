@@ -39,14 +39,23 @@
      </insert>
 
     <!--메인 회원리스트-->
-    <select id="getMemberList" resultType="memberDto">
-        SELECT
+<!--    <select id="getMemberList" resultType="memberDto">-->
+<!--        SELECT-->
+<!--            MEMBER_ID,-->
+<!--            MEMBER_NAME,-->
+<!--            MEMBER_ADDRESS,-->
+<!--            DATE(REGDATE) AS regDate-->
+<!--        FROM   MEMBER_TB-->
+<!--    </select>-->
+        <select id="getMemberList" resultType="memberDto" parameterType="map">
+            SELECT
             MEMBER_ID,
             MEMBER_NAME,
             MEMBER_ADDRESS,
             DATE(REGDATE) AS regDate
-        FROM   MEMBER_TB
-    </select>
+            FROM MEMBER_TB
+            ORDER BY MEMBER_ID LIMIT ${startIdx},${endIdx}
+        </select>
 
     <!--회원 클릭시 정보 가져오기-->
     <select id="getMember" resultType="memberDto" parameterType="String">
@@ -74,6 +83,14 @@
             MEMBER_BIRTH = #{memberBirth}
         WHERE MEMBER_ID = #{memberId}
     </update>
+
+    <select id="getTotalCnt" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM   MEMBER_TB
+    </select>
+
+
 </mapper>
 
     <!--SELECT-->

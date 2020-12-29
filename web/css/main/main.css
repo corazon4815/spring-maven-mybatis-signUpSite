@@ -3,7 +3,7 @@ body {
 }
 .clickable {cursor: pointer;}
 .hover {text-decoration: underline;}
-.active{ width:10px; height:10px; background:#c8c8c8; color:white;}
+.active{ height:10px; background:#c8c8c8; color:white;}
 .thead {
     text-align: center; background:#c8c8c8;
 }
@@ -83,4 +83,48 @@ a:hover { color: #ffffff; text-decoration: none;}
 .header h2,
 .header h4 {
     display: inline;
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #93B874;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #93B874;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+a {
+    color: #93B874;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #93B874;
+    border-color: #93B874;
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #93B874;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
 }

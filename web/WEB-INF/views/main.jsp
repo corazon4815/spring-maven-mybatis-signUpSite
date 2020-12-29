@@ -37,7 +37,7 @@
 <div class="container">
     <div class="span5">
         <div id="listInfo" style="height: 500px;">
-            <table id="tbl" class="tbl paginated table table-striped table-condensed table-hover">
+            <table id="tbl" style="border: 2px solid #dee2e6" class="tbl paginated table table-striped table-condensed table-hover">
                 <thead class="thead">
                 <tr>
                     <th class="noWid">번호</th>
@@ -51,14 +51,12 @@
 
                 </tbody>
             </table>
-            <div id="pager">
-                <ul id="pagination" class="pagination-sm"></ul>
+        </div><br><br>
+        <div style="float: left; width: 100%; text-align: center">
+            <div style="display: inline-block">
+        <ul class="sync-pagination"></ul>
             </div>
-        </div>
-        <br>
     </div>
-    <ul class="pagination_tbl pager" id="myPager" style="text-align: center;"></ul>
-    <span class="left" id="total_reg"></span>
 </div>
 </div>
 

@@ -1,6 +1,7 @@
 package org.example.mapper;
 
 import org.example.model.MemberDto;
+import org.example.model.Paging;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -40,7 +41,9 @@ public interface MemberMapper {
      * @return List<MemberDto> : 회원 정보 목록
      * @throws Exception 예외
      */
-    public List<MemberDto> getMemberList() throws Exception;
+    public List<MemberDto> getMemberList(Map<String, Object> map) throws Exception;
+
+    public int getTotalCnt() throws Exception;
 
     /**
      * @name getMember

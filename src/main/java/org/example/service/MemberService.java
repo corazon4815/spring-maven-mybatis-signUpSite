@@ -3,11 +3,13 @@ package org.example.service;
 
 import org.example.mapper.MemberMapper;
 import org.example.model.MemberDto;
+import org.example.model.Paging;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -73,8 +75,15 @@ public class MemberService {
      * @return List<MemberDto> : 회원 정보 목록
      * @throws Exception 예외
      */
-    public List<MemberDto> getMemberList() throws Exception {
-        return mapperMapper.getMemberList();
+    public Map getMemberList(Map<String, Object> map) throws Exception {
+
+        int cnt = mapperMapper.getTotalCnt();
+
+        Map resultMap = new HashMap();
+        resultMap.put("totalCnt", cnt);
+        resultMap.put("memberList", mapperMapper.getMemberList(map));
+
+        return resultMap;
     }
 
     /**

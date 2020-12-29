@@ -3,31 +3,10 @@
 
     $(document).ready(function () {
 
-        $mainView.ui.memberList();
+        $mainView.ui.memberList(0, 10, 1, true);
         $mainView.event.setEventUI();
-        $mainView.event.datePicker();
-
-    });
 
 
-    var $pagination = $('#pagination'),
-        totalRecords = 0,
-        records = [],
-        displayRecords = [],
-        recPerPage = 10,
-        page = 1,
-        totalPages = 0;
-    $.ajax({
-        url: "/member/memberlist",
-        async: true,
-        dataType: 'json',
-        success: function (data) {
-            records = data;
-            console.log(records);
-            totalRecords = records.length;
-            totalPages = Math.ceil(totalRecords / recPerPage);
-            //apply_pagination();
-        }
     });
 
     $mainView.ui = {
@@ -35,56 +14,64 @@
          * 현재 켜있는 모달창의 회원 아이디가 저장된다.
          */
         currentMemberId : "",
+        totalCnt : "",
+        cntPerPage : 10,
 
         /**
          * @name memberList
          * @description 회원 목록을 가져온다.
          */
-        memberList: function () {
+        memberList: function (startIdx, endIdx, page, isPaging) {
+            console.log(startIdx,endIdx,page);
             $.ajax({
                 type: "get",
                 url: "/member/memberlist",
+                data: "startIdx=" + startIdx + "&endIdx=" + endIdx,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8;"
             })
                 .done(function (args) {
                     $("#myTable").html("");
 
-                    for (let i = 0; i < args.result.length; i++) {
+                    const result = args.result;
+                    for (let i = 0; i < result.memberList.length; i++) {
                         let myTbody =
-                            "<tr class='cursor' onclick=\"javascript:$mainView.ui.showMemberInfoPopup(\'" + args.result[i].memberId + "\')\"; data-title=" + args.result[i].memberId + ">" +
-                                "<td class='noWid'>"+(i+1)+"</td>" +
+                            "<tr class='cursor' onclick=\"javascript:$mainView.ui.showMemberInfoPopup(\'" + result.memberList[i].memberId + "\')\"; data-title=" + result.memberList[i].memberId + ">" +
+                                "<td class='noWid'>"+(i+1+(page-1)*10)+"</td>" +
                                 "<td id='memId_"+i+"' class='idWid'>" +
-                                    args.result[i].memberId + "</td>" +
-                                "<td class='nameWid'>" + args.result[i].memberName + "</td>" +
-                                "<td class='addWid'>" + args.result[i].memberAddress + "</td>" +
-                                "<td class='regWid'>" + args.result[i].regDate + "</td>" +
+                                    result.memberList[i].memberId + "</td>" +
+                                "<td class='nameWid'>" + result.memberList[i].memberName + "</td>" +
+                                "<td class='addWid'>" + result.memberList[i].memberAddress + "</td>" +
+                                "<td class='regWid'>" + result.memberList[i].regDate + "</td>" +
                             "</tr>";
                         $("#myTable").append(myTbody);
+                        $mainView.ui.totalCnt = result.totalCnt;
                     }
-                    $mainView.ui.paging();
+                    if (isPaging) {
+                        $mainView.ui.paging($mainView.ui.totalCnt);
+                    }
+                   /* if(callback != undefined && callback instanceof Function) {
+                        callback.call(undefined, args.result.totalCnt);
+                        콜백함수는 undefined이나 null로 자릿수를 채워야함
+                    }*/
                 }).fail(function (e) {
                 alert(e.responseText);
             });
         },
 
-        paging: function () {
-            /*$('#myTable').pageMe({
-                pagerSelector:'#myPager',
-                activeColor:'green',
-                perPage: 10,
-                showPrevNext:true,
-                nextText:'>',
-                prevText:'<',
-                hidePageNumbers:false
-            });*/
-
-            $('#testPaging').twbsPagination({
-                totalPages: 100,
-                visiblePages: 10,
-                onPageClick: function (event, page) {
-                    $('#page-content').text('Page ' + page);
-
+        /**
+         * @name paging
+         * @param totalCnt : 전체 레코드 수
+         * @description 페이징을 한다.
+         *
+         */
+        paging: function (totalCnt) {
+            $('.sync-pagination').twbsPagination({
+                totalPages: totalCnt/10+1,
+                visiblePages : 10,
+                onPageClick: function (evt, page) {
+                    let start = 10*(page-1);
+                    $mainView.ui.memberList(start, $mainView.ui.cntPerPage, page, false)
                 }
             });
 
@@ -140,6 +127,7 @@
     $mainView.template = {
         /**
          * @name getMemberInfoForm
+         * @param data, mode (READ일때 조회, MOD일때 수정)
          * @description 회원을 클릭했을 때의 두가지 템플릿 (조회상태와 수정상태)
          *
          */

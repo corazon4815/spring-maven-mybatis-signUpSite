@@ -81,35 +81,47 @@
                 $('#name_check').text("필수입력 사항입니다.");
                 $('#name_check').css("color", "red");
                 return false;
+            }else{
+                $('#name_check').text("");
             }
             if(memberAddress==="") {
                 $('#address_check').text("필수입력 사항입니다.");
                 $('#address_check').css("color", "red");
                 return false;
+            }else{
+                $('#address_check').text("");
             }
             if(memberPw==="") {
                 $('#pre_pw_check').text("필수입력 사항입니다.");
                 $('#pre_pw_check').css("color", "red");
                 return false;
+            }else{
+                $('#pre_pw_check').text("");
             }
             if (memberPw !== member_pw_chk) {
                 $('#pw_check').text('비밀번호가 일치하지 않습니다.');
                 $('#pw_check').css('color', 'red');
                 return false;
+            }else{
+                $('#pw_check').text("");
             }
             if(memberBirth==="") {
                 $('#birth_check').text("필수입력 사항입니다.");
                 $('#birth_check').css("color", "red");
                 return false;
+            }else{
+                $('#birth_check').text("");
             }
             if ( !datatimeRegexp.test(memberBirth) ) {
                 $("#birth_check").text("날짜는 yyyy-mm-dd 형식으로 입력해주세요.");
                 $("#birth_check").css("color", "red");
                 return false;
+            }else{
+                $('#birth_check').text("");
             }
             if ($memberJoin.event.isMemberChecked!='Y') {
                 $('#id_check').text('아이디 중복체크를 해주세요.');
-                $("#id_check").css("color", "black");
+                $("#id_check").css("color", "red");
                 return false;
             }else {
                 $.ajax({

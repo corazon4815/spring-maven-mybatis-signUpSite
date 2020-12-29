@@ -1,6 +1,7 @@
 package org.example.api;
 
 import org.example.model.MemberDto;
+import org.example.model.Paging;
 import org.example.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -99,14 +100,21 @@ public class MemberController {
     /**
      * @name getMemberList
      * @description 메인화면의 회원 목록을 가져온다.
+     * @param startIdx : 시작 번호
+     * @param endIdx : 가져올 레코드 갯수
      * @return List<MemberDto> : resultMap의 result키에 회원 목록
      * @throws Exception
      */
     @GetMapping(value = "/member/memberlist")
-    public Map getMemberList() throws Exception {
+    public Map getMemberList(int startIdx, int endIdx) throws Exception {
+
+        /*List<MemberDto> list = (List<MemberDto>) memberService.getMemberList();*/
+        Map map = new HashMap();
+        map.put("startIdx", startIdx);
+        map.put("endIdx", endIdx);
         Map resultMap = new HashMap();
-        List<MemberDto> list = (List<MemberDto>) memberService.getMemberList();
-        resultMap.put("result", list);
+        resultMap.put("result", memberService.getMemberList(map));
+
         return resultMap;
     }
 
