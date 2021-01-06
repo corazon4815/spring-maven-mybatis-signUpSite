@@ -1,0 +1,24 @@
+    setKtxKeywordArea : function(data) { //연도와 여정코드가 들어있음
+            let params = {
+                keywCls1Cd : "2",
+                routeCd : data.routeCd,
+                srcDate : data.searchDate
+            };
+            $journeyView.request.reqgetCustomerKeywordInfo(params, function(res) {
+                const result = res.result; //콜백함수를 하고 온 결과값
+                let seriesData = [] //seriesData라는 빈 배열을 만들어놓음
+
+                for (let i=0; i<result.length; i++) {
+                    let tmpData = [
+                        result[i].keywCls1Nm,
+                        result[i].keywCls2Nm
+                    ]
+                    seriesData.push(tmpData);
+                }
+                for (let i=0; i<result.length; i++) {
+                    let tmpData = [
+                        result[i].keywCls2Nm,
+                        result[i].keywCls3Nm
+                    ]
+                    seriesData.push(tmpData);
+                }
