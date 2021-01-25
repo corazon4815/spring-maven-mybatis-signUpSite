@@ -5,22 +5,17 @@
 <html>
 <head>
     <title>회원목록</title>
-    <%--<link rel="stylesheet" href="/css/main/materialize.css">--%>
+    <link rel="stylesheet" href="/css/common/common.css">
     <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
-    <%--<link rel="stylesheet" href="/libs/jquery/ui/jquery-ui.css">--%>
     <link rel="stylesheet" href="/libs/paging/paging.css">
     <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
-    <link rel="stylesheet" href="/css/font/all.css">
-    <link rel="stylesheet" href="/css/font/Material+Icons.css">
+    <link rel="stylesheet" href="/fonts/all.css">
     <link rel="stylesheet" href="/css/main/main.css">
     <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
     <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
-    <%--<script type="text/javascript" src="/libs/jquery/ui/jquery-ui.js"></script>
-    <script type="text/javascript" src="/libs/paging/jquery.table.hpaging.js"></script>--%>
     <script type="text/javascript" src="/libs/paging/twbsPagination.js"></script>
-    <script type="text/javascript" src="/libs/paging/Pagination.js"></script>
+   <%-- <script type="text/javascript" src="/libs/paging/Pagination.js"></script>--%>
     <script type="text/javascript" src="/js/main/main.js"></script>
     <script type="text/javascript" src="/js/common/common.js"></script>
     <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
@@ -30,7 +25,6 @@
 </head>
 <script>
     sessionStorage.setItem("userId", "${memberInfo.memberId}");
-    /*console.log(sessionStorage.getItem("userId"));*/
 </script>
 <body>
 <jsp:include page="../layers/header.jsp"></jsp:include>
@@ -56,7 +50,19 @@
             <div style="display: inline-block">
         <ul class="sync-pagination"></ul>
             </div>
-    </div>
+        </div>
+        <div id="search" style="text-align: center">
+            <form id="searchForm">
+                <select id="searchSelect" name="type" class="form-control">
+                    <option value="">선택</option>
+                    <option value="memberId">아이디</option>
+                    <option value="memberName">이름</option>
+                    <option value="memberAddress">주소</option>
+                </select>
+                <input id ="searchKey" type="text" name="keyword"  class="form-control" />
+                <button id="searchBtn" style="background-color: #93b874; border-color: #93b874;" class="btn btn-primary search-button">검색</button>
+            </form>
+        </div>
 </div>
 </div>
 

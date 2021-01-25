@@ -4,9 +4,10 @@
 <html>
 <head>
     <title>로그인</title>
+    <link rel="stylesheet" href="/css/common/common.css">
     <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
     <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
-    <link rel="stylesheet" href="/css/font/all.css">
+    <link rel="stylesheet" href="/fonts/all.css">
     <link rel="stylesheet" href="/css/login/login.css">
     <link rel="stylesheet" href="/css/memberjoin/memberjoin.css">
     <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>

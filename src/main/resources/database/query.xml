@@ -38,24 +38,29 @@
          )
      </insert>
 
-    <!--메인 회원리스트-->
-<!--    <select id="getMemberList" resultType="memberDto">-->
-<!--        SELECT-->
-<!--            MEMBER_ID,-->
-<!--            MEMBER_NAME,-->
-<!--            MEMBER_ADDRESS,-->
-<!--            DATE(REGDATE) AS regDate-->
-<!--        FROM   MEMBER_TB-->
-<!--    </select>-->
-        <select id="getMemberList" resultType="memberDto" parameterType="map">
-            SELECT
-            MEMBER_ID,
-            MEMBER_NAME,
-            MEMBER_ADDRESS,
-            DATE(REGDATE) AS regDate
-            FROM MEMBER_TB
-            ORDER BY MEMBER_ID LIMIT ${startIdx},${endIdx}
-        </select>
+    <!-- 회원 목록 + 페이징 + 검색 -->
+    <select id="getMemberList" resultType="memberDto" parameterType="hashMap">
+        SELECT
+        MEMBER_ID,
+        MEMBER_NAME,
+        MEMBER_ADDRESS,
+        DATE(REGDATE) AS regDate
+        FROM MEMBER_TB
+
+        <if test='searchType.equals("memberId")'>
+            WHERE MEMBER_ID LIKE concat('%', #{keyword}, '%')
+        </if>
+
+        <if test='searchType.equals("memberName")'>
+            WHERE MEMBER_NAME LIKE concat('%', #{keyword}, '%')
+        </if>
+
+        <if test='searchType.equals("memberAddress")'>
+            WHERE MEMBER_ADDRESS LIKE concat('%', #{keyword}, '%')
+        </if>
+
+        ORDER BY MEMBER_ID LIMIT ${startIdx},${endIdx}
+    </select>
 
     <!--회원 클릭시 정보 가져오기-->
     <select id="getMember" resultType="memberDto" parameterType="String">

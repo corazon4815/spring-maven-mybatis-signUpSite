@@ -128,3 +128,35 @@ a {
     background-color: #e9ecef;
     border-color: #dee2e6;
 }
+
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: middle; !important;
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-primary-search {
+    color: #fff;
+    background-color: #93b874;
+    border-color: #93b874;
+   /* float: left; !important;*/
+    display: inline; !important;
+}
+
+
+.search-area1{
+    display: inline; !important;
+    /*float: left; !important;*/
+}
+
+select.form-control{
+    width: 100px;
+    display: inline;
+    vertical-align:middle;
+}
+
+input.form-control{
+    width: 150px;
+    display: inline;
+    vertical-align:middle;
+}

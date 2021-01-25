@@ -106,17 +106,25 @@ public class MemberController {
      * @throws Exception
      */
     @GetMapping(value = "/member/memberlist")
-    public Map getMemberList(int startIdx, int endIdx) throws Exception {
 
+    public Map getMemberList(int startIdx, int endIdx, @RequestParam(value = "searchType",required = false, defaultValue = "") String searchType,
+                             @RequestParam(value = "keyword",required = false, defaultValue = "") String keyword) throws Exception {
+        System.out.println("a"+searchType);
+        System.out.println("b"+keyword);
         /*List<MemberDto> list = (List<MemberDto>) memberService.getMemberList();*/
         Map map = new HashMap();
         map.put("startIdx", startIdx);
         map.put("endIdx", endIdx);
+        map.put("searchType", searchType);
+        map.put("keyword", keyword);
+
+
         Map resultMap = new HashMap();
         resultMap.put("result", memberService.getMemberList(map));
 
         return resultMap;
     }
+
 
     /**
      * @name getMember
