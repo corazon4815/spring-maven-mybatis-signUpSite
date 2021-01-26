@@ -30,8 +30,8 @@
 <jsp:include page="../layers/header.jsp"></jsp:include>
 <div class="container">
     <div class="span5">
-        <div id="listInfo" style="height: 500px;">
-            <table id="tbl" style="border: 2px solid #dee2e6" class="tbl paginated table table-striped table-condensed table-hover">
+        <div id="listInfo">
+            <table id="tbl" style="border: 2px solid #dee2e6; table-layout:fixed;" class="tbl mainTbl paginated table table-striped table-condensed table-hover">
                 <thead class="thead">
                 <tr>
                     <th class="noWid">번호</th>
@@ -42,10 +42,11 @@
                 </tr>
                 </thead>
                 <tbody id="myTable">
-
                 </tbody>
             </table>
-        </div><br><br>
+            <div class="emptySearch" style="display: none; height: 500px;"></div>
+            <div class="totalCnt" style="text-align: right; color:#5e5e5e; font-weight: bold;"></div>
+        </div><br>
         <div style="float: left; width: 100%; text-align: center">
             <div style="display: inline-block">
         <ul class="sync-pagination"></ul>
@@ -60,7 +61,7 @@
                     <option value="memberAddress">주소</option>
                 </select>
                 <input id ="searchKey" type="text" name="keyword"  class="form-control" />
-                <button id="searchBtn" style="background-color: #93b874; border-color: #93b874;" class="btn btn-primary search-button">검색</button>
+                <%--<button type='button' id="searchBtn" style="background-color: #93b874; border-color: #93b874;" class="btn btn-primary search-button">검색</button>--%>
             </form>
         </div>
 </div>

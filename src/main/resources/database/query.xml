@@ -89,10 +89,21 @@
         WHERE MEMBER_ID = #{memberId}
     </update>
 
-    <select id="getTotalCnt" resultType="int">
+    <select id="getTotalCnt" resultType="int" parameterType="hashMap">
         SELECT
             COUNT(*)
         FROM   MEMBER_TB
+        <if test='searchType.equals("memberId")'>
+            WHERE MEMBER_ID LIKE concat('%', #{keyword}, '%')
+        </if>
+
+        <if test='searchType.equals("memberName")'>
+            WHERE MEMBER_NAME LIKE concat('%', #{keyword}, '%')
+        </if>
+
+        <if test='searchType.equals("memberAddress")'>
+            WHERE MEMBER_ADDRESS LIKE concat('%', #{keyword}, '%')
+        </if>
     </select>
 
 

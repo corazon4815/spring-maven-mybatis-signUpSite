@@ -39,22 +39,16 @@
 
         isPaging : true,
 
+        isSearchPaging : false,
+
         doSearch: function () {
-            $('#searchBtn').click(function () {
+            $('#searchKey').keyup(function () {
+                $mainView.ui.isSearchPaging = true;
                 searchType = $("#searchSelect option:selected").val();
                 keyword = $("#searchKey").val();
-                console.log("list"+searchType)
                 $mainView.ui.memberList(start,cntPerPage,1,searchType,keyword);
             })
         },
-
-
-     /*   listSearch : function () {
-            searchType = $("#searchSelect option:selected").val();
-            keyword = $("#searchKey").val();
-            console.log("list"+searchType)
-            $mainView.ui.memberList(start,cntPerPage,1,searchType,keyword);
-        },*/
 
         /**
          * @name memberList
@@ -62,22 +56,17 @@
          */
         memberList: function (startIdx, endIdx, page) {
             if(!startIdx){
-                startIdx = 0;
+                startIdx = start;
             }
             if(!endIdx){
-                endIdx = 10;
+                endIdx = cntPerPage;
             }
             if(!page){
-                page = 1;
+                page = page;
             }
-            // let searchType = $("#searchSelect option:selected").val();
-            // let keyword = $("#searchKey").val();
             searchType = $("#searchSelect option:selected").val();
             keyword = $("#searchKey").val();
 
-            /*console.log(searchType,keyword);*/
-            console.log("member"+keyword);
-            console.log("startIdx= "+startIdx+" endIdx= "+endIdx);
             $.ajax({
                 type: "get",
                 url: "/member/memberlist",
@@ -92,18 +81,24 @@
                 contentType: "application/json; charset=utf-8;"
             })
                 .done(function (args) {
-
                     const result = args.result;
-                    console.log(result);
+                    const memLength = result.memberList.length;
                     $mainView.ui.totalCnt = result.totalCnt;
 
-                    if($mainView.ui.isPaging == true) {
+                    if($mainView.ui.isPaging||$mainView.ui.isSearchPaging) {
                         $mainView.ui.paging($mainView.ui.totalCnt);
                     }
-
                     $("#myTable").html("");
-
-                    for (let i = 0; i < result.memberList.length; i++) {
+                    $(".emptySearch").html("");
+                    $('.emptySearch').css('display', 'none');
+                    $(".totalCnt").html("Total : "+$mainView.ui.totalCnt);
+                    if(!result.totalCnt){
+                        let empty =
+                            "<h5 style='text-align: center'>검색 결과가 없습니다.</h5>"
+                        $('.emptySearch').css('display', 'block');
+                        $(".emptySearch").append(empty);
+                    }else{
+                    for (let i = 0; i < memLength; i++) {
                         let myTbody =
                             "<tr class='cursor' onclick=\"javascript:$mainView.ui.showMemberInfoPopup(\'" + result.memberList[i].memberId + "\')\"; data-title=" + result.memberList[i].memberId + ">" +
                             "<td class='noWid'>"+(i+1+(page-1)*10)+"</td>" +
@@ -116,13 +111,25 @@
                         $("#myTable").append(myTbody);
 
                     }
+                    if(memLength < 10){
+                        for (let i = 0; i < 10-result.memberList.length; i++) {
+                            let myTbody1 =
+                                "<tr><td></td>" +
+                                "<td></td>" +
+                                "<td></td>" +
+                                "<td></td>" +
+                                "<td></td>" +
+                                "</tr>";
+                            $("#myTable").append(myTbody1);
+                        }
+                    }
+                    }
                     /* if(callback != undefined && callback instanceof Function) {
                          callback.call(undefined, args.result.totalCnt);
                          콜백함수는 undefined이나 null로 자릿수를 채워야함
                      }*/
                 }).fail(function (e) {
-                    console.log(e);
-                /*alert(e.responseText);*/
+                alert(e.responseText);
             });
         },
 
@@ -134,15 +141,25 @@
          *
          */
         paging: function (totalCnt) {
+            if($('.pagination').data("twbs-pagination")){
+                $('.pagination').twbsPagination('destroy');
+            }
             $('.sync-pagination').twbsPagination({
+                //전체 페이지수
                 totalPages: totalCnt / 10 + 1,
-                visiblePages : 10,
+                //하단에 보여줄 페이지 수
+                visiblePages : 5,
+                changeTotalPages: function(totalPages, currentPage) {
+                    this.options.totalPages = totalPages;
+                    return this.show(currentPage);
+                },
                 onPageClick: function (evt, page) {
                     let start = 10 * (page - 1);
-                    if($mainView.ui.isPaging == false) {
-                        $mainView.ui.memberList(start, cntPerPage,page,searchType,keyword);
+                    if(!$mainView.ui.isPaging && !$mainView.ui.isSearchPaging) {
+                        $mainView.ui.memberList(start, cntPerPage, page, searchType, keyword);
                     }else{
-                        $mainView.ui.isPaging= false;
+                        $mainView.ui.isPaging = false;
+                        $mainView.ui.isSearchPaging = false;
                     }
 
                 }
@@ -163,8 +180,6 @@
                 dataType: "json",
                 contentType: "application/json; charset=utf-8;",
                 success: function (data) {
-                    //console.log(sessionStorage.getItem("userId"));
-                    //console.log( data.result.memberId);
                     if (sessionStorage.getItem("userId") != data.result.memberId) {
                         $("#memberInfo").html("");
                         $("#memberInfo").html($mainView.template.getMemberInfoForm(data, "READ"));
@@ -190,7 +205,6 @@
 
                 }, error: function (data) {
                     console.log("실패");
-                    console.log($mainView.ui.currentMemberId);
                 }
             });
         }
@@ -242,7 +256,7 @@
                             "<td class='verticalM'>생년월일" +"</td>" +
                             "<td>" +
                                  "<div class='input-group input-group-lg date' id='modifyBirthDatepicker' data-target-input='nearest' onclick='$mainView.event.datePicker();'>" +
-                                     "<input type='text' class='form-control datetimepicker-input inputbox verticalM' style='font-size:16px; height: 36px' value='"+ data.result.memberBirth +"' id='modyfyBirth' data-target='#modifyBirthDatepicker'>" +
+                                     "<input type='text' class='form-control datetimepicker-input inputbox' style='font-size:16px; height: 36px' value='"+ data.result.memberBirth +"' id='modyfyBirth' data-target='#modifyBirthDatepicker'>" +
                                         "<div class='input-group-append' style='height: 36px;' data-target='#modifyBirthDatepicker' data-toggle='datetimepicker'>" +
                                             "<div class='input-group-text'>" +
                                                "<i class='fa fa-calendar'></i></div>" +

@@ -77,7 +77,7 @@ public class MemberService {
      */
     public Map getMemberList(Map<String, Object> map) throws Exception {
 
-        int cnt = mapperMapper.getTotalCnt();
+        int cnt = mapperMapper.getTotalCnt(map);
 
         Map resultMap = new HashMap();
         resultMap.put("totalCnt", cnt);

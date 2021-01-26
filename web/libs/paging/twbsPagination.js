@@ -17,7 +17,6 @@
     var TwbsPagination = function (element, options) {
         this.$element = $(element);
         this.options = $.extend({}, $.fn.twbsPagination.defaults, options);
-
         if (this.options.startPage < 1 || this.options.startPage > this.options.totalPages) {
             throw new Error('Start page option is incorrect');
         }
@@ -327,7 +326,7 @@
     $.fn.twbsPagination.defaults = {
         totalPages: 1,
         startPage: 1,
-        visiblePages: 5,
+        visiblePages: 6,
         initiateStartPageClick: true,
         hideOnlyOnePage: false,
         href: false,

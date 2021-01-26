@@ -120,8 +120,8 @@
                                         <div class="input-group-text inputWidth">생년월일</div>
                                     </div>
                                     <div class="input-group input-group-lg date" id="datetimepickerlogin" data-target-input="nearest" onclick="$memberJoin.event.datePicker();">
-                                        <input type="text" class="form-control datetimepicker-input inputbox" id="memberBirth" data-target="#datetimepickerlogin"/>
-                                        <div class="input-group-append" data-target="#datetimepickerlogin" data-toggle="datetimepicker">
+                                        <input type="text" class="form-control datetimepicker-input inputbox" style='font-size:16px; width: 252px; height: 39px' id="memberBirth" data-target="#datetimepickerlogin"/>
+                                        <div class="input-group-append" style='height: 39px;' data-target="#datetimepickerlogin" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>

@@ -96,7 +96,7 @@ public class MemberController {
 
         return resultMap;
     }
-
+    int a;
     /**
      * @name getMemberList
      * @description 메인화면의 회원 목록을 가져온다.
@@ -106,11 +106,11 @@ public class MemberController {
      * @throws Exception
      */
     @GetMapping(value = "/member/memberlist")
-
     public Map getMemberList(int startIdx, int endIdx, @RequestParam(value = "searchType",required = false, defaultValue = "") String searchType,
                              @RequestParam(value = "keyword",required = false, defaultValue = "") String keyword) throws Exception {
-        System.out.println("a"+searchType);
-        System.out.println("b"+keyword);
+
+        System.out.println("타입 : "+searchType+a++);
+        System.out.println("검색어 : "+keyword+a++);
         /*List<MemberDto> list = (List<MemberDto>) memberService.getMemberList();*/
         Map map = new HashMap();
         map.put("startIdx", startIdx);

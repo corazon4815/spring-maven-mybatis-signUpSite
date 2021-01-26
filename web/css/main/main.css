@@ -63,6 +63,7 @@ a:hover { color: #ffffff; text-decoration: none;}
 }
 
 .headertext {
+    margin-top: 50px;
     padding-left: 10px;
     float:left;
     height: 40px;
@@ -72,7 +73,8 @@ a:hover { color: #ffffff; text-decoration: none;}
     padding-right: 10px;
     padding-top: 10px;
     font-size : 20px;
-    float:right; display:inline-block;
+    float:right;
+    display:inline-block;
     height: 40px;
     color: #ffffff;
 }
@@ -143,7 +145,6 @@ a {
     display: inline; !important;
 }
 
-
 .search-area1{
     display: inline; !important;
     /*float: left; !important;*/
@@ -156,7 +157,15 @@ select.form-control{
 }
 
 input.form-control{
-    width: 150px;
+    width: 200px;
     display: inline;
     vertical-align:middle;
+}
+
+/*.tbl.mainTbl {*/
+/*    height: 500px;!important;*/
+/*}*/
+
+table tr, table td, table thead{
+    height: 50px; !important;
 }

@@ -17,7 +17,7 @@
     <div class="headerlogouta">
         <a class="logouta" href="/view/logout">LOGOUT</a>
     </div>
-    <div class="header">
+    <div class="header" style="height: 100px;">
         <h2 class="headertext">MEMBERS</h2>
         <h4 class="headerid">${memberInfo.memberName}님 반갑습니다.</h4>
     </div>

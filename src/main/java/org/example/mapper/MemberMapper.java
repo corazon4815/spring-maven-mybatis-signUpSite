@@ -43,7 +43,7 @@ public interface MemberMapper {
      */
     public List<MemberDto> getMemberList(Map<String, Object> map) throws Exception;
 
-    public int getTotalCnt() throws Exception;
+    public int getTotalCnt(Map<String, Object> map) throws Exception;
 
     /**
      * @name getMember
