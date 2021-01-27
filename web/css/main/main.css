@@ -162,10 +162,12 @@ input.form-control{
     vertical-align:middle;
 }
 
-/*.tbl.mainTbl {*/
-/*    height: 500px;!important;*/
-/*}*/
-
 table tr, table td, table thead{
     height: 50px; !important;
+}
+
+.modifyBirthDatepicker .bootstrap-datetimepicker-widget.dropdown-menu {
+    display: block;
+    padding: 4px;
+    width: 22rem;
 }

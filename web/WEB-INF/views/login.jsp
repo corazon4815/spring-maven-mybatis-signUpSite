@@ -39,8 +39,7 @@
                         <div>
                             <button type="button" class="btn btn-primary" id="join_btn" data-toggle="modal"
                                     data-target="#memberModal">회원가입
-                            </button>
-                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            </button> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                             <input type="button" id="btn_login" class="btn btn-info btn-md" onclick="$loginView.event.btn_login();" value="로그인">
                         </div>
 
@@ -122,14 +121,14 @@
                                     <div class="input-group input-group-lg date" id="datetimepickerlogin" data-target-input="nearest" onclick="$memberJoin.event.datePicker();">
                                         <input type="text" class="form-control datetimepicker-input inputbox" style='font-size:16px; width: 252px; height: 39px' id="memberBirth" data-target="#datetimepickerlogin"/>
                                         <div class="input-group-append" style='height: 39px;' data-target="#datetimepickerlogin" data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            <div class="input-group-text">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="check_font inputbox error-next-box" id="birth_check" style="font-size: 10px;"></div>
-
                             </div>
-
                             <div class="text-center">
                                 <button type="button" class="btn btn-info btn-block rounded-0 py-2" name="reg_submit"
                                         id="reg_submit"
@@ -144,13 +143,6 @@
                     </div>
                 </form>
             </div>
-            <%--모달바디--%>
-            <%--<div class="modal-footer">
-                <button type="button" class="btn btn-primary" name="reg_submit" id="reg_submit"
-                        onclick="$memberJoin.request.doRegister();">등록
-                </button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-            </div>--%>
         </div>
     </div>
 </div>

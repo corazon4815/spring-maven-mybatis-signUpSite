@@ -7,20 +7,16 @@
     <title>회원목록</title>
     <link rel="stylesheet" href="/css/common/common.css">
     <link rel="stylesheet" href="/libs/bootstrap/4.3.1/css/bootstrap.css">
-    <link rel="stylesheet" href="/libs/paging/paging.css">
     <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
     <link rel="stylesheet" href="/fonts/all.css">
     <link rel="stylesheet" href="/css/main/main.css">
-    <link rel="stylesheet" href="/css/memberjoin/calender/tempusdominus-bootstrap-4.min.css">
     <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
     <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
     <script type="text/javascript" src="/libs/paging/twbsPagination.js"></script>
-   <%-- <script type="text/javascript" src="/libs/paging/Pagination.js"></script>--%>
     <script type="text/javascript" src="/js/main/main.js"></script>
     <script type="text/javascript" src="/js/common/common.js"></script>
     <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
     <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
-
 
 </head>
 <script>
@@ -44,12 +40,14 @@
                 <tbody id="myTable">
                 </tbody>
             </table>
-            <div class="emptySearch" style="display: none; height: 500px;"></div>
-            <div class="totalCnt" style="text-align: right; color:#5e5e5e; font-weight: bold;"></div>
+            <div class="emptySearch" style="display: none; height: 500px; text-align: center;">
+                검색 결과가 없습니다.
+            </div>
+            <div class="totalCnt" style="text-align: right; color:#5e5e5e;  font-weight: bold;"></div>
         </div><br>
         <div style="float: left; width: 100%; text-align: center">
             <div style="display: inline-block">
-        <ul class="sync-pagination"></ul>
+                <ul class="sync-pagination"></ul>
             </div>
         </div>
         <div id="search" style="text-align: center">
@@ -61,12 +59,10 @@
                     <option value="memberAddress">주소</option>
                 </select>
                 <input id ="searchKey" type="text" name="keyword"  class="form-control" />
-                <%--<button type='button' id="searchBtn" style="background-color: #93b874; border-color: #93b874;" class="btn btn-primary search-button">검색</button>--%>
             </form>
         </div>
+    </div>
 </div>
-</div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="memberInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -85,16 +81,14 @@
             <div class="modal-footer">
                 <div id="update_btn_div">
                     <button type="button" class="btn btn-primary" name="reg_submit" id="update_btn"
-                            onclick="$mainView.request.doUpdate();">수정
+                            onclick="$mainView.ui.doUpdateMember();">수정
                     </button>
                 </div>
                 <div id="del_btn_div">
-                    <button type="button" class="btn btn-primary" name="member_del_btn" id="member_del_btn">삭제
+                    <button type="button" class="btn btn-primary" name="member_del_btn" id="member_del_btn" onclick="$mainView.ui.doDeleteMember()">삭제
                     </button>
                 </div>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-
-
             </div>
         </div>
     </div>

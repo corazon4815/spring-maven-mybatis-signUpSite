@@ -3,7 +3,6 @@ package org.example.service;
 
 import org.example.mapper.MemberMapper;
 import org.example.model.MemberDto;
-import org.example.model.Paging;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -71,7 +70,7 @@ public class MemberService {
 
     /**
      * @name getMemberList
-     * @description 메인화면의 회원 목록을 가져온다.
+     * @description 메인화면의 회원 목록과 목록갯수를 가져온다.
      * @return List<MemberDto> : 회원 정보 목록
      * @throws Exception 예외
      */

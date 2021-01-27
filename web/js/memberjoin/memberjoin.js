@@ -1,12 +1,11 @@
 (function(W, D) {
     W.$memberJoin = W.$memberJoin || {};
 
-    /**
-     * 아이디 중복확인 버튼 클릭 상태를 저장 (회원가입버튼 클릭시 'N'으로 초기화됨)
-     */
-    //let isMemberChecked;
 
     $memberJoin.event = {
+        /**
+         * 아이디 중복확인 버튼 클릭 상태를 저장
+         */
         isMemberChecked : "",
 
         /**
@@ -46,23 +45,22 @@
                 }
             });
         },
+        /**
+         * @name datePicker
+         * @description datePicker를 실행한다.
+         */
         datePicker: function () {
             $('#datetimepickerlogin').datetimepicker({format: 'YYYY-MM-DD'});
-
         }
     };
 
     $memberJoin.request = {
-
         /**
          * @name doRegister
          * @description 회원가입창의 등록버튼 클릭시 실행한다.
          * @returns {boolean}
          */
         doRegister : function() {
-            /*$("#reg_submit").click(function () {*/
-            let memberId = $('#memberIdModal').val();
-            let id_check = $('#id_check').val();
             let memberPw = $('#memberPwModal').val();
             let member_pw_chk = $('#member_pw_chk').val();
             let memberName = $('#memberName').val();
@@ -144,7 +142,6 @@
                     }
                 });
             }
-            /*});*/
         }
     }
 })(window, document);
