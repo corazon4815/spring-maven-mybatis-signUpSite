@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="/css/memberjoin/memberjoin.css">
     <script type="text/javascript" src="/libs/jquery/3.5.1/jquery.js"></script>
     <script type="text/javascript" src="/libs/bootstrap/4.3.1/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
-    <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
     <script type="text/javascript" src="/js/common/common.js"></script>
     <script type="text/javascript" src="/js/login/login.js"></script>
     <script type="text/javascript" src="/js/memberjoin/memberjoin.js"></script>
+    <script type="text/javascript" src="/libs/calender/moment.min.js"></script>
+    <script type="text/javascript" src="/libs/calender/tempusdominus-bootstrap-4.min.js"></script>
 
 </head>
 <body>
@@ -40,7 +40,8 @@
                             <button type="button" class="btn btn-primary" id="join_btn" data-toggle="modal"
                                     data-target="#memberModal">회원가입
                             </button> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                            <input type="button" id="btn_login" class="btn btn-info btn-md" onclick="$loginView.event.btn_login();" value="로그인">
+                            <input type="button" id="btn_login" class="btn btn-info btn-md"
+                                   onclick="$loginView.ui.doLoginMember();" value="로그인">
                         </div>
 
                     </form>
@@ -50,7 +51,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- 회원가입 팝업 -->
 <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -64,18 +65,21 @@
                         </div>
                         <div class="card-body p-3">
 
-                            <!--Body-->
+                            <!--팝업 Body-->
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text inputWidth ">아이디</div>
-                                        <input type="text" class="form-control idInputbox inputbox" id="memberIdModal" required>
+                                        <input type="text" class="form-control idInputbox inputbox" id="memberIdModal"
+                                               required>
                                         <button type="button" name="btn_duplChk" id="btn_duplChk"
-                                                class="btn btn-secondary" onclick="$memberJoin.event.duplChk();">중복확인
+                                                class="btn btn-secondary" onclick="$memberJoin.ui.doDuplChkMember();">
+                                            중복확인
                                         </button>
                                     </div>
                                 </div>
-                                <div class="check_font inputbox error-next-box" id="id_check" style="font-size: 10px;"></div>
+                                <div class="check_font inputbox error-next-box" id="id_check"
+                                     style="font-size: 10px;"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group mb-2">
@@ -84,7 +88,8 @@
                                     </div>
                                     <input type="text" class="form-control inputbox" id="memberName" required>
                                 </div>
-                                <div class="check_font inputbox error-next-box" id="name_check" style="font-size: 10px;"></div>
+                                <div class="check_font inputbox error-next-box" id="name_check"
+                                     style="font-size: 10px;"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group mb-2">
@@ -93,16 +98,19 @@
                                     </div>
                                     <input type="text" class="form-control inputbox" id="memberAddress" required>
                                 </div>
-                                <div class="check_font inputbox error-next-box" id="address_check" style="font-size: 10px;"></div>
+                                <div class="check_font inputbox error-next-box" id="address_check"
+                                     style="font-size: 10px;"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text inputWidth">비밀번호</div>
                                     </div>
-                                    <input type="text" class="form-control inputbox error-next-box" id="memberPwModal" required>
+                                    <input type="text" class="form-control inputbox error-next-box" id="memberPwModal"
+                                           required>
                                 </div>
-                                <div class="check_font inputbox error-next-box" id="pre_pw_check" style="font-size: 10px;"></div>
+                                <div class="check_font inputbox error-next-box" id="pre_pw_check"
+                                     style="font-size: 10px;"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group mb-2">
@@ -111,35 +119,40 @@
                                     </div>
                                     <input type="text" class="form-control inputbox" id="member_pw_chk" required>
                                 </div>
-                                <div class="check_font inputbox error-next-box" id="pw_check" style="font-size: 10px;"></div>
+                                <div class="check_font inputbox error-next-box" id="pw_check"
+                                     style="font-size: 10px;"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text inputWidth">생년월일</div>
                                     </div>
-                                    <div class="input-group input-group-lg date" id="datetimepickerlogin" data-target-input="nearest" onclick="$memberJoin.event.datePicker();">
-                                        <input type="text" class="form-control datetimepicker-input inputbox" style='font-size:16px; width: 252px; height: 39px' id="memberBirth" data-target="#datetimepickerlogin"/>
-                                        <div class="input-group-append" style='height: 39px;' data-target="#datetimepickerlogin" data-toggle="datetimepicker">
+                                    <div class="input-group input-group-lg date" id="datetimepickerlogin"
+                                         data-target-input="nearest" onclick="$memberJoin.event.datePicker();">
+                                        <input type="text" class="form-control datetimepicker-input inputbox"
+                                               style='font-size:16px; width: 252px; height: 39px' id="memberBirth"
+                                               data-target="#datetimepickerlogin"/>
+                                        <div class="input-group-append" style='height: 39px;'
+                                             data-target="#datetimepickerlogin" data-toggle="datetimepicker">
                                             <div class="input-group-text">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="check_font inputbox error-next-box" id="birth_check" style="font-size: 10px;"></div>
+                                <div class="check_font inputbox error-next-box" id="birth_check"
+                                     style="font-size: 10px;"></div>
                             </div>
                             <div class="text-center">
                                 <button type="button" class="btn btn-info btn-block rounded-0 py-2" name="reg_submit"
                                         id="reg_submit"
-                                        onclick="$memberJoin.request.doRegister();">등록
+                                        onclick="$memberJoin.ui.doRegisterMember();">등록
                                 </button>
                                 <button type="button" data-dismiss="modal"
                                         class="btn btn-info btn-block rounded-0 py-2">닫기
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </form>
             </div>

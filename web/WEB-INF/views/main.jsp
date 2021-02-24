@@ -15,8 +15,8 @@
     <script type="text/javascript" src="/libs/paging/twbsPagination.js"></script>
     <script type="text/javascript" src="/js/main/main.js"></script>
     <script type="text/javascript" src="/js/common/common.js"></script>
-    <script type="text/javascript" src="/js/memberjoin/calender/moment.min.js"></script>
-    <script type="text/javascript" src="/js/memberjoin/calender/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="/libs/calender/moment.min.js"></script>
+    <script type="text/javascript" src="/libs/calender/tempusdominus-bootstrap-4.min.js"></script>
 
 </head>
 <script>
@@ -27,7 +27,8 @@
 <div class="container">
     <div class="span5">
         <div id="listInfo">
-            <table id="tbl" style="border: 2px solid #dee2e6; table-layout:fixed;" class="tbl mainTbl paginated table table-striped table-condensed table-hover">
+            <table id="tbl" style="border: 2px solid #dee2e6; table-layout:fixed;"
+                   class="tbl mainTbl paginated table table-striped table-condensed table-hover">
                 <thead class="thead">
                 <tr>
                     <th class="noWid">번호</th>
@@ -44,7 +45,8 @@
                 검색 결과가 없습니다.
             </div>
             <div class="totalCnt" style="text-align: right; color:#5e5e5e;  font-weight: bold;"></div>
-        </div><br>
+        </div>
+        <br>
         <div style="float: left; width: 100%; text-align: center">
             <div style="display: inline-block">
                 <ul class="sync-pagination"></ul>
@@ -58,13 +60,13 @@
                     <option value="memberName">이름</option>
                     <option value="memberAddress">주소</option>
                 </select>
-                <input id ="searchKey" type="text" name="keyword"  class="form-control" />
+                <input id="searchKey" type="text" name="keyword" class="form-control"/>
             </form>
         </div>
     </div>
 </div>
 
-<!-- Modal -->
+<!-- 멤버 개인정보 팝업창 -->
 <div class="modal fade" id="memberInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
     <div class="modal-dialog">
@@ -74,10 +76,11 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
+            <%-- 팝업 body--%>
             <div class="modal-body">
                 <div id="memberInfo"></div>
             </div>
-            <%--modalbody end--%>
             <div class="modal-footer">
                 <div id="update_btn_div">
                     <button type="button" class="btn btn-primary" name="reg_submit" id="update_btn"
@@ -85,7 +88,8 @@
                     </button>
                 </div>
                 <div id="del_btn_div">
-                    <button type="button" class="btn btn-primary" name="member_del_btn" id="member_del_btn" onclick="$mainView.ui.doDeleteMember()">삭제
+                    <button type="button" class="btn btn-primary" name="member_del_btn" id="member_del_btn"
+                            onclick="$mainView.ui.doDeleteMember()">삭제
                     </button>
                 </div>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
@@ -93,7 +97,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

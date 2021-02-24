@@ -28,7 +28,7 @@ td.regWid{
     width:200px;
     text-align: center;
 }
-.cursor {cursor: pointer}
+.cursor {cursor: pointer !important}
 
 .modyfywidth {width: 100px}
 
@@ -40,36 +40,39 @@ td.regWid{
     background-color: #93B874;
 }
 
-.header_container {
+.headerContainer {
     background-color: #f3f3f3;
     border: 0;
     z-index: 10;
     top: 0;
     width: 100%;
 }
-.logouta {
+.headerContainer .logout {
     margin-right: 20px;
-    color: #ffffff}
+    color: #ffffff;
+    background-color: #93B874;
+    cursor: pointer; !important;
+}
 a:hover { color: #ffffff; text-decoration: none;}
-.header {
+.headerContainer .header {
     text-align: left;
     height: 40px;
     background-color: #93B874;
 }
-.headerlogouta {
+.headerContainer .headerLogout {
     text-align: right;
     height: 20px;
     background-color: #93B874;
 }
 
-.headertext {
+.headerContainer .headerText {
     margin-top: 50px;
     padding-left: 10px;
     float:left;
     height: 40px;
     color: #ffffff;
 }
-.headerid {
+.headerContainer .headerId {
     padding-right: 10px;
     padding-top: 10px;
     font-size : 20px;

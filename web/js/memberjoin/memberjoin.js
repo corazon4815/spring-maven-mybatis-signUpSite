@@ -1,73 +1,46 @@
 (function(W, D) {
     W.$memberJoin = W.$memberJoin || {};
 
-
-    $memberJoin.event = {
+    $memberJoin.ui = {
         /**
          * 아이디 중복확인 버튼 클릭 상태를 저장
          */
-        isMemberChecked : "",
+        isMemberChecked: "",
 
         /**
-         * @name duplChk
+         * @name doDuplChkMember
          * @description 회원가입의 아이디 중복확인 버튼 클릭시 실행한다.
          */
-        duplChk: function () {
-            /* $("#btn_duplChk").click(function () {*/
+        doDuplChkMember : function () {
             let memberId = $('#memberIdModal').val();
-            $.ajax({
-                type: 'get',
-                url: '/member/checkid',
-                data: {
-                   "memberId" : memberId
-                },
-                dataType: "json",
-                contentType: "application/json; charset=utf-8;",
-                success: function (data) {
-                    $memberJoin.event.isMemberChecked = 'N';
-                    if(memberId == ""){
-                        $("#id_check").text("아이디를 입력해주세요.");
-                        $("#id_check").css("color", "black");
-                        $("#reg_submit").attr("disabled", false);
-                    }else if (data.result==false) {
-                        $("#id_check").text("사용중인 아이디입니다");
-                        $("#id_check").css("color", "red");
-                        $("#reg_submit").attr("disabled", true);}
-                    else {
-                            $('#id_check').text('사용 가능한 아이디 입니다.');
-                            $("#id_check").css("color", "black");
-                            $("#reg_submit").attr("disabled", false);
-                        $memberJoin.event.isMemberChecked = 'Y';
-                        }
-                    }
-                , error: function () {
-                    console.log("실패");
+            $memberJoin.request.doDuplChk(memberId, function (res) {
+                console.log(res);
+                $memberJoin.ui.isMemberChecked = 'N';
+                if(memberId == ""){
+                    $("#id_check").text("아이디를 입력해주세요.");
+                    $("#id_check").css("color", "black");
+                    $("#reg_submit").attr("disabled", false);
+                }else if(res.result == false) {
+                    $("#id_check").text("사용중인 아이디입니다");
+                    $("#id_check").css("color", "red");
+                    $("#reg_submit").attr("disabled", true);
+                }else {
+                    $('#id_check').text('사용 가능한 아이디 입니다.');
+                    $("#id_check").css("color", "black");
+                    $("#reg_submit").attr("disabled", false);
+                    $memberJoin.ui.isMemberChecked = 'Y';
                 }
             });
         },
-        /**
-         * @name datePicker
-         * @description datePicker를 실행한다.
-         */
-        datePicker: function () {
-            $('#datetimepickerlogin').datetimepicker({format: 'YYYY-MM-DD'});
-        }
-    };
-
-    $memberJoin.request = {
-        /**
-         * @name doRegister
-         * @description 회원가입창의 등록버튼 클릭시 실행한다.
-         * @returns {boolean}
-         */
-        doRegister : function() {
+        doRegisterMember : function () {
             let memberPw = $('#memberPwModal').val();
             let member_pw_chk = $('#member_pw_chk').val();
             let memberName = $('#memberName').val();
             let memberAddress = $('#memberAddress').val();
             let memberBirth = $('#memberBirth').val();
             let datatimeRegexp = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
-            let form = {
+
+            let data = {
                 memberId: $('#memberIdModal').val(),
                 memberName: $('#memberName').val(),
                 memberAddress: $('#memberAddress').val(),
@@ -75,21 +48,21 @@
                 memberBirth: $('#memberBirth').val()
             };
 
-            if(memberName==="") {
+            if(memberName === "") {
                 $('#name_check').text("필수입력 사항입니다.");
                 $('#name_check').css("color", "red");
                 return false;
             }else{
                 $('#name_check').text("");
             }
-            if(memberAddress==="") {
+            if(memberAddress === "") {
                 $('#address_check').text("필수입력 사항입니다.");
                 $('#address_check').css("color", "red");
                 return false;
             }else{
                 $('#address_check').text("");
             }
-            if(memberPw==="") {
+            if(memberPw === "") {
                 $('#pre_pw_check').text("필수입력 사항입니다.");
                 $('#pre_pw_check').css("color", "red");
                 return false;
@@ -103,7 +76,7 @@
             }else{
                 $('#pw_check').text("");
             }
-            if(memberBirth==="") {
+            if(memberBirth === "") {
                 $('#birth_check').text("필수입력 사항입니다.");
                 $('#birth_check').css("color", "red");
                 return false;
@@ -117,31 +90,79 @@
             }else{
                 $('#birth_check').text("");
             }
-            if ($memberJoin.event.isMemberChecked!='Y') {
+            if ($memberJoin.ui.isMemberChecked!='Y') {
                 $('#id_check').text('아이디 중복체크를 해주세요.');
                 $("#id_check").css("color", "red");
                 return false;
             }else {
-                $.ajax({
-                    type: "POST",
-                    url: "/member/register",
-                    data: JSON.stringify(form),
-                    dataType: "json",
-                    contentType: "application/json; charset=utf-8;",
-                    success: function (result) {
-                        console.log(this);
-                        console.log(result.result)
-                        $('.inputbox').val('');
-                        $('.inputbox').text('');
-                        $commonFunc.message.alert("알림","회원가입이 완료되었습니다.")
-                        $memberJoin.event.isMemberChecked = 'N';
-                        $('#memberModal').modal('hide');
-                    },
-                    error: function (request, status, error) {
-                        alert("code:" + request.status + "\n" + "error:" + error);
-                    }
+                $memberJoin.request.doRegister(data, function (res) {
+                    console.log(res)
+                    $('.inputbox').val('');
+                    $('.inputbox').text('');
+                    $commonFunc.message.alert("알림","회원가입이 완료되었습니다.")
+                    $memberJoin.ui.isMemberChecked = 'N';
+                    $('#memberModal').modal('hide');
+
                 });
             }
         }
-    }
+    };
+
+    $memberJoin.request = {
+        /**
+         * @name doDuplChk
+         * @description 회원가입의 아이디 중복확인 버튼 클릭시 실행한다.
+         */
+        doDuplChk : function(memberId ,callback) {
+            $.ajax({
+                type: 'get',
+                url: '/member/checkid',
+                data: {
+                   "memberId" : memberId
+                },
+                dataType: "json",
+                contentType: "application/json; charset=utf-8;",
+                success: function (res) {
+                    if (callback != null && callback instanceof Function) {
+                        callback.call(undefined, res);
+                    }
+                }
+                , error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                }
+            });
+        },
+        /**
+         * @name doRegister
+         * @description 회원가입창의 등록버튼 클릭시 실행한다.
+         * @returns {boolean}
+         */
+        doRegister : function(data, callback) {
+            $.ajax({
+                type: "POST",
+                url: "/member/register",
+                data: JSON.stringify(data),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8;",
+                success: function (res) {
+                    if (callback != null && callback instanceof Function) {
+                        callback.call(undefined, res);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                }
+            });
+        }
+    },
+
+    $memberJoin.event = {
+        /**
+         * @name datePicker
+         * @description datePicker를 실행한다.
+         */
+        datePicker: function () {
+            $('#datetimepickerlogin').datetimepicker({format: 'YYYY-MM-DD'});
+        }
+    };
 })(window, document);

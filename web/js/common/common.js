@@ -135,7 +135,6 @@
                 '</div>' +
                 '</div>';
 
-
             $(html).on('shown.bs.modal', function (e) {
                 $("#confirmOkBtn").on("click", function() {
                     $('#confirmPopup').modal("hide");
